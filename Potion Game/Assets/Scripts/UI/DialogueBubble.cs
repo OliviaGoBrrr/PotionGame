@@ -16,6 +16,7 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
     // Components
     UnityEngine.UI.Image DiaBubble;
     [SerializeField] TMP_Text textObject;
+    [SerializeField] AudioSource audioSource;
 
     int State = 0; // 0 = no dialogue, 1 = typing start, 2 = typing, 3 = complete
     int TextAnim = 0; // 0 = no anim, 1 = rotating, 2 = size shifting, 3 = vert displacement, 4 = colours
@@ -25,6 +26,10 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
     int lineNum;
     float textIntervalDefault = 0.1f;
     float textInterval;
+
+    // SoundCues
+    int soundInterval;
+    int soundCount;
 
     // Visual clutter
     List<float> animStates;
@@ -46,12 +51,15 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
     }
 
     // Recieves a list of dialogue from another source
-    public void SetDialogue(List<string> dialogue, int textAnimNum)
+    public void SetDialogue(List<string> dialogue, int textAnimNum, AudioClip aud)
     {
         dialogueList = dialogue;
         State = 1;
         lineNum = 0;
         TextAnim = textAnimNum;
+        soundCount = 0;
+        soundInterval = 2;
+        audioSource.resource = aud;
     }
     void Update()
     {
@@ -113,7 +121,7 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
                     textObject.text += dialogueList[lineN][i];
                     break;
             }
-            
+            soundCheck();   
             yield return new WaitForSeconds(textInterval);
         }
         State = 3;
@@ -229,12 +237,24 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
             }
         }
     }
+    private void soundCheck()
+    {
+        if (soundCount == 0) 
+        {
+            int random = UnityEngine.Random.Range(-2, 3);
+            audioSource.pitch = 1 * Mathf.Pow(1.059463f, random);
+            audioSource.Play(); 
+            soundCount = soundInterval; 
+        }
+        else { soundCount -= 1; }
+    }
     // Allows the player to either reduce the text interval or go to the next message by clicking on the dialogue bubble
     public void OnPointerClick(PointerEventData eventData)
     {
         if (State == 2)
         {
             textInterval = 0.01f;
+            soundInterval = 10;
         }
         if (State == 3)
         {

@@ -8,9 +8,10 @@ public class TestButton2 : MonoBehaviour, IPointerClickHandler
     public List<string> dialogue;
     public int diaAnim;
     public DialogueBubble dia;
+    public AudioClip audioClip;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        dia.SetDialogue(dialogue, diaAnim);
+        dia.SetDialogue(dialogue, diaAnim, audioClip);
     }
 }
