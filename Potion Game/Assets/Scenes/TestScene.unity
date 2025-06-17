@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hi!
+  m_text: hi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2716,13 +2716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 763217395}
-  animCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  animScale: 0
 --- !u!114 &1606007972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3475,7 +3468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - test1
-  - hey guys what's up it's pewdiepie
+  - making this one effect took 3 hours because i didn't want to pay 60 dollars for
+    a plugin
+  diaAnim: 1
   dia: {fileID: 1606007971}
 --- !u!114 &2011736361
 MonoBehaviour:

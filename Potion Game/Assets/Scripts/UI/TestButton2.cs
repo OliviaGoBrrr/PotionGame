@@ -6,9 +6,11 @@ using UnityEngine.EventSystems;
 public class TestButton2 : MonoBehaviour, IPointerClickHandler
 {
     public List<string> dialogue;
+    public int diaAnim;
     public DialogueBubble dia;
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        dia.SetDialogue(dialogue);
+        dia.SetDialogue(dialogue, diaAnim);
     }
 }
