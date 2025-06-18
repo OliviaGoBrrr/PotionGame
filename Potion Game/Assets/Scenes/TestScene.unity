@@ -1622,10 +1622,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3601,7 +3601,7 @@ MonoBehaviour:
   - test1
   - making this one effect took 3 hours because i didn't want to pay 60 dollars for
     a plugin
-  diaAnim: 3
+  diaAnim: 1
   dia: {fileID: 1606007971}
   audioClip: {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
 --- !u!114 &2011736361

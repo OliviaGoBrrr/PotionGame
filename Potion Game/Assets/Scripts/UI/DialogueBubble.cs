@@ -191,7 +191,7 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
                     textObject.text = string.Join(string.Empty, sizeSubStrings);
                     break;
                 case 3:
-                    string[] vertSubStrings = Regex.Split(textObject.text, @"(?<=[<>])"); // Divides the string into a set of substring spagetti
+                    string[] vertSubStrings = Regex.Split(textObject.text, @"(?<=[<>])"); // Divides the string into a set of substring spaghetti
                     for (int i = 0; i < vertSubStrings.Length - 1; i += 4) // Repeat for each character
                     {
                         int startindex = vertSubStrings[i + 1].IndexOf('=');
