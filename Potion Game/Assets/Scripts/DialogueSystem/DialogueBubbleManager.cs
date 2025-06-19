@@ -16,22 +16,26 @@ public class DialogueBubbleManager : MonoBehaviour
     // Components
     [SerializeField] AudioSource audioSource;
 
+    [SerializeField] List<DialogueBubble> bubbleList;
+
     // Stores all the instructions given when dialogue is set
     private int currentDiaPos;
-    List<DialogueBubble> bubble;
+    public List<DialogueBubble> currentBubble;
     List<string> names;
     List<string> dialogue;
     List<int> textFX; // 0 = no anim, 1 = rotating, 2 = size shifting, 3 = vert displacement, 4 = colours
     List<AudioClip> characterBlip;
+    List<float> defaultTextInterval;
+    List<float> fastTextInterval;
+    List<int> defaultBlipInterval;
+    List<int> fastBlipInterval;
 
     int State = 0; // 0 = no dialogue, 1 = typing start, 2 = typing, 3 = complete
     
     // TextSpeed
-    float textIntervalDefault = 0.1f;
     float textInterval;
 
     // SoundCues
-    int soundIntervalDefault = 2;
     int soundInterval;
     int soundCount;
 
@@ -48,37 +52,44 @@ public class DialogueBubbleManager : MonoBehaviour
     float ColourSpeed = 2f;
 
     // Recieves a list of dialogue from another source
-    public void SetDialogue(List<DialogueBubble> Bubble, List<string> Names, List<string> Dialogue, List<int> TextFX, List<AudioClip> CharacterBlip)
+    public void SetDialogue(List<int> Bubble, List<string> Names, List<string> Dialogue, List<int> TextFX, List<AudioClip> CharacterBlip, List<float> DefaultTextInterval, List<float> FastTextInterval, List<int> DefaultBlipInterval, List<int> FastBlipInterval)
     {
-        bubble = Bubble;
+        currentBubble = new List<DialogueBubble>( new DialogueBubble[Bubble.Count] );
+        for ( int i = 0; i < Bubble.Count; i++ )
+        {
+            currentBubble[i] = bubbleList[Bubble[i]];
+        }
         names = Names;
         dialogue = Dialogue;
         textFX = TextFX;
         characterBlip = CharacterBlip;
+        defaultTextInterval = DefaultTextInterval;
+        fastTextInterval = FastTextInterval;
+        defaultBlipInterval = DefaultBlipInterval;
+        fastBlipInterval = FastBlipInterval;
+
         currentDiaPos = 0;
         NewLinePrep();
     }
     void NewLinePrep()
     {
         State = 1;
-        textInterval = textIntervalDefault;
+        textInterval = defaultTextInterval[currentDiaPos];
         soundCount = 0;
-        soundInterval = soundIntervalDefault;
+        soundInterval = defaultBlipInterval[currentDiaPos];
     }
     void Update()
     {
         PrintWords();
         AnimateWords();
     }
-    // If the state is 0 (no text), fades everything out. Otherwise, fade in.
-
     // Resets text interval and initiates coroutine
     void PrintWords()
     {
         if (State == 1)
         {
             ResetAnim();
-            StartCoroutine(TypeText(bubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos]));
+            StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos]));
             State = 2;
         }
     }
@@ -149,7 +160,7 @@ public class DialogueBubbleManager : MonoBehaviour
                 case 0:
                     break;
                 case 1:
-                    string[] rotSubStrings = Regex.Split(bubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])"); // Divides the string into a set of substring spagetti
+                    string[] rotSubStrings = Regex.Split(currentBubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])"); // Divides the string into a set of substring spagetti
                     for (int i = 0; i < rotSubStrings.Length - 1; i += 4) // Repeat for each character
                     {
                         int startindex = rotSubStrings[i + 1].IndexOf('"');
@@ -168,10 +179,10 @@ public class DialogueBubbleManager : MonoBehaviour
                         else if (animStates[i / 4] == 1) { currentValueFloat = Mathf.Lerp(currentValueFloat, RotationLimit * 1.1f, Time.deltaTime * RotationSpeed); }
                         rotSubStrings[i + 1] = "rotate=\"" + currentValueFloat + "\">"; // I'm hard coding this i'm so tired of regex
                     }
-                    bubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, rotSubStrings);
+                    currentBubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, rotSubStrings);
                     break;
                 case 2:
-                    string[] sizeSubStrings = Regex.Split(bubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])");
+                    string[] sizeSubStrings = Regex.Split(currentBubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])");
                     for (int i = 0; i < sizeSubStrings.Length - 1; i += 2) // Repeat for each character
                     {
                         int startindex = sizeSubStrings[i + 1].IndexOf('=');
@@ -191,10 +202,10 @@ public class DialogueBubbleManager : MonoBehaviour
 
                         sizeSubStrings[i + 1] = "size=" + currentValueFloat + "%>"; // I'm hard coding this i'm so tired of regex
                     }
-                    bubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, sizeSubStrings);
+                    currentBubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, sizeSubStrings);
                     break;
                 case 3:
-                    string[] vertSubStrings = Regex.Split(bubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])"); // Divides the string into a set of substring spaghetti
+                    string[] vertSubStrings = Regex.Split(currentBubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])"); // Divides the string into a set of substring spaghetti
                     for (int i = 0; i < vertSubStrings.Length - 1; i += 4) // Repeat for each character
                     {
                         int startindex = vertSubStrings[i + 1].IndexOf('=');
@@ -207,10 +218,10 @@ public class DialogueBubbleManager : MonoBehaviour
                         else if (animStates[i / 4] == 1) { currentValueFloat = Mathf.Lerp(currentValueFloat, (VertLimit * 1.1f), Time.deltaTime * VertSpeed); }
                         vertSubStrings[i + 1] = "voffset=" + currentValueFloat + "em>"; // I'm hard coding this i'm so tired of regex
                     }
-                    bubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, vertSubStrings);
+                    currentBubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, vertSubStrings);
                     break;
                 case 4:
-                    string[] colorSubStrings = Regex.Split(bubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])"); // Divides the string into a set of substring spagetti
+                    string[] colorSubStrings = Regex.Split(currentBubble[currentDiaPos].dialogueTextBox.text, @"(?<=[<>])"); // Divides the string into a set of substring spagetti
                     for (int i = 0; i < colorSubStrings.Length - 1; i += 4) // Repeat for each character
                     {
                         animStates[i/4] += Time.deltaTime * ColourSpeed;
@@ -233,7 +244,7 @@ public class DialogueBubbleManager : MonoBehaviour
                         }
                         colorSubStrings[i + 1] = "color=#" + UnityEngine.ColorUtility.ToHtmlStringRGB(textColor) + ">"; // I'm hard coding this i'm so tired of regex
                     }
-                    bubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, colorSubStrings);
+                    currentBubble[currentDiaPos].dialogueTextBox.text = string.Join(string.Empty, colorSubStrings);
                     break;
                 default:
                     break;
@@ -246,13 +257,13 @@ public class DialogueBubbleManager : MonoBehaviour
         if (State == 2)
         {
             // Modifies the interval statistics to make the text scroll faster
-            textInterval = 0.01f;
-            soundInterval = 10;
+            textInterval = fastTextInterval[currentDiaPos];
+            soundInterval = fastBlipInterval[currentDiaPos];
         }
         if (State == 3)
         {
-            bubble[currentDiaPos].nameTextBox.text = string.Empty;
-            bubble[currentDiaPos].dialogueTextBox.text = string.Empty;
+            currentBubble[currentDiaPos].nameTextBox.text = string.Empty;
+            currentBubble[currentDiaPos].dialogueTextBox.text = string.Empty;
             if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
             {
                 State = 0;
