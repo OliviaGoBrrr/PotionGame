@@ -45,21 +45,31 @@ public class DragTarget : MonoBehaviour
             // Add a target joint to the Rigidbody2D GameObject.
             if(body.GetComponent<TargetJoint2D>() == null)
             {
-                m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
+                this.m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
                 Debug.Log(m_TargetJoint.name);
             }
+            else
+            {
+                return;
+            }
 
-            if (m_TargetJoint)
+            if (m_TargetJoint != null)
             {
                 m_TargetJoint.dampingRatio = m_Damping;
                 m_TargetJoint.frequency = m_Frequency;
                 _rb.gravityScale = 0;
-                // Attach the anchor to the local-point where we clicked.
-                m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);
+                // Attach the anchor to the local-point where we clicked. 
+                m_TargetJoint.anchor = this.m_TargetJoint.transform.InverseTransformPoint(worldPos);
             }
+            
         }
+        
         else if (Input.GetMouseButtonUp(0))
         {
+            if(gameObject.GetComponent<TargetJoint2D>() != null)
+            {
+                Destroy(this.gameObject.GetComponent<TargetJoint2D>());
+            }
             _rb.gravityScale = 1;
             Destroy(m_TargetJoint);
             m_TargetJoint = null;
@@ -74,6 +84,11 @@ public class DragTarget : MonoBehaviour
             // Draw the line between the target and the joint anchor.
             if (m_DrawDragLine)
                 Debug.DrawLine(m_TargetJoint.transform.TransformPoint(m_TargetJoint.anchor), worldPos, m_Color);
+        }
+
+        if(this.transform.position.y < -10 || this.transform.position.y > 100)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
