@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5736176080280127776}
   - component: {fileID: 9219524953163845321}
   m_Layer: 0
-  m_Name: BaseIngredient
+  m_Name: BaseIngredient TEST1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,10 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73359b7a6b3d56845bfd6d754ea32cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: 0
-  carbonation: 0
-  pazaz: 0
-  potency: 0
+  temperature: 0.2
+  carbonation: 0.1
+  pazaz: 0.5
+  potency: 10
 --- !u!58 &1846651633700716702
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
