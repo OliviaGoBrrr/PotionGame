@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361823851425826661}
   - component: {fileID: 2675707412359688809}
+  - component: {fileID: -8319182096523113249}
   - component: {fileID: 1846651633700716702}
   - component: {fileID: 5736176080280127776}
   - component: {fileID: 9219524953163845321}
@@ -54,6 +55,18 @@ MonoBehaviour:
   m_Frequency: 5
   m_DrawDragLine: 1
   m_Color: {r: 0, g: 1, b: 1, a: 1}
+--- !u!114 &-8319182096523113249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497837659299323094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73359b7a6b3d56845bfd6d754ea32cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &1846651633700716702
 CircleCollider2D:
   m_ObjectHideFlags: 0
