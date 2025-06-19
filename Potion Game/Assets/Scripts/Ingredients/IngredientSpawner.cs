@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class IngredientSpawner : MonoBehaviour, IPointerClickHandler
+public class IngredientSpawner : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private GameObject ingredient;
 
@@ -19,14 +19,8 @@ public class IngredientSpawner : MonoBehaviour, IPointerClickHandler
 
     }
 
-    public void IsClicked()
+    public void OnPointerDown(PointerEventData eventData)
     {
         Instantiate(ingredient, transform.position, Quaternion.identity);
-        Debug.Log("HELLO GOOBERS!!");
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("HELLO GOOBERS!!");
     }
 }
