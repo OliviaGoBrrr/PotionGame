@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class DragTarget : MonoBehaviour
 {
     public LayerMask m_DragLayers;
@@ -15,10 +16,18 @@ public class DragTarget : MonoBehaviour
 
     private TargetJoint2D m_TargetJoint;
 
+    private Rigidbody2D _rb;
+
+    private void Awake()
+    {
+       _rb = gameObject.GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         // Calculate the world position for the mouse.
         var worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPos.z = 1.0f;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -34,15 +43,24 @@ public class DragTarget : MonoBehaviour
                 return;
 
             // Add a target joint to the Rigidbody2D GameObject.
-            m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
-            m_TargetJoint.dampingRatio = m_Damping;
-            m_TargetJoint.frequency = m_Frequency;
+            if(body.GetComponent<TargetJoint2D>() == null)
+            {
+                m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
+                Debug.Log(m_TargetJoint.name);
+            }
 
-            // Attach the anchor to the local-point where we clicked.
-            m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);
+            if (m_TargetJoint)
+            {
+                m_TargetJoint.dampingRatio = m_Damping;
+                m_TargetJoint.frequency = m_Frequency;
+                _rb.gravityScale = 0;
+                // Attach the anchor to the local-point where we clicked.
+                m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);
+            }
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            _rb.gravityScale = 1;
             Destroy(m_TargetJoint);
             m_TargetJoint = null;
             return;
