@@ -39,7 +39,7 @@ public class CauldronVisuals : MonoBehaviour
         liquidTimer += Time.deltaTime;
         cauldronLiquid.GetComponent<SpriteRenderer>().color = Color.Lerp(cauldronLiquid.GetComponent<SpriteRenderer>().color, liquidColour, liquidTimer / 3);
     }
-    void ShakeShake() // Shake from
+    void ShakeShake() // It's not done yettttt
     {
         shakeAmount -= Time.deltaTime;
         if (cauldronShake == false)
@@ -47,7 +47,7 @@ public class CauldronVisuals : MonoBehaviour
             switch (shakeDirection)
             {
                 case (true):
-                    cauldronTilt = LeanTween.value(gameObject, cauldronTilt, )
+                    LeanTween.value(gameObject, cauldronTilt, shakeAmount, 2f).setEase(LeanTweenType.easeOutQuart);
                 break;
             }
         }
