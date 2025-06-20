@@ -67,9 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73359b7a6b3d56845bfd6d754ea32cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: -0.1
-  carbonation: 0.2
-  pazaz: -0.3
+  temperature: -1
+  carbonation: 2
+  pazaz: -3
   potency: 5
 --- !u!58 &1846651633700716702
 CircleCollider2D:

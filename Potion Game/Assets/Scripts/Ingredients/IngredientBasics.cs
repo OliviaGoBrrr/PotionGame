@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class IngredientBasics : MonoBehaviour
 {
-    public float temperature;
-    public float carbonation;
-    public float pazaz;
-    public float potency;
+    public int temperature;
+    public int carbonation;
+    public int pazaz;
+    public int potency;
+
+    private SliderController sliders;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        sliders = GameObject.FindWithTag("AttributeSliders").GetComponent<SliderController>();
     }
 
     // Update is called once per frame
@@ -37,7 +39,6 @@ public class IngredientBasics : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("AAA");
         if (collider.gameObject.name == "Cauldron")
         {
             var cauldronScript = collider.gameObject.GetComponent<CauldronStats>();
@@ -45,6 +46,8 @@ public class IngredientBasics : MonoBehaviour
             cauldronScript.currentCarbonation += carbonation;
             cauldronScript.currentPazaz += pazaz;
             cauldronScript.currentPotency += potency;
+
+            sliders.UpdateCauldronNotches(temperature, carbonation, pazaz);
         }
     }
 }
