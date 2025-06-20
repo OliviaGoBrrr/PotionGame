@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
+  m_Name: 02_Whale
+  m_EditorClassIdentifier: 
+  bubble: 0000000000000000000000000000000000000000000000000000000000000000
+  nameText:
+  - 
+  - ???
+  - Owl
+  - ???
+  - Owl
+  - ???
+  - Owl
+  - Walter
+  dialogueText:
+  - You hear your front door open, and fear for the stability of your roof as the
+    first customer of the day enters your hut.
+  - "erm\u2026 hello? sorry, i think i might\u2019ve left a small dent in one of
+    the rafters, that\u2019s my bad, i can pay for it\u2013  "
+  - "Speak up would you? What\u2019ll it be??"
+  - "I\u2019m having some barnacle issues. Only if that\u2019s okay of course, if
+    it\u2019s too hard I can get something else\u2013"
+  - I really cannot hear you.
+  - I NEED SOME CREAM FOR MY BARNACLE RASH!!!
+  - "Alright calm down, there\u2019s no need to yell\u2026 Barnacle cream coming
+    right up.  "
+  - oh okay, thank you. walter please, if that's okay.
+  textAnim: 0000000000000000000000000000000000000000000000000000000000000000
+  audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  defaultTextInterval:
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  fastTextInterval:
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  defaultBlipInterval: 0300000003000000030000000300000003000000030000000300000003000000
+  fastBlipInterval: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
+  fontSize:
+  - 36
+  - 14
+  - 36
+  - 25
+  - 36
+  - 50
+  - 36
+  - 14

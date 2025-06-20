@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
+  m_Name: 03_Tutorial
+  m_EditorClassIdentifier: 
+  bubble: 000000000000000000000000
+  nameText:
+  - Owl
+  - Owl
+  - Owl
+  dialogueText:
+  - "I\u2019ve given you the rough properties of each potion in the hopes you can
+    at least give Walter something remotely close to what he wants\u2026  "
+  - "Of course, I will be here providing feedback on your failings\u2026 just try
+    not to blow the place up if you can help it.  "
+  - "Well, what are you waiting for? Throw some things into the cauldron! Walter\u2019s
+    waiting!"
+  textAnim: 000000000000000000000000
+  audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  defaultTextInterval:
+  - 0.05
+  - 0.05
+  - 0.05
+  fastTextInterval:
+  - 0.01
+  - 0.01
+  - 0.01
+  defaultBlipInterval: 030000000300000003000000
+  fastBlipInterval: 0a0000000a0000000a000000
+  fontSize:
+  - 36
+  - 36
+  - 36

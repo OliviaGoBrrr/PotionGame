@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
+  m_Name: 04_2_WhaleResponseMid
+  m_EditorClassIdentifier: 
+  bubble: 0000000000000000
+  nameText:
+  - Walter
+  - Owl
+  dialogueText:
+  - "Oh, I feel a little better now, thank you. I\u2019m sure the rest will clear
+    up soon! I owe you, thank you so much for this!"
+  - "I\u2019m not sure how permanent that one is\u2026 let\u2019s hope for the kid\u2019s
+    sake that it lasts."
+  textAnim: 0000000000000000
+  audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  defaultTextInterval:
+  - 0.05
+  - 0.05
+  fastTextInterval:
+  - 0.01
+  - 0.01
+  defaultBlipInterval: 0300000003000000
+  fastBlipInterval: 0a0000000a000000
+  fontSize:
+  - 36
+  - 36
