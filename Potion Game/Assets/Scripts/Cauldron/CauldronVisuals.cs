@@ -47,7 +47,7 @@ public class CauldronVisuals : MonoBehaviour
             switch (shakeDirection)
             {
                 case (true):
-                    LeanTween.value(gameObject, cauldronTilt, shakeAmount, 2f).setEase(LeanTweenType.easeOutQuart);
+                    transform.LeanRotateZ(shakeAmount, 2f).setEase(LeanTweenType.easeOutQuart);
                 break;
             }
         }
