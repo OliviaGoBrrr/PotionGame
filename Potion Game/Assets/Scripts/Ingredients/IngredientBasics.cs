@@ -7,12 +7,12 @@ public class IngredientBasics : MonoBehaviour
     public int pazaz;
     public int potency;
 
-    private SliderController sliders;
+    private SliderContainer sliders;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        sliders = GameObject.FindWithTag("AttributeSliders").GetComponent<SliderController>();
+        sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class IngredientBasics : MonoBehaviour
             cauldronScript.currentPazaz += pazaz;
             cauldronScript.currentPotency += potency;
 
-            sliders.UpdateCauldronNotches(temperature, carbonation, pazaz);
+            sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
         }
     }
 }
