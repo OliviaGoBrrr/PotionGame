@@ -28,7 +28,10 @@ public class DialogueScriptableObject : ScriptableObject
     [Tooltip("The amount of characters that need to appear before the audio plays (I would reccomend 3)")]
     [SerializeField] List<int> defaultBlipInterval;
     public List<int> DefaultBlipInterval { get => defaultBlipInterval; private set => defaultBlipInterval = value; }
-    [Tooltip("The amount of characters that need to appear before the audio plays (I would reccomend 10")]
+    [Tooltip("The amount of characters that need to appear before the audio plays (I would reccomend 10)")]
     [SerializeField] List<int> fastBlipInterval;
     public List<int> FastBlipInterval { get => defaultBlipInterval; private set => defaultBlipInterval = value; }
+    [Tooltip("Size of the dialogue font (for the name text, use TextMeshPro RichText)")]
+    [SerializeField] List<float> fontSize;
+    public List<float> FontSize { get => fontSize; private set => fontSize = value; }
 }

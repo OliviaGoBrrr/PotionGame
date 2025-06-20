@@ -11,6 +11,8 @@ public class SliderController : MonoBehaviour
     [SerializeField] AudioClip soundFX;
     [SerializeField] AudioSource audioSource;
 
+    [SerializeField] CauldronStats cauldron;
+
     // Notch Update Logic
     float NotchTimer;
     int CurrentUpdate = 0;
@@ -27,9 +29,14 @@ public class SliderController : MonoBehaviour
     float SheenGoal;
 
     // Values for notches
-    int TempNotch;
-    int BubbleNotch;
-    int SheenNotch;
+    int TempNotch = 5;
+    int BubbleNotch = 5;
+    int SheenNotch = 5;
+
+    // Old values
+    int OldTemp;
+    int OldBubble;
+    int OldSheen;
 
     // Changes the guideline sliders (all at once). Call this BEFORE notches.
     public void SetNewPotionGuidelines(int TempLower, int TempUpper, int BubbleLower, int BubbleUpper, int SheenLower, int SheenUpper)
@@ -48,9 +55,13 @@ public class SliderController : MonoBehaviour
         NotchTimer = 1;
         CurrentUpdate = 1;
         pitchMod = 1;
+        OldTemp = TempNotch;
+        OldBubble = BubbleNotch;
+        OldSheen = SheenNotch;
         TempNotch = TempValue;
         BubbleNotch = BubbleValue;
         SheenNotch = SheenValue;
+        cauldron.PotencyReduction();
     }
 
     // Update is called once per frame
@@ -66,15 +77,18 @@ public class SliderController : MonoBehaviour
                     CurrentUpdate = 2;
                     NotchTimer = 0;
                     improvement = TempSlider.UpdateNotch(TempNotch, TempGoal);
+                    cauldron.NewCauldronValues(TempNotch, OldBubble, OldSheen);
                     break;
                 case 2:
                     CurrentUpdate = 3;
                     NotchTimer = 0;
                     improvement = BubbleSlider.UpdateNotch(BubbleNotch, BubbleGoal);
+                    cauldron.NewCauldronValues(TempNotch, BubbleNotch, OldSheen);
                     break;
                 case 3:
                     CurrentUpdate = 0;
                     improvement = SheenSlider.UpdateNotch(SheenNotch, SheenGoal);
+                    cauldron.NewCauldronValues(TempNotch, BubbleNotch, SheenNotch);
                     break;
                 default:
                     improvement = true;

@@ -9,6 +9,6 @@ public class TestButton2 : MonoBehaviour, IPointerClickHandler
     public DialogueScriptableObject dialogue;
     public void OnPointerClick(PointerEventData eventData)
     {
-        dia.SetDialogue(dialogue.Bubble, dialogue.NameText, dialogue.DialogueText, dialogue.TextAnim, dialogue.AudioClip, dialogue.DefaultTextInterval, dialogue.FastTextInterval, dialogue.DefaultBlipInterval, dialogue.FastBlipInterval);
+        dia.SetDialogue(dialogue.Bubble, dialogue.NameText, dialogue.DialogueText, dialogue.TextAnim, dialogue.AudioClip, dialogue.DefaultTextInterval, dialogue.FastTextInterval, dialogue.DefaultBlipInterval, dialogue.FastBlipInterval, dialogue.FontSize);
     }
 }
