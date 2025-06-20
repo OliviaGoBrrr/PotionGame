@@ -9,12 +9,13 @@ public class DialogueBubble : MonoBehaviour, IPointerClickHandler
     public TMP_Text nameTextBox;
     public TMP_Text dialogueTextBox;
 
-    [SerializeField] DialogueBubbleManager manager;
+    DialogueBubbleManager manager;
     float transparency = 0;
     float transparencySpeed = 5;
     private void Awake()
     {
         DiaBubble = GetComponent<UnityEngine.UI.Image>();
+        manager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueBubbleManager>();
     }
     private void Update()
     {

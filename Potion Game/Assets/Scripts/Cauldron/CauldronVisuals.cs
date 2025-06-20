@@ -17,99 +17,41 @@ public class CauldronVisuals : MonoBehaviour
     [SerializeField] ParticleSystem glisteningParticle;
     [SerializeField] ParticleSystem lusterlessParticle;
 
-    float shakeAmount = 5;
-    float shakeAmount2 = -5;
-    int shakeState1 = 0;
-    int shakeState2 = 0;
+    float shakeAmount = 0;
+    bool cauldronShake = false;
+    bool liquidShake = false;
     float cauldronTilt = 0;
     float liquidTilt = 0;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+
+    bool shakeDirection; // true = positive shake, negative = negative shake
 
     // Update is called once per frame
     void Update()
     {
-        ShakeShake();
+        if (shakeAmount >= 0)
+        {
+            ShakeShake();
+        }
         ColourUpdate();
     }
-    void ColourUpdate()
+    void ColourUpdate() // Updates the colour of the liquid
     {
         liquidTimer += Time.deltaTime;
         cauldronLiquid.GetComponent<SpriteRenderer>().color = Color.Lerp(cauldronLiquid.GetComponent<SpriteRenderer>().color, liquidColour, liquidTimer / 3);
     }
-    void ShakeShake()
+    void ShakeShake() // Shake from
     {
-        switch (shakeState1)
+        shakeAmount -= Time.deltaTime;
+        if (cauldronShake == false)
         {
-            case 1:
-                cauldronTilt = Mathf.Lerp(cauldronTilt, shakeAmount + 1, Time.deltaTime * 5);
-                if (cauldronTilt >= shakeAmount)
-                {
-                    shakeState1 = 2;
-                }
+            switch (shakeDirection)
+            {
+                case (true):
+                    cauldronTilt = LeanTween.value(gameObject, cauldronTilt, )
                 break;
-            case 2:
-                cauldronTilt = Mathf.Lerp(cauldronTilt, shakeAmount2 - 1, Time.deltaTime * 5);
-                if ( cauldronTilt <= shakeAmount2 )
-                {
-                    shakeState1 = 3;
-                }
-            break;
-            case 3:
-                cauldronTilt = Mathf.Lerp(cauldronTilt, 0 + 1, Time.deltaTime * 5);
-                if (cauldronTilt >= 0)
-                {
-                    cauldronTilt = 0;
-                    shakeState1 = 0;
-                }
-                break;
-            default:
-                break;
+            }
         }
-        switch (shakeState2)
-        {
-            case 1:
-                liquidTilt = Mathf.Lerp(liquidTilt, shakeAmount + 0.5f, Time.deltaTime * 4f);
-                if (liquidTilt >= shakeAmount)
-                {
-                    shakeState2 = 2;
-                }
-                break;
-            case 2:
-                liquidTilt = Mathf.Lerp(liquidTilt, shakeAmount2 - 0.5f, Time.deltaTime * 4f);
-                if (liquidTilt <= shakeAmount2)
-                {
-                    shakeState2 = 3;
-                }
-                break;
-            case 3:
-                liquidTilt = Mathf.Lerp(liquidTilt, shakeAmount/2 + 0.5f, Time.deltaTime * 2f);
-                if (liquidTilt >= shakeAmount/2)
-                {
-                    shakeState2 = 4;
-                }
-                break;
-            case 4:
-                liquidTilt = Mathf.Lerp(liquidTilt, shakeAmount2/2 - 0.5f, Time.deltaTime * 2f);
-                if (liquidTilt <= shakeAmount2/2)
-                {
-                    shakeState2 = 5;
-                }
-                break;
-            case 5:
-                liquidTilt = Mathf.Lerp(liquidTilt, 0 + 0.5f, Time.deltaTime * 1f);
-                if (liquidTilt >= 0)
-                {
-                    liquidTilt = 0;
-                    shakeState2 = 0;
-                }
-                break;
-            default:
-                break;
-        }
+        
         cauldronOuter.transform.localRotation = Quaternion.Euler(0, 0, cauldronTilt);
         cauldronLiquid.transform.localRotation = Quaternion.Euler(0, 0, liquidTilt + cauldronTilt/10);
     }
@@ -130,9 +72,50 @@ public class CauldronVisuals : MonoBehaviour
         var lusterlessEmission = lusterlessParticle.emission;
         lusterlessEmission.rateOverTime = Mathf.Clamp(5 - PazazValue, 0, 10);
     }
-    public void StartTheRock()
+    public void FireBurst(int TempDiff, int CarbDiff, int PazazDiff)
     {
-        shakeState1 = 1;
-        shakeState2 = 1;
+        if (TempDiff > 0)
+        {
+            hotParticle.Emit(Random.Range(4, 7) * TempDiff);
+        }
+        else if (TempDiff < 0)
+        {
+            coldParticle.Emit(Random.Range(-4, -7) * TempDiff);
+        }
+        if (CarbDiff > 0)
+        {
+            bubblyParticle.Emit(Random.Range(4, 7) * CarbDiff);
+        }
+        else if (CarbDiff < 0)
+        { 
+            flatParticle.Emit(Random.Range(-4, -7) * CarbDiff);
+        }
+        if (PazazDiff > 0)
+        {
+            glisteningParticle.Emit(Random.Range(4, 7) * PazazDiff);
+        }
+        else if (PazazDiff < 0)
+        {
+            lusterlessParticle.Emit(Random.Range(-4, -7) * PazazDiff);
+        }
+    }
+    public void StartTheRock(float ShakeAmount, bool ShakeDirection)
+    {
+        if (shakeDirection == ShakeDirection)
+        {
+            shakeAmount += ShakeAmount;
+        }
+        else
+        {
+            if(shakeAmount >= ShakeAmount)
+            {
+                shakeAmount -= ShakeAmount;
+            }
+            else
+            {
+                shakeDirection = ShakeDirection;
+                shakeAmount = ShakeAmount - shakeAmount;
+            }
+        }
     }
 }

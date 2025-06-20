@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - SliderContainer
+  - GameManager
+  - DialogueManager
   layers:
   - Default
   - TransparentFX
@@ -39,11 +41,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1882168475
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Cauldron
-    uniqueID: 593961877
+  - name: TheBigPot
+    uniqueID: 1812230029
+    locked: 0
+  - name: UI
+    uniqueID: 3064200615
     locked: 0
   m_RenderingLayers:
   - Default

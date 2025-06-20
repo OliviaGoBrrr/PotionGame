@@ -61,7 +61,7 @@ public class SliderController : MonoBehaviour
         TempNotch = TempValue;
         BubbleNotch = BubbleValue;
         SheenNotch = SheenValue;
-        cauldron.PotencyReduction();
+        //cauldron.IngredientEnters();
     }
 
     // Update is called once per frame
@@ -77,18 +77,18 @@ public class SliderController : MonoBehaviour
                     CurrentUpdate = 2;
                     NotchTimer = 0;
                     improvement = TempSlider.UpdateNotch(TempNotch, TempGoal);
-                    cauldron.NewCauldronValues(TempNotch, OldBubble, OldSheen);
+                    //cauldron.NewCauldronValues(TempNotch, OldBubble, OldSheen);
                     break;
                 case 2:
                     CurrentUpdate = 3;
                     NotchTimer = 0;
                     improvement = BubbleSlider.UpdateNotch(BubbleNotch, BubbleGoal);
-                    cauldron.NewCauldronValues(TempNotch, BubbleNotch, OldSheen);
+                    //cauldron.NewCauldronValues(TempNotch, BubbleNotch, OldSheen);
                     break;
                 case 3:
                     CurrentUpdate = 0;
                     improvement = SheenSlider.UpdateNotch(SheenNotch, SheenGoal);
-                    cauldron.NewCauldronValues(TempNotch, BubbleNotch, SheenNotch);
+                    //cauldron.NewCauldronValues(TempNotch, BubbleNotch, SheenNotch);
                     break;
                 default:
                     improvement = true;

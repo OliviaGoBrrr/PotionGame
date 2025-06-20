@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
   m_Name: TestDialogue
   m_EditorClassIdentifier: 
-  bubble: 000000000100000001000000
+  bubble: 010000000000000000000000
   nameText:
   - Owl
   - ???
@@ -37,6 +37,6 @@ MonoBehaviour:
   defaultBlipInterval: 030000000300000003000000
   fastBlipInterval: 0a0000000a0000000a000000
   fontSize:
-  - 20
+  - 30
   - 35
-  - 50
+  - 100

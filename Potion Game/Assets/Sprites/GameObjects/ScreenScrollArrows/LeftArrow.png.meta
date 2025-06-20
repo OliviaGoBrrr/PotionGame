@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3a521485be31144c94cea65e65a9086
+guid: 763c650fbbb8f794e9d09807221b2939
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5413607947630144341
-    second: scene_1_0
+      213: 144775311990115912
+    second: LeftArrow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scene_1_0
+      name: LeftArrow_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 3
+        y: 10
+        width: 85
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba4164011400fd4b0800000000000000
-      internalID: -5413607947630144341
+      spriteID: 84eca631168520200800000000000000
+      internalID: 144775311990115912
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scene_1_0: -5413607947630144341
+      LeftArrow_0: 144775311990115912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
