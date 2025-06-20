@@ -35,7 +35,7 @@ public class IngredientBasics : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("AAA");
         if (collider.gameObject.name == "Cauldron")
