@@ -41,8 +41,9 @@ public class SliderContainer : MonoBehaviour
 
     }
 
-    public void UpdateSliderStats(int temperature, int carbonation, int pazaz, int potency)
+    public void UpdateSliderStats(float temperature, float carbonation, float pazaz, float potency)
     {
+
         AddStats(tempSlider, temperature);
 
         AddStats(carbonSlider, carbonation);
@@ -50,12 +51,12 @@ public class SliderContainer : MonoBehaviour
         AddStats(pazazSlider, pazaz);
     }
 
-    private void AddStats(Slider slider, int stat)
+    private void AddStats(Slider slider, float stat)
     {
         slider.value += stat;
     }
 
-    public void UpdateGaugePositions(int tempPos, int tempSize, int carbPos, int carbSize, int pazPos, int pazSize)
+    public void UpdateGaugePositions(float tempPos, float tempSize, float carbPos, float carbSize, float pazPos, float pazSize)
     {
         tempGauge.value = tempPos;
         tempGaugeTransform.sizeDelta = new Vector2(tempSize, 0);
