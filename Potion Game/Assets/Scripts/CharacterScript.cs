@@ -76,4 +76,20 @@ public class CharacterScript : MonoBehaviour
                 break;
         }
     }
+    public void PullCharacterValues(out DialogueScriptableObject intro, out DialogueScriptableObject positive, out DialogueScriptableObject neutral,
+        out DialogueScriptableObject negative, out List<DialogueScriptableObject> idle, out int tempF, out int tempC, out int carbF, out int carbC, out int pazazF, out int pazazC)
+    {
+        intro = introductionDialogue;
+        positive = happyDialogue;
+        neutral = neutralDialogue;
+        negative = unhappyDialogue;
+        idle = idleDialogue;
+
+        tempF = tempFloor;
+        tempC = tempCeiling;
+        carbF = carbFloor;
+        carbC = carbCeiling;
+        pazazF = pazazFloor;
+        pazazC = pazazCeiling;
+    }
 }
