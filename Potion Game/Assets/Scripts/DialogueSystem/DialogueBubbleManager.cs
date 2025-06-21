@@ -31,6 +31,7 @@ public class DialogueBubbleManager : MonoBehaviour
     List<int> fastBlipInterval;
     List<TMP_FontAsset> textFont;
     List<float> fontSize;
+    List<TMP_FontAsset> nameFont;
 
     int State = 0; // 0 = no dialogue, 1 = typing start, 2 = typing, 3 = complete
     
@@ -75,6 +76,7 @@ public class DialogueBubbleManager : MonoBehaviour
         fastBlipInterval = currentDialogue.FastBlipInterval;
         textFont = currentDialogue.Font;
         fontSize = currentDialogue.FontSize;
+        nameFont = currentDialogue.NameFont;
 
         currentDiaPos = 0;
         NewLinePrep();
@@ -97,7 +99,7 @@ public class DialogueBubbleManager : MonoBehaviour
         if (State == 1)
         {
             ResetAnim();
-            StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos], textFont[currentDiaPos], fontSize[currentDiaPos]));
+            StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos], textFont[currentDiaPos], fontSize[currentDiaPos], nameFont[currentDiaPos]));
             State = 2;
         }
     }
@@ -111,9 +113,10 @@ public class DialogueBubbleManager : MonoBehaviour
         }
     }
     // Coroutine which types each letter out one at a time
-    IEnumerator TypeText(DialogueBubble currentBubble, string nameText, string dialogueText, int textFX, AudioClip currentBlip, TMP_FontAsset textFont, float fontSize)
+    IEnumerator TypeText(DialogueBubble currentBubble, string nameText, string dialogueText, int textFX, AudioClip currentBlip, TMP_FontAsset textFont, float fontSize, TMP_FontAsset nameFont)
     {
         currentBubble.nameTextBox.text = nameText;
+        currentBubble.nameTextBox.font = nameFont;
         currentBubble.dialogueTextBox.text = string.Empty;
         currentBubble.dialogueTextBox.font = textFont;
         currentBubble.dialogueTextBox.fontSize = fontSize;

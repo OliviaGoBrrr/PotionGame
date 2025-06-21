@@ -32,4 +32,11 @@ public class CauldronStats : MonoBehaviour
         cauldronVisuals.GetCauldronValues(currentTemperature, currentCarbonation, currentPazaz, currentPotency);
         cauldronVisuals.StartTheRock(20, true);
     }
+    public void PullStats(out float Temp, out float Carb, out float Pazaz, out float Potency)
+    {
+        Temp = currentTemperature;
+        Carb = currentCarbonation;
+        Pazaz = currentPazaz;
+        Potency = currentPotency;
+    }
 }

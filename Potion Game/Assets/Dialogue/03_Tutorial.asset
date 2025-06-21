@@ -39,7 +39,9 @@ MonoBehaviour:
   - 0.01
   defaultBlipInterval: 030000000300000003000000
   fastBlipInterval: 0a0000000a0000000a000000
+  font: []
   fontSize:
   - 36
   - 36
   - 36
+  nameFont: []

@@ -38,4 +38,7 @@ public class DialogueScriptableObject : ScriptableObject
     [Tooltip("Size of the dialogue font (for the name text, use TextMeshPro RichText)")]
     [SerializeField] List<float> fontSize;
     public List<float> FontSize { get => fontSize; private set => fontSize = value; }
+    [Tooltip("The dialogue font (for the name text, use TextMeshPro RichText)")]
+    [SerializeField] List<TMP_FontAsset> nameFont;
+    public List<TMP_FontAsset> NameFont { get => nameFont; private set => nameFont = value; }
 }
