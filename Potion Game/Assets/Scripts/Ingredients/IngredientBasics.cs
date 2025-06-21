@@ -50,4 +50,10 @@ public class IngredientBasics : MonoBehaviour
             sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
         }
     }
+
+    public void OnClick()
+    {
+
+        sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
+    }
 }
