@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 04_2_WhaleResponseMid
+  m_Name: 10_1_ElfGood
   m_EditorClassIdentifier: 
   bubble: 0000000001000000
   nameText:
-  - Walter
+  - Gregory
   - Albert
   dialogueText:
-  - "Oh, I feel a little better now, thank you. I\u2019m sure the rest will clear
-    up soon! I owe you, thank you so much for this!"
-  - "I\u2019m not sure how permanent that one is\u2026 let\u2019s hope for the kid\u2019s
-    sake that it lasts."
+  - Oh this is perfect!!  That snake is going to be stuck washing out glitter for
+    the next month!! Thanks a bunch!!
+  - "Oh this is going to be hilarious\u2026"
   textAnim: 0000000000000000
   audioClip:
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}

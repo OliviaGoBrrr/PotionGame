@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 01_Introduction
+  m_Name: 06_3_DemonBad
   m_EditorClassIdentifier: 
-  bubble: 0000000000000000000000000000000000000000
+  bubble: 0000000000000000000000000000000001000000
   nameText:
-  - Albert
-  - Albert
-  - Albert
-  - Albert
+  - Desmond
+  - 
+  - Desmond
+  - 
   - Albert
   dialogueText:
-  - Hello?? Wake up, you lazy @*/&!! I can hear customers coming, come on, get up!!
-  - "Of course they leave me with the one apprentice that would rather sleep than
-    make potions\u2026"
-  - "No, no, there\u2019s no time to clean the cauldron, you\u2019ll have to reuse
-    yesterday\u2019s potion and pray the health overlords don\u2019t come knocking. "
-  - "Oh, you\u2019re worried about the potion\u2019s stability? I\u2019ll keep an
-    eye on it for you. Just remember less is more! you don\u2019t want to know what
-    happens if you put too many ingredients in a potion."
-  - "Now come on, quickly! The first customer is nearly here, at least try to look
-    like you didn\u2019t just wake up!"
+  - IS THIS WHAT YOU CALL FLAMMA ALE???!!! I HAVE DRANK WATER WITH FINER TASTES THAN
+    THIS VILE, DISGRACEFUL, PATHETIC...
+  - <i>5 minutes later...</i>
+  - ...EVIL, DISGUSTING EXCUSE OF A DRINK. WHERE IS YOUR SUPERVISOR?? I SHOULD'VE
+    NEVER TRUSTED A MORTAL WITH SOMETHING AS FINE AS FLAMMA ALE. I WILL <i>NOT</i>
+    BE BACK.
+  - <i>You feel your hut shake as the front door is slammed with the full force of
+    the nine circles of hell.</i>
+  - "You deserved that. Messing with a demon\u2026 How stupid are you exactly?"
   textAnim: 0000000000000000000000000000000000000000
   audioClip:
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}

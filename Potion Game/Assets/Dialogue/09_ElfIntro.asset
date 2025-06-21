@@ -10,28 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 01_Introduction
+  m_Name: 09_ElfIntro
   m_EditorClassIdentifier: 
-  bubble: 0000000000000000000000000000000000000000
+  bubble: 00000000010000000000000000000000000000000000000001000000
   nameText:
+  - 
   - Albert
-  - Albert
-  - Albert
-  - Albert
+  - 
+  - Gregory
+  - 
+  - Gregory
   - Albert
   dialogueText:
-  - Hello?? Wake up, you lazy @*/&!! I can hear customers coming, come on, get up!!
-  - "Of course they leave me with the one apprentice that would rather sleep than
-    make potions\u2026"
-  - "No, no, there\u2019s no time to clean the cauldron, you\u2019ll have to reuse
-    yesterday\u2019s potion and pray the health overlords don\u2019t come knocking. "
-  - "Oh, you\u2019re worried about the potion\u2019s stability? I\u2019ll keep an
-    eye on it for you. Just remember less is more! you don\u2019t want to know what
-    happens if you put too many ingredients in a potion."
-  - "Now come on, quickly! The first customer is nearly here, at least try to look
-    like you didn\u2019t just wake up!"
-  textAnim: 0000000000000000000000000000000000000000
+  - <i>You hear the door chime and small, quick paces getting closer, but cannot
+    see the source.</i>
+  - Aww a goblin, are you sure the little guy is old enough to order from the big
+    potions apprentice?
+  - <i>A large, pointed nose pushes its way over the counter and a pair of beady
+    eyes peer mischievously up at you as desperate fingers cling to the table for
+    balance.</i>
+  - "That\u2019s an elf to you, you tall dolt. We aren\u2019t all tall, y\u2019know.
+    And it\u2019s Gregory. "
+  - <i>He stares menacingly at your guide, daring him to speak once more, before
+    turning to you.</i>
+  - "Did you see that emo loser that just walked out? How funny would it be if a
+    <b>glitter bomb</b> happened to explode all over her perfectly black outfit\u2026"
+  - "You\u2019re a genius\u2026 Apprentice, get on that quick before the snake gets
+    too far. "
+  textAnim: 00000000000000000000000000000000000000000000000000000000
   audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
@@ -43,15 +52,21 @@ MonoBehaviour:
   - 0.05
   - 0.05
   - 0.05
+  - 0.05
+  - 0.05
   fastTextInterval:
   - 0.01
   - 0.01
   - 0.01
   - 0.01
   - 0.01
-  defaultBlipInterval: 0300000003000000030000000300000003000000
-  fastBlipInterval: 0a0000000a0000000a0000000a0000000a000000
+  - 0.01
+  - 0.01
+  defaultBlipInterval: 03000000030000000300000003000000030000000300000003000000
+  fastBlipInterval: 0a0000000a0000000a0000000a0000000a0000000a0000000a000000
   font:
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
@@ -63,7 +78,11 @@ MonoBehaviour:
   - 36
   - 36
   - 36
+  - 36
+  - 36
   nameFont:
+  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}

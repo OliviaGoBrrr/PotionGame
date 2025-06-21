@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 02_Whale
+  m_Name: 06_2_DemonMid
   m_EditorClassIdentifier: 
-  bubble: 0000000000000000000000000000000000000000000000000000000000000000
+  bubble: 0000000000000000000000000100000000000000000000000100000000000000
   nameText:
+  - Desmond
   - 
-  - ???
-  - Owl
-  - ???
-  - Owl
-  - ???
-  - Owl
-  - Walter
+  - Desmond
+  - Albert
+  - Desmond
+  - Desmond
+  - Albert
+  - Desmond
   dialogueText:
-  - You hear your front door open, and fear for the stability of your roof as the
-    first customer of the day enters your hut.
-  - "erm\u2026 hello? sorry, i think i might\u2019ve left a small dent in one of
-    the rafters, that\u2019s my bad, i can pay for it\u2013  "
-  - "Speak up would you? What\u2019ll it be??"
-  - "I\u2019m having some barnacle issues. Only if that\u2019s okay of course, if
-    it\u2019s too hard I can get something else\u2013"
-  - I really cannot hear you.
-  - I NEED SOME CREAM FOR MY BARNACLE RASH!!!
-  - "Alright calm down, there\u2019s no need to yell\u2026 Barnacle cream coming
-    right up.  "
-  - oh okay, thank you. walter please, if that's okay.
+  - Well... this isn't the worst drink I've had. At least I can tell this is flamma
+    ale. One time I went to a potioneer to order this drink when I lived in Albeguarde
+    nearly 350 years ago, and the drink he made me was so abhorrent...
+  - <i>5 minutes later...</i>
+  - ...and then I told him that he was a disgrace to his entire bloodline and cursed
+    his entire family and future generations to endure the flames of-
+  - Perhaps a mild overreaction there.
+  - "...Perhaps so. I suppose I shouldn\u2019t have expected that much from a mere
+    mortal."
+  - ...
+  - ...
+  - In that case, I suppose I'd best be off. I will see you around, young apprentice.
   textAnim: 0000000000000000000000000000000000000000000000000000000000000000
   audioClip:
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
@@ -66,23 +66,23 @@ MonoBehaviour:
   defaultBlipInterval: 0300000003000000030000000300000003000000030000000300000003000000
   fastBlipInterval: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   font:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   fontSize:
   - 36
-  - 14
   - 36
-  - 25
   - 36
-  - 50
   - 36
-  - 14
+  - 36
+  - 36
+  - 36
+  - 36
   nameFont:
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}

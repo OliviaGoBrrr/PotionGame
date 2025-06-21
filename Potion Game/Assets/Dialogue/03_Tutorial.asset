@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubble: 000000000000000000000000
   nameText:
-  - Owl
-  - Owl
-  - Owl
+  - Albert
+  - Albert
+  - Albert
   dialogueText:
   - "I\u2019ve given you the rough properties of each potion in the hopes you can
     at least give Walter something remotely close to what he wants\u2026  "
@@ -39,7 +39,10 @@ MonoBehaviour:
   - 0.01
   defaultBlipInterval: 030000000300000003000000
   fastBlipInterval: 0a0000000a0000000a000000
-  font: []
+  font:
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   fontSize:
   - 36
   - 36

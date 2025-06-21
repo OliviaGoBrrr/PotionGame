@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
   m_Name: 04_1_WhaleResponseGood
   m_EditorClassIdentifier: 
-  bubble: 0000000000000000
+  bubble: 0000000001000000
   nameText:
   - Walter
-  - Owl
+  - Albert
   dialogueText:
   - "Wow!! I can\u2019t remember the last time my skin felt this nice\u2026 thank
     you so much!! I owe you everything, thank you, thank you, THANK YOU!!!!!"
@@ -34,8 +34,8 @@ MonoBehaviour:
   defaultBlipInterval: 0300000003000000
   fastBlipInterval: 0a0000000a000000
   font:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   fontSize:
   - 36
   - 36

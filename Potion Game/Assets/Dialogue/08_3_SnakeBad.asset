@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 04_2_WhaleResponseMid
+  m_Name: 08_3_SnakeBad
   m_EditorClassIdentifier: 
   bubble: 0000000001000000
   nameText:
-  - Walter
+  - Stacey
   - Albert
   dialogueText:
-  - "Oh, I feel a little better now, thank you. I\u2019m sure the rest will clear
-    up soon! I owe you, thank you so much for this!"
-  - "I\u2019m not sure how permanent that one is\u2026 let\u2019s hope for the kid\u2019s
-    sake that it lasts."
+  - "Thank you for the <i>anti</i>-venom\u2026 wait a sssecond, why does this look
+    different to lasssst time? Will thissss even work??? Do you want to see local
+    artissstssss fail?! What is wrong with you??"
+  - "Can\u2019t believe you... Whatever happened to supporting local music?"
   textAnim: 0000000000000000
   audioClip:
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
