@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 45b1625820c08294ea2b392c11f8622c
+guid: 0601855bbdf2b374aaeab7fd3718e3ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9180740383053328379
-    second: WhaleDefault_0
+      213: 5268178662295060096
+    second: rhinestone_roots_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhaleDefault_0
+      name: rhinestone_roots_0
       rect:
         serializedVersion: 2
-        x: 509
-        y: 386
-        width: 808
-        height: 694
+        x: 81
+        y: 43
+        width: 222
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 500d5056345779080800000000000000
-      internalID: -9180740383053328379
+      spriteID: 08eb363d4945c1940800000000000000
+      internalID: 5268178662295060096
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhaleDefault_0: -9180740383053328379
+      rhinestone_roots_0: 5268178662295060096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

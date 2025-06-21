@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SliderContainer : MonoBehaviour
 {
@@ -38,17 +39,32 @@ public class SliderContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            UpdateGaugePositions(1, 100, 5, 50, 8, 200);
+        }
     }
 
     public void UpdateSliderStats(float temperature, float carbonation, float pazaz, float potency)
     {
+        float tempTotal = tempSlider.value + temperature;
+        float carbTotal = carbonSlider.value + carbonation;
+        float pazTotal = pazazSlider.value + pazaz;
 
-        AddStats(tempSlider, temperature);
+        //Sequence valueSequence = DOTween.Sequence();
+        /*
+        valueSequence.Append();
+        valueSequence.Append();
+        valueSequence.Append();
+        */
+        //AddStats(tempSlider, temperature);
+        DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine);
+        DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine);
+        DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine);
+        //AddStats(carbonSlider, carbonation);
 
-        AddStats(carbonSlider, carbonation);
 
-        AddStats(pazazSlider, pazaz);
+        //AddStats(pazazSlider, pazaz);
     }
 
     private void AddStats(Slider slider, float stat)

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 45b1625820c08294ea2b392c11f8622c
+guid: a2a4346633128ba46b60de7eedb75c21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9180740383053328379
-    second: WhaleDefault_0
+      213: -9075391703750127154
+    second: pearlescent_pondwater_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhaleDefault_0
+      name: pearlescent_pondwater_0
       rect:
         serializedVersion: 2
-        x: 509
-        y: 386
-        width: 808
-        height: 694
+        x: 118
+        y: 31
+        width: 152
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 500d5056345779080800000000000000
-      internalID: -9180740383053328379
+      spriteID: ec15274345bbd0280800000000000000
+      internalID: -9075391703750127154
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhaleDefault_0: -9180740383053328379
+      pearlescent_pondwater_0: -9075391703750127154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
