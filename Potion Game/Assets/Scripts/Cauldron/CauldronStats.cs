@@ -30,5 +30,6 @@ public class CauldronStats : MonoBehaviour
         currentCarbonation = Mathf.Clamp(currentCarbonation + CarbChange, 0, 10);
         currentPazaz = Mathf.Clamp(currentPazaz + PazazChange, 0, 10);
         cauldronVisuals.GetCauldronValues(currentTemperature, currentCarbonation, currentPazaz, currentPotency);
+        cauldronVisuals.StartTheRock(10, true);
     }
 }

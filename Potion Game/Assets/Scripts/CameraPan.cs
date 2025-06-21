@@ -29,18 +29,20 @@ public class CameraPan : MonoBehaviour
         {
             case 0:
                 GoHere(new Vector3(0, 0, -10));
+                cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x - 0), false);
                 break;
             case 1:
                 GoHere(new Vector3(-21, 0, -10));
+                cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x + 21), true);
                 break;
             default:
-                GoHere(new Vector3(0, 0, 0));
+                GoHere(new Vector3(0, 0, -10));
                 break;
         }
     }
     void GoHere(Vector3 hi)
     {
         LeanTween.move(gameObject, hi, 1f).setEase(LeanTweenType.easeOutQuint);
-        LeanTween.move(cauldron, new Vector3(hi.x, -4.08f, 0), 1f).setEase(LeanTweenType.easeInOutQuart);
+        LeanTween.move(cauldron, new Vector3(hi.x, -5.5f, 0), 1f).setEase(LeanTweenType.easeInOutQuart);
     }
 }

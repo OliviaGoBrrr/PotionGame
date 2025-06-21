@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using System.Collections.Generic;
+using System.Collections;
 
 public class CauldronVisuals : MonoBehaviour
 {
-    [SerializeField] GameObject cauldronOuter;
-    [SerializeField] GameObject cauldronInner;
+    [SerializeField] GameObject cauldronShell;
     [SerializeField] GameObject cauldronLiquid;
 
     public Color liquidColour;
@@ -17,21 +18,10 @@ public class CauldronVisuals : MonoBehaviour
     [SerializeField] ParticleSystem glisteningParticle;
     [SerializeField] ParticleSystem lusterlessParticle;
 
-    float shakeAmount = 0;
-    bool cauldronShake = false;
-    bool liquidShake = false;
-    float cauldronTilt = 0;
-    float liquidTilt = 0;
-
-    bool shakeDirection; // true = positive shake, negative = negative shake
-
+    Coroutine Shake;
     // Update is called once per frame
     void Update()
     {
-        if (shakeAmount >= 0)
-        {
-            ShakeShake();
-        }
         ColourUpdate();
     }
     void ColourUpdate() // Updates the colour of the liquid
@@ -39,21 +29,62 @@ public class CauldronVisuals : MonoBehaviour
         liquidTimer += Time.deltaTime;
         cauldronLiquid.GetComponent<SpriteRenderer>().color = Color.Lerp(cauldronLiquid.GetComponent<SpriteRenderer>().color, liquidColour, liquidTimer / 3);
     }
-    void ShakeShake() // It's not done yettttt
+    IEnumerator InitializeShake(float ShakeAmount, bool ShakeDirection, bool cameraPan)
     {
-        shakeAmount -= Time.deltaTime;
-        if (cauldronShake == false)
+        LeanTween.cancel(cauldronShell);
+        LeanTween.cancel(cauldronLiquid);
+        List<float> amounts = new List<float>();
+        while (ShakeAmount >= 0.2f)
         {
-            switch (shakeDirection)
+            amounts.Add(ShakeAmount);
+            ShakeAmount /= 2;
+        }
+        for (int i = 0; i < amounts.Count; i++)
+        {
+            float shakeDur = amounts[i] / 15 + 0.1f;
+            if (cameraPan == true)
             {
-                case (true):
-                    transform.LeanRotateZ(shakeAmount, 2f).setEase(LeanTweenType.easeOutQuart);
-                break;
+                if (ShakeDirection == true)
+                {
+                    cauldronShell.transform.LeanRotateZ(amounts[i], shakeDur).setEase(LeanTweenType.easeOutCirc);
+                    yield return new WaitForSeconds(0.1f);
+                    cauldronLiquid.transform.LeanRotateZ(amounts[i] * 0.8f, shakeDur).setEase(LeanTweenType.easeOutCirc);
+                    yield return new WaitForSeconds(shakeDur - 0.1f);
+                    ShakeDirection = false;
+                }
+                else if (ShakeDirection == false)
+                {
+                    cauldronShell.transform.LeanRotateZ(amounts[i] * -1, shakeDur).setEase(LeanTweenType.easeOutCirc);
+                    yield return new WaitForSeconds(0.1f);
+                    cauldronLiquid.transform.LeanRotateZ(amounts[i] * -0.8f, shakeDur).setEase(LeanTweenType.easeOutCirc);
+                    yield return new WaitForSeconds(shakeDur - 0.1f);
+                    ShakeDirection = true;
+                }
+                cameraPan = false;
+            }
+            else
+            {
+                if (ShakeDirection == true)
+                {
+                    cauldronShell.transform.LeanRotateZ(amounts[i], shakeDur).setEase(LeanTweenType.easeInOutSine);
+                    yield return new WaitForSeconds(0.1f);
+                    cauldronLiquid.transform.LeanRotateZ(amounts[i] * 0.8f, shakeDur).setEase(LeanTweenType.easeInOutSine);
+                    yield return new WaitForSeconds(shakeDur - 0.1f);
+                    ShakeDirection = false;
+                }
+                else if (ShakeDirection == false)
+                {
+                    cauldronShell.transform.LeanRotateZ(amounts[i] * -1, shakeDur).setEase(LeanTweenType.easeInOutSine);
+                    yield return new WaitForSeconds(0.1f);
+                    cauldronLiquid.transform.LeanRotateZ(amounts[i] * -0.8f, shakeDur).setEase(LeanTweenType.easeInOutSine);
+                    yield return new WaitForSeconds(shakeDur - 0.1f);
+                    ShakeDirection = true;
+                }
             }
         }
-        
-        cauldronOuter.transform.localRotation = Quaternion.Euler(0, 0, cauldronTilt);
-        cauldronLiquid.transform.localRotation = Quaternion.Euler(0, 0, liquidTilt + cauldronTilt/10);
+        cauldronShell.transform.LeanRotateZ(0, 1f).setEase(LeanTweenType.easeOutQuart);
+        cauldronLiquid.transform.LeanRotateZ(0, 1f).setEase(LeanTweenType.easeOutQuart);
+        yield return null;
     }
     public void GetCauldronValues(float TempValue, float CarbValue, float PazazValue, float Alpha)
     {
@@ -101,21 +132,7 @@ public class CauldronVisuals : MonoBehaviour
     }
     public void StartTheRock(float ShakeAmount, bool ShakeDirection)
     {
-        if (shakeDirection == ShakeDirection)
-        {
-            shakeAmount += ShakeAmount;
-        }
-        else
-        {
-            if(shakeAmount >= ShakeAmount)
-            {
-                shakeAmount -= ShakeAmount;
-            }
-            else
-            {
-                shakeDirection = ShakeDirection;
-                shakeAmount = ShakeAmount - shakeAmount;
-            }
-        }
+        if (Shake != null) { StopCoroutine(Shake); }
+        Shake = StartCoroutine(InitializeShake(ShakeAmount, ShakeDirection, true));
     }
 }
