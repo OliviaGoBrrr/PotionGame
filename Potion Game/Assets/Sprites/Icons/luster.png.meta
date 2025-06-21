@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 938c10bdd17b8724bbd62f260334e404
+guid: 62cfee3961eda544c97a8b2ae0e793d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1469909079130451432
-    second: paper_0
+      213: -9036206464889720341
+    second: luster_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paper_0
+      name: luster_0
       rect:
         serializedVersion: 2
-        x: 446
-        y: 126
-        width: 599
-        height: 513
+        x: 85
+        y: 75
+        width: 79
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 812de4efa75d99be0800000000000000
-      internalID: -1469909079130451432
+      spriteID: be1f8279812f89280800000000000000
+      internalID: -9036206464889720341
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      paper_0: -1469909079130451432
+      luster_0: -9036206464889720341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

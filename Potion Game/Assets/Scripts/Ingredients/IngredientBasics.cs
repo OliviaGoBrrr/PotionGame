@@ -18,7 +18,7 @@ public class IngredientBasics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBounds();
+        //CheckBounds();
  
     }
 

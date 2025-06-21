@@ -41,7 +41,7 @@ public class SliderContainer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            UpdateGaugePositions(1, 100, 5, 50, 8, 200);
+            UpdateGaugePositions(0, 100, 5, 100, 10, 100);
         }
     }
 
