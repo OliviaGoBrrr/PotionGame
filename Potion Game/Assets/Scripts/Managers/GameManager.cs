@@ -9,17 +9,20 @@ public class GameManager : MonoBehaviour
     public bool gameStarted = false;
     
     DialogueBubbleManager dialogueManager;
+    SliderContainer sliders;
     [SerializeField] CauldronStats cauldron;
+    [SerializeField] PotionCanvas potionCanvas;
 
     // Dialogue Components
     [SerializeField] DialogueScriptableObject beginning;
+    [SerializeField] DialogueScriptableObject tutorial;
     [SerializeField] DialogueScriptableObject ending;
     [Tooltip("Place characters in here in order of appearance")]
     [SerializeField] List<CharacterScript> characters;
     int currentChar = 0;
 
     // Character Sections (Pulled later with function)
-    DialogueScriptableObject characterIntroduction;
+    List<DialogueScriptableObject> characterIntroduction;
     DialogueScriptableObject positiveConclusion;
     DialogueScriptableObject neutralConclusion;
     DialogueScriptableObject negativeConclusion;
@@ -34,21 +37,26 @@ public class GameManager : MonoBehaviour
     float potencyFloor;
 
     // Game State Logic
-    int gameState = 0;
+    public int gameState = 0;
     bool stateWaiting = false;
     float timer = 0;
     float nextIdleDialogue = 0;
     bool dialogueEnded = false;
     bool potionSubmitted = false;
+    int lastPotionScore = 0;
 
     void Awake()
     {
         dialogueManager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueBubbleManager>();
+        sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
     }
     public void PlayButtonClicked()
     {
-        gameStarted = true;
-        timer = 0;
+        if (gameStarted == false)
+        {
+            gameStarted = true;
+            timer = 0;
+        }
     }
     public void DialogueEnded()
     {
@@ -88,18 +96,27 @@ public class GameManager : MonoBehaviour
                 {
                     characters[currentChar].SetActive(true);
                     characters[currentChar].PullCharacterValues(out characterIntroduction, out positiveConclusion, out neutralConclusion, out negativeConclusion, out idleDialogue, out tempFloor, out tempCeiling, out carbFloor, out carbCeiling, out pazazFloor, out pazazCeiling, out potencyFloor);
-                    dialogueManager.SetDialogue(characterIntroduction);
+                    if (characterIntroduction.Count == 1) { dialogueManager.SetDialogue(characterIntroduction[0]); }
+                    else { dialogueManager.SetDialogue(characterIntroduction[lastPotionScore]); }
                     stateWaiting = true;
                 }
                 if (dialogueEnded == true) // Once dialogue ends, go to the next gamestate
                 {
-                    ResetState(2);
+                    if (currentChar != 0)
+                    {
+                        ResetState(2);
+                    }
+                    else
+                    {
+                        ResetState(666);
+                    }
                 }
                 break;
             case 2: // Potion crafting
                 if (stateWaiting == false) // When the gamestate enters this phase
                 {
-                    // Initialize potion values
+                    float Width = 250;
+                    sliders.UpdateGaugePositions((tempFloor + tempCeiling)/2, (tempCeiling - tempFloor) * Width/10 + 35, (carbFloor + carbCeiling)/2, (carbCeiling - carbFloor) * Width / 10 + 35, (pazazFloor + pazazCeiling)/2, (pazazCeiling - pazazFloor) * Width / 10 + 35);
                     ResetIdleText();
                     dialogueEnded = true;
                     stateWaiting = true;
@@ -125,24 +142,40 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case 3:
-                // Display potion
-                int score = CalculateScore();
-                switch (score)
+                if (stateWaiting == false)
                 {
-                    case 4:
-                        dialogueManager.SetDialogue(positiveConclusion);
-                        break;
-                    case 3:
-                        dialogueManager.SetDialogue(neutralConclusion);
-                        break;
-                    default:
-                        dialogueManager.SetDialogue(negativeConclusion);
-                        break;
+                    potionCanvas.gameObject.SetActive(true);
+                    potionCanvas.FadeIn(characters[currentChar].potionVisual);
+                    stateWaiting = true;
+                }
+                if (potionSubmitted == true)
+                {
+                    int score = CalculateScore();
+                    switch (score)
+                    {
+                        case 4:
+                            dialogueManager.SetDialogue(positiveConclusion);
+                            characters[currentChar].SetSprite(1);
+                            lastPotionScore = 0;
+                            break;
+                        case 3:
+                            dialogueManager.SetDialogue(neutralConclusion);
+                            characters[currentChar].SetSprite(2);
+                            lastPotionScore = 1;
+                            break;
+                        default:
+                            dialogueManager.SetDialogue(negativeConclusion);
+                            characters[currentChar].SetSprite(3);
+                            lastPotionScore = 2;
+                            break;
+                    }
+                    potionSubmitted = false;
                 }
                 if (dialogueEnded == true)
                 {
+                    characters[currentChar].SetActive(false);
                     currentChar += 1;
-                    if (currentChar > characters.Count)
+                    if (currentChar < characters.Count)
                     {
                         ResetState(1);
                     }
@@ -153,6 +186,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case 4:
+                timer += Time.deltaTime;
                 if (timer >= 2 && stateWaiting == false) // After a two second wait, play the conclusion
                 {
                     dialogueManager.SetDialogue(ending);
@@ -160,7 +194,19 @@ public class GameManager : MonoBehaviour
                 }
                 if (dialogueEnded == true)
                 {
-                    // gameend
+                    // GAME END STUFF GOES HERE
+                }
+                break;
+            case 666:
+                timer += Time.deltaTime;
+                if (timer >= 2 && stateWaiting == false) // After a two second wait, play the tutorial
+                {
+                    dialogueManager.SetDialogue(tutorial);
+                    stateWaiting = true;
+                }
+                if (dialogueEnded == true)
+                {
+                    ResetState(2);
                 }
                 break;
         }

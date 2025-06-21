@@ -286,6 +286,7 @@ public class DialogueBubbleManager : MonoBehaviour
             {
                 currentDiaPos += 1;
                 State = 1;
+                NewLinePrep();
             }
         }
     }

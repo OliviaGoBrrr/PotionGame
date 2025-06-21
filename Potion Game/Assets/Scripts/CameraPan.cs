@@ -25,19 +25,22 @@ public class CameraPan : MonoBehaviour
     }
     public void OnButtonPress(int cameraPos)
     {
-        switch(cameraPos)
+        if (gameManager.gameState != 0)
         {
-            case 0:
-                GoHere(new Vector3(970, 0, -926));
-                cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x - 970)/100, false);
-                break;
-            case 1:
-                GoHere(new Vector3(-970, 0, -926));
-                cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x + 970)/100, true);
-                break;
-            default:
-                GoHere(new Vector3(0, 0, -926));
-                break;
+            switch (cameraPos)
+            {
+                case 0:
+                    GoHere(new Vector3(970, 0, -926));
+                    cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x - 970) / 100, false);
+                    break;
+                case 1:
+                    GoHere(new Vector3(-970, 0, -926));
+                    cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x + 970) / 100, true);
+                    break;
+                default:
+                    GoHere(new Vector3(0, 0, -926));
+                    break;
+            }
         }
     }
     void GoHere(Vector3 hi)

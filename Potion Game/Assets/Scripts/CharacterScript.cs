@@ -13,7 +13,8 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] Sprite unhappyPose;
 
     [Header("Dialogue Scriptable Objects")]
-    [SerializeField] DialogueScriptableObject introductionDialogue;
+    [Tooltip("Keep this list to one scriptable object if you want linear. If this list is 3 objects, it will choose from the list based on the previous potion's success. 0 is positive, 1 is neutral, 2 is negative.")]
+    [SerializeField] List<DialogueScriptableObject> introductionDialogue;
     [SerializeField] DialogueScriptableObject happyDialogue;
     [SerializeField] DialogueScriptableObject neutralDialogue;
     [SerializeField] DialogueScriptableObject unhappyDialogue;
@@ -34,6 +35,8 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] int pazazCeiling;
     [Tooltip("The minimum value for the potency to be 'correct' (0 ~ 1, this value is included)")]
     [SerializeField] float potencyFloor;
+    [Tooltip("The visuals for the potion canvas")]
+    [SerializeField] public int potionVisual;
     bool active;
     private void Awake()
     {
@@ -76,7 +79,7 @@ public class CharacterScript : MonoBehaviour
                 break;
         }
     }
-    public void PullCharacterValues(out DialogueScriptableObject intro, out DialogueScriptableObject positive, out DialogueScriptableObject neutral, out DialogueScriptableObject negative, 
+    public void PullCharacterValues(out List<DialogueScriptableObject> intro, out DialogueScriptableObject positive, out DialogueScriptableObject neutral, out DialogueScriptableObject negative, 
         out List<DialogueScriptableObject> idle, out int tempF, out int tempC, out int carbF, out int carbC, out int pazazF, out int pazazC, out float potencyF)
     {
         intro = introductionDialogue;

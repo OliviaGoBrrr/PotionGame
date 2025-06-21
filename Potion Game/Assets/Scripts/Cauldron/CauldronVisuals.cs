@@ -14,9 +14,7 @@ public class CauldronVisuals : MonoBehaviour
     [SerializeField] ParticleSystem hotParticle;
     [SerializeField] ParticleSystem coldParticle;
     [SerializeField] ParticleSystem bubblyParticle;
-    [SerializeField] ParticleSystem flatParticle;
     [SerializeField] ParticleSystem glisteningParticle;
-    [SerializeField] ParticleSystem lusterlessParticle;
 
     Coroutine Shake;
     // Update is called once per frame
@@ -88,7 +86,7 @@ public class CauldronVisuals : MonoBehaviour
     }
     public void GetCauldronValues(float TempValue, float CarbValue, float PazazValue, float Alpha)
     {
-        liquidColour = new Color(TempValue / 10, CarbValue / 10, PazazValue / 10, Alpha);
+        liquidColour = new Color(TempValue / 10, CarbValue / 10, PazazValue / 10, Alpha/100);
         liquidTimer = 0;
         var hotEmission = hotParticle.emission;
         hotEmission.rateOverTime = Mathf.Clamp(TempValue - 5, 0, 10);
@@ -96,12 +94,10 @@ public class CauldronVisuals : MonoBehaviour
         coldEmission.rateOverTime = Mathf.Clamp(5 - TempValue, 0, 10);
         var bubbleEmission = bubblyParticle.emission;
         bubbleEmission.rateOverTime = Mathf.Clamp(CarbValue - 5, 0, 10);
-        var flatEmission = flatParticle.emission;
-        flatEmission.rateOverTime = Mathf.Clamp(5 - CarbValue, 0, 10);
+
         var glisteningEmission = glisteningParticle.emission;
         glisteningEmission.rateOverTime = Mathf.Clamp(PazazValue - 5, 0, 10);
-        var lusterlessEmission = lusterlessParticle.emission;
-        lusterlessEmission.rateOverTime = Mathf.Clamp(5 - PazazValue, 0, 10);
+
     }
     public void FireBurst(int TempDiff, int CarbDiff, int PazazDiff)
     {
@@ -117,18 +113,12 @@ public class CauldronVisuals : MonoBehaviour
         {
             bubblyParticle.Emit(Random.Range(4, 7) * CarbDiff);
         }
-        else if (CarbDiff < 0)
-        { 
-            flatParticle.Emit(Random.Range(-4, -7) * CarbDiff);
-        }
+        
         if (PazazDiff > 0)
         {
             glisteningParticle.Emit(Random.Range(4, 7) * PazazDiff);
         }
-        else if (PazazDiff < 0)
-        {
-            lusterlessParticle.Emit(Random.Range(-4, -7) * PazazDiff);
-        }
+        
     }
     public void StartTheRock(float ShakeAmount, bool ShakeDirection)
     {

@@ -24,6 +24,8 @@ public class SliderContainer : MonoBehaviour
     private Slider carbonGauge;
     private Slider pazazGauge;
 
+    public float Width;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -9,6 +9,8 @@ public class IngredientBasics : MonoBehaviour
 
     private SliderContainer sliders;
 
+    [SerializeField] CauldronStats cauldron;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,7 +55,7 @@ public class IngredientBasics : MonoBehaviour
 
     public void OnClick()
     {
-
         sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
+        cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
     }
 }
