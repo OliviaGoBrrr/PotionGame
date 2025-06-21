@@ -277,7 +277,7 @@ public class DialogueBubbleManager : MonoBehaviour
             if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
             {
                 State = 0;
-                //
+                gameManager.DialogueEnded();
             }
             else
             {

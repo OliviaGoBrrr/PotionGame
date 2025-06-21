@@ -51,11 +51,11 @@ public class CharacterScript : MonoBehaviour
     {
         if (active == true && spriteRenderer.color.a < 1)
         {
-            spriteRenderer.color = new Color(0, 0, 0, spriteRenderer.color.a + Time.deltaTime);
+            spriteRenderer.color = new Color(1, 1, 1, spriteRenderer.color.a + Time.deltaTime);
         }
-        else if (active == true && spriteRenderer.color.a > 0)
+        else if (active == false && spriteRenderer.color.a > 0)
         {
-            spriteRenderer.color = new Color(0, 0, 0, spriteRenderer.color.a + Time.deltaTime);
+            spriteRenderer.color = new Color(1, 1, 1, spriteRenderer.color.a - Time.deltaTime);
         }
     }
     public void SetSprite(int spriteNum) // sets sprite with ints from 0 to 3
@@ -76,8 +76,8 @@ public class CharacterScript : MonoBehaviour
                 break;
         }
     }
-    public void PullCharacterValues(out DialogueScriptableObject intro, out DialogueScriptableObject positive, out DialogueScriptableObject neutral,
-        out DialogueScriptableObject negative, out List<DialogueScriptableObject> idle, out int tempF, out int tempC, out int carbF, out int carbC, out int pazazF, out int pazazC)
+    public void PullCharacterValues(out DialogueScriptableObject intro, out DialogueScriptableObject positive, out DialogueScriptableObject neutral, out DialogueScriptableObject negative, 
+        out List<DialogueScriptableObject> idle, out int tempF, out int tempC, out int carbF, out int carbC, out int pazazF, out int pazazC, out float potencyF)
     {
         intro = introductionDialogue;
         positive = happyDialogue;
@@ -91,5 +91,6 @@ public class CharacterScript : MonoBehaviour
         carbC = carbCeiling;
         pazazF = pazazFloor;
         pazazC = pazazCeiling;
+        potencyF = potencyFloor;
     }
 }
