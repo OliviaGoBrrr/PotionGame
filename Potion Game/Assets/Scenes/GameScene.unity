@@ -223,6 +223,18 @@ MonoBehaviour:
   happyPose: {fileID: 0}
   neutralPose: {fileID: 0}
   unhappyPose: {fileID: 0}
+  introductionDialogue: {fileID: 0}
+  happyDialogue: {fileID: 0}
+  neutralDialogue: {fileID: 0}
+  unhappyDialogue: {fileID: 0}
+  idleDialogue: []
+  tempFloor: 0
+  tempCeiling: 0
+  carbFloor: 0
+  carbCeiling: 0
+  pazazFloor: 0
+  pazazCeiling: 0
+  potencyFloor: 0
 --- !u!1 &31901234
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +902,18 @@ MonoBehaviour:
   happyPose: {fileID: 0}
   neutralPose: {fileID: 0}
   unhappyPose: {fileID: 0}
+  introductionDialogue: {fileID: 0}
+  happyDialogue: {fileID: 0}
+  neutralDialogue: {fileID: 0}
+  unhappyDialogue: {fileID: 0}
+  idleDialogue: []
+  tempFloor: 0
+  tempCeiling: 0
+  carbFloor: 0
+  carbCeiling: 0
+  pazazFloor: 0
+  pazazCeiling: 0
+  potencyFloor: 0
 --- !u!1 &236759967
 GameObject:
   m_ObjectHideFlags: 0
@@ -17806,6 +17830,18 @@ MonoBehaviour:
   happyPose: {fileID: 0}
   neutralPose: {fileID: 0}
   unhappyPose: {fileID: 0}
+  introductionDialogue: {fileID: 0}
+  happyDialogue: {fileID: 0}
+  neutralDialogue: {fileID: 0}
+  unhappyDialogue: {fileID: 0}
+  idleDialogue: []
+  tempFloor: 0
+  tempCeiling: 0
+  carbFloor: 0
+  carbCeiling: 0
+  pazazFloor: 0
+  pazazCeiling: 0
+  potencyFloor: 0
 --- !u!1 &1028239172
 GameObject:
   m_ObjectHideFlags: 0
@@ -18426,6 +18462,18 @@ MonoBehaviour:
   happyPose: {fileID: 0}
   neutralPose: {fileID: 0}
   unhappyPose: {fileID: 0}
+  introductionDialogue: {fileID: 0}
+  happyDialogue: {fileID: 0}
+  neutralDialogue: {fileID: 0}
+  unhappyDialogue: {fileID: 0}
+  idleDialogue: []
+  tempFloor: 0
+  tempCeiling: 0
+  carbFloor: 0
+  carbCeiling: 0
+  pazazFloor: 0
+  pazazCeiling: 0
+  potencyFloor: 0
 --- !u!1 &1180754900
 GameObject:
   m_ObjectHideFlags: 0
@@ -19692,6 +19740,18 @@ MonoBehaviour:
   happyPose: {fileID: 0}
   neutralPose: {fileID: 0}
   unhappyPose: {fileID: 0}
+  introductionDialogue: {fileID: 0}
+  happyDialogue: {fileID: 0}
+  neutralDialogue: {fileID: 0}
+  unhappyDialogue: {fileID: 0}
+  idleDialogue: []
+  tempFloor: 0
+  tempCeiling: 0
+  carbFloor: 0
+  carbCeiling: 0
+  pazazFloor: 0
+  pazazCeiling: 0
+  potencyFloor: 0
 --- !u!1 &1498769510
 GameObject:
   m_ObjectHideFlags: 0
@@ -30166,6 +30226,7 @@ GameObject:
   - component: {fileID: 1756468052}
   - component: {fileID: 1756468051}
   - component: {fileID: 1756468054}
+  - component: {fileID: 1756468055}
   m_Layer: 5
   m_Name: ScrollLeftButton
   m_TagString: Untagged
@@ -30296,6 +30357,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1756468055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756468049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cb2ed39c87ad0448ef96b9b3f76cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1776966911
