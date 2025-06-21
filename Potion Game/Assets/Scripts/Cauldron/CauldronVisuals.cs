@@ -41,7 +41,7 @@ public class CauldronVisuals : MonoBehaviour
         }
         for (int i = 0; i < amounts.Count; i++)
         {
-            float shakeDur = amounts[i] / 15 + 0.1f;
+            float shakeDur = amounts[i] / 20 + 0.1f;
             if (cameraPan == true)
             {
                 if (ShakeDirection == true)

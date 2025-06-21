@@ -5,14 +5,14 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public bool gameStarted = false;
+    
+    DialogueBubbleManager dialogueManager;
+
+    // Dialogue Components
+    [SerializeField] DialogueScriptableObject introduction;
     [Tooltip("Place characters in here in order of appearance")]
     [SerializeField] List<CharacterScript> characters;
     int currentChar = 0;
-
-    DialogueBubbleManager dialogueManager;
-
-    // Introduction
-    [SerializeField] DialogueScriptableObject introduction;
 
     // Character Sections (Pulled later with function)
     DialogueScriptableObject characterIntroduction;
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     // Game State Logic
     int gameState = 0;
+    bool stateWaiting = false;
     float Timer = 0;
     bool dialogueEnded = false;
 
@@ -60,11 +61,28 @@ public class GameManager : MonoBehaviour
     {
         switch (gameState)
         {
-            case 0:
+            case 0: // Introduction Dialogue
                 Timer += Time.deltaTime;
-                if (Timer >= 2)
+                if (Timer >= 2 && stateWaiting == false)
                 {
-                    //dialogueManager.SetDialogue();
+                    dialogueManager.SetDialogue(introduction);
+                    stateWaiting = true;
+                }
+                else if (dialogueEnded == true)
+                {
+                    stateWaiting = false;
+                    dialogueEnded = false;
+                    gameState = 0;
+                }
+                break;
+            case 1:
+                if (currentChar <= characters.Count)
+                {
+
+                }
+                if (dialogueEnded == true)
+                {
+                    dialogueEnded = false;
                 }
                 break;
         }

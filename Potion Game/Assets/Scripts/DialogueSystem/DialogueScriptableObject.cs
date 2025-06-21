@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 [CreateAssetMenu(fileName = "DialogueScriptableObject", menuName = "Scriptable Objects/DialogueScriptableObject")]
 public class DialogueScriptableObject : ScriptableObject
@@ -31,6 +32,9 @@ public class DialogueScriptableObject : ScriptableObject
     [Tooltip("The amount of characters that need to appear before the audio plays (I would reccomend 10)")]
     [SerializeField] List<int> fastBlipInterval;
     public List<int> FastBlipInterval { get => defaultBlipInterval; private set => defaultBlipInterval = value; }
+    [Tooltip("The dialogue font (for the name text, use TextMeshPro RichText)")]
+    [SerializeField] List<TMP_FontAsset> font;
+    public List<TMP_FontAsset> Font { get => font; private set => font = value; }
     [Tooltip("Size of the dialogue font (for the name text, use TextMeshPro RichText)")]
     [SerializeField] List<float> fontSize;
     public List<float> FontSize { get => fontSize; private set => fontSize = value; }

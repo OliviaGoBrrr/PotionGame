@@ -14,8 +14,8 @@ using UnityEngine.Windows;
 public class DialogueBubbleManager : MonoBehaviour
 {
     // Components
+    GameManager gameManager;
     [SerializeField] AudioSource audioSource;
-
     [SerializeField] List<DialogueBubble> bubbleList;
 
     // Stores all the instructions given when dialogue is set
@@ -29,6 +29,7 @@ public class DialogueBubbleManager : MonoBehaviour
     List<float> fastTextInterval;
     List<int> defaultBlipInterval;
     List<int> fastBlipInterval;
+    List<TMP_FontAsset> textFont;
     List<float> fontSize;
 
     int State = 0; // 0 = no dialogue, 1 = typing start, 2 = typing, 3 = complete
@@ -52,23 +53,28 @@ public class DialogueBubbleManager : MonoBehaviour
     float VertSpeed = 2;
     float ColourSpeed = 2f;
 
-    // Recieves a list of dialogue from another source
-    public void SetDialogue(List<int> Bubble, List<string> Names, List<string> Dialogue, List<int> TextFX, List<AudioClip> CharacterBlip, List<float> DefaultTextInterval, List<float> FastTextInterval, List<int> DefaultBlipInterval, List<int> FastBlipInterval, List<float> FontSize)
+    private void Awake()
     {
-        currentBubble = new List<DialogueBubble>( new DialogueBubble[Bubble.Count] );
-        for ( int i = 0; i < Bubble.Count; i++ )
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+    }
+    // Recieves a list of dialogue from another source
+    public void SetDialogue(DialogueScriptableObject currentDialogue)
+    {
+        currentBubble = new List<DialogueBubble>( new DialogueBubble[currentDialogue.Bubble.Count] );
+        for ( int i = 0; i < currentDialogue.Bubble.Count; i++ )
         {
-            currentBubble[i] = bubbleList[Bubble[i]];
+            currentBubble[i] = bubbleList[currentDialogue.Bubble[i]];
         }
-        names = Names;
-        dialogue = Dialogue;
-        textFX = TextFX;
-        characterBlip = CharacterBlip;
-        defaultTextInterval = DefaultTextInterval;
-        fastTextInterval = FastTextInterval;
-        defaultBlipInterval = DefaultBlipInterval;
-        fastBlipInterval = FastBlipInterval;
-        fontSize = FontSize;
+        names = currentDialogue.NameText;
+        dialogue = currentDialogue.DialogueText;
+        textFX = currentDialogue.TextAnim;
+        characterBlip = currentDialogue.AudioClip;
+        defaultTextInterval = currentDialogue.DefaultTextInterval;
+        fastTextInterval = currentDialogue.FastTextInterval;
+        defaultBlipInterval = currentDialogue.DefaultBlipInterval;
+        fastBlipInterval = currentDialogue.FastBlipInterval;
+        textFont = currentDialogue.Font;
+        fontSize = currentDialogue.FontSize;
 
         currentDiaPos = 0;
         NewLinePrep();
@@ -91,7 +97,7 @@ public class DialogueBubbleManager : MonoBehaviour
         if (State == 1)
         {
             ResetAnim();
-            StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos], fontSize[currentDiaPos]));
+            StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos], textFont[currentDiaPos], fontSize[currentDiaPos]));
             State = 2;
         }
     }
@@ -105,10 +111,11 @@ public class DialogueBubbleManager : MonoBehaviour
         }
     }
     // Coroutine which types each letter out one at a time
-    IEnumerator TypeText(DialogueBubble currentBubble, string nameText, string dialogueText, int textFX, AudioClip currentBlip, float fontSize)
+    IEnumerator TypeText(DialogueBubble currentBubble, string nameText, string dialogueText, int textFX, AudioClip currentBlip, TMP_FontAsset textFont, float fontSize)
     {
         currentBubble.nameTextBox.text = nameText;
         currentBubble.dialogueTextBox.text = string.Empty;
+        currentBubble.dialogueTextBox.font = textFont;
         currentBubble.dialogueTextBox.fontSize = fontSize;
         currentBubble.StartExisting();
         for (int i = 0; i < dialogueText.Length; i++)
@@ -270,6 +277,7 @@ public class DialogueBubbleManager : MonoBehaviour
             if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
             {
                 State = 0;
+                //
             }
             else
             {
