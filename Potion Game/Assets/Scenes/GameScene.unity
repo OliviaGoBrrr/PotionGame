@@ -389,6 +389,7 @@ MonoBehaviour:
   pazazCeiling: 0
   potencyFloor: 0
   potionVisual: 0
+  potionSound: {fileID: 8300000, guid: e53c34140cd1a9d45bd9ec92f10346de, type: 3}
 --- !u!1 &90294922
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +510,7 @@ AudioSource:
   m_Volume: 0.096
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1042,6 +1043,7 @@ MonoBehaviour:
   pazazCeiling: 0
   potencyFloor: 0
   potionVisual: 2
+  potionSound: {fileID: 8300000, guid: c8693f2179c914443b0c01fdc67be04f, type: 3}
 --- !u!1 &250120384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1540,22 @@ MonoBehaviour:
     sounds: []
   - name: POTION
     sounds:
-    - {fileID: 8300000, guid: bc2439bbfd19f0e42836367e0c97f689, type: 3}
+    - {fileID: 8300000, guid: d33d0788cc641e6449fd6aaf72352363, type: 3}
+    - {fileID: 8300000, guid: bee9b16ad154d414882a7035368ca2f6, type: 3}
+    - {fileID: 8300000, guid: 92fe7c8debb503547860e5effa797d87, type: 3}
+    - {fileID: 8300000, guid: 1af27ff1f48a13240ba247764489be36, type: 3}
+    - {fileID: 8300000, guid: da37ae713116d4543b8fe4c0f364e5d8, type: 3}
+    - {fileID: 8300000, guid: c8693f2179c914443b0c01fdc67be04f, type: 3}
+    - {fileID: 8300000, guid: 125229f5079bcf34db57225c5b97d41c, type: 3}
+    - {fileID: 8300000, guid: c7fef60951f47994aa6ddc8390227f8a, type: 3}
+    - {fileID: 8300000, guid: 44e36fa536369fb49a395ba5e3b80a9b, type: 3}
+    - {fileID: 8300000, guid: 160a03d9c0da5bc48ab633d67ee09a83, type: 3}
+    - {fileID: 8300000, guid: e9e9172e4739458478ebdaf32ce04381, type: 3}
+    - {fileID: 8300000, guid: 1cc91d19e4e2d6e4f8592e8e0235e9d3, type: 3}
+    - {fileID: 8300000, guid: 7a9b38aae05c1f149aaf21d90dfbd40a, type: 3}
+    - {fileID: 8300000, guid: 14daf49e582328c40b02083dff245929, type: 3}
+    - {fileID: 8300000, guid: e53c34140cd1a9d45bd9ec92f10346de, type: 3}
+    - {fileID: 8300000, guid: 1d19fd4907c71a74e9b1b578e800dbc2, type: 3}
   - name: BERRIES
     sounds:
     - {fileID: 8300000, guid: c37ee18d6cbdc5841a8fecdb2357d1f6, type: 3}
@@ -12447,6 +12464,7 @@ MonoBehaviour:
   currentPazaz: 0
   currentPotency: 0
   cauldronVisuals: {fileID: 605214396}
+  potencySlider: {fileID: 0}
 --- !u!4 &605214398
 Transform:
   m_ObjectHideFlags: 0
@@ -18949,6 +18967,7 @@ MonoBehaviour:
   pazazCeiling: 0
   potencyFloor: 0
   potionVisual: 4
+  potionSound: {fileID: 8300000, guid: 160a03d9c0da5bc48ab633d67ee09a83, type: 3}
 --- !u!1 &1028239172
 GameObject:
   m_ObjectHideFlags: 0
@@ -19447,6 +19466,7 @@ MonoBehaviour:
   pazazCeiling: 0
   potencyFloor: 0
   potionVisual: 1
+  potionSound: {fileID: 8300000, guid: 7a9b38aae05c1f149aaf21d90dfbd40a, type: 3}
 --- !u!1 &1180754900
 GameObject:
   m_ObjectHideFlags: 0
@@ -20542,7 +20562,7 @@ MonoBehaviour:
   carbonation: 3
   pazaz: 1
   potency: 1
-  soundEffectList: 4
+  soundEffectList: 5
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!222 &1348034364
@@ -21157,6 +21177,7 @@ MonoBehaviour:
   pazazCeiling: 0
   potencyFloor: 0
   potionVisual: 3
+  potionSound: {fileID: 8300000, guid: 1d19fd4907c71a74e9b1b578e800dbc2, type: 3}
 --- !u!1 &1498769510
 GameObject:
   m_ObjectHideFlags: 0
