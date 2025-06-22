@@ -19215,12 +19215,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be6259dd4b2761c4c84c5569d4a44cf1, type: 2}
   - {fileID: 11400000, guid: 34c797f293accb54b808b8ea1d800f78, type: 2}
   - {fileID: 11400000, guid: befd56cd821db65458a65a5ef2e3501c, type: 2}
-  tempFloor: 3
-  tempCeiling: 5
+  tempFloor: 5
+  tempCeiling: 7
   carbFloor: 0
   carbCeiling: 2
-  pazazFloor: 4
-  pazazCeiling: 6
+  pazazFloor: 1
+  pazazCeiling: 3
   potencyFloor: 0
   potionVisual: 4
   potionSound: {fileID: 8300000, guid: 160a03d9c0da5bc48ab633d67ee09a83, type: 3}
@@ -19717,12 +19717,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c4416e40c8c95a4d9ec3a4de229a793, type: 2}
   - {fileID: 11400000, guid: 103a2349e2fc6624caaada92451caa71, type: 2}
   - {fileID: 11400000, guid: cd5a866f4fda2684f93bc6cea2e9e36f, type: 2}
-  tempFloor: 2
-  tempCeiling: 4
-  carbFloor: 4
-  carbCeiling: 6
-  pazazFloor: 8
-  pazazCeiling: 10
+  tempFloor: 8
+  tempCeiling: 10
+  carbFloor: 6
+  carbCeiling: 8
+  pazazFloor: 1
+  pazazCeiling: 3
   potencyFloor: 0
   potionVisual: 1
   potionSound: {fileID: 8300000, guid: 7a9b38aae05c1f149aaf21d90dfbd40a, type: 3}
@@ -21287,12 +21287,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a3545a7eaf72eb041aa664c7972a50db, type: 2}
   - {fileID: 11400000, guid: 6225fce83eeb7ab4b928650641e45ffd, type: 2}
   - {fileID: 11400000, guid: f607f5b926ccaed408e4e2662cfc2123, type: 2}
-  tempFloor: 6
-  tempCeiling: 7
-  carbFloor: 2
-  carbCeiling: 4
-  pazazFloor: 6
-  pazazCeiling: 8
+  tempFloor: 2
+  tempCeiling: 4
+  carbFloor: 6
+  carbCeiling: 8
+  pazazFloor: 7
+  pazazCeiling: 9
   potencyFloor: 0
   potionVisual: 3
   potionSound: {fileID: 8300000, guid: 1d19fd4907c71a74e9b1b578e800dbc2, type: 3}

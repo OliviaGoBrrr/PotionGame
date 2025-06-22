@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
   m_Name: 06_2_DemonMid
   m_EditorClassIdentifier: 
-  bubble: 0000000000000000000000000100000000000000000000000100000000000000
+  bubble: 000000000000000000000000010000000000000000000000010000000000000000000000
   nameText:
   - Desmond
   - 
@@ -21,6 +21,7 @@ MonoBehaviour:
   - Desmond
   - Desmond
   - Albert
+  - Desmond
   - Desmond
   dialogueText:
   - Well... this isn't the worst drink I've had. At least I can tell this is flamma
@@ -34,9 +35,11 @@ MonoBehaviour:
     mortal."
   - ...
   - ...
+  - ...
   - In that case, I suppose I'd best be off. I will see you around, young apprentice.
-  textAnim: 0000000000000000000000000000000000000000000000000000000000000000
+  textAnim: 000000000000000000000000000000000000000000000000000000000000000000000000
   audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
@@ -54,6 +57,7 @@ MonoBehaviour:
   - 0.05
   - 0.05
   - 0.05
+  - 0.05
   fastTextInterval:
   - 0.01
   - 0.01
@@ -63,8 +67,9 @@ MonoBehaviour:
   - 0.01
   - 0.01
   - 0.01
-  defaultBlipInterval: 0300000003000000030000000300000003000000030000000300000003000000
-  fastBlipInterval: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
+  - 0.01
+  defaultBlipInterval: 030000000300000003000000030000000300000003000000030000000300000003000000
+  fastBlipInterval: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000
   font:
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: b2c43c70a109ba04fb922b0b8de1a07a, type: 2}
@@ -73,6 +78,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   fontSize:
   - 36
@@ -83,6 +89,7 @@ MonoBehaviour:
   - 36
   - 28
   - 36
+  - 36
   nameFont:
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: b2c43c70a109ba04fb922b0b8de1a07a, type: 2}
@@ -91,4 +98,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}
   - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}

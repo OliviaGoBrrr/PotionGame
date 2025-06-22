@@ -31,8 +31,8 @@ MonoBehaviour:
   - "<i>You struggle to meet this snake\u2019s sssour gaze through her long, box-dyed
     hair.</i>"
   - "Quit whining, what\u2019ll it be?"
-  - "I need sssome anti-venom. I promisssed my band I would get my venom under control
-    after\u2026. <i>The Incident\u2026.</i>"
+  - "I need sssome <b>anti-venom.</b> I promisssed my band I would get my venom under
+    control after\u2026. <i>The Incident\u2026.</i>"
   - "I don\u2019t even wanna know\u2026  "
   textAnim: 00000000000000000000000000000000000000000000000000000000
   audioClip:

@@ -26,7 +26,7 @@ MonoBehaviour:
     and sparkly as the one outside! Fascinating! '
   - "Yeah\u2026 that\u2019s definitely right\u2026"
   - The poor thing looked like a deer in headlights, but I simply must talk with
-    her. Could you please make me a calming remedy of some sort?
+    her. Could you please make me a <b>calming remedy</b> of some sort?
   textAnim: 00000000000000000000000000000000
   audioClip:
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}

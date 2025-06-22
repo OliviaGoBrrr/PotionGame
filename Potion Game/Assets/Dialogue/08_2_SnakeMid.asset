@@ -17,7 +17,7 @@ MonoBehaviour:
   - Stacey
   - Albert
   dialogueText:
-  - Thank you for the <i>anti</i>-venom... let's hope it's sssstrong enough this
+  - Thank you for the <b>anti-venom...</b> let's hope it's sssstrong enough this
     time...
   - Kid kind of gave me the heebie jeebies there. Weird.
   textAnim: 0000000000000000

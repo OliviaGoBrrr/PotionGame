@@ -27,7 +27,7 @@ MonoBehaviour:
   - "Oh that\u2019s not a goblin, that\u2019s an elf. He\u2019s very sensitive about
     it."
   - "Absolutely fascinating! A short elf! I simply must talk to him! I\u2019ll take
-    a calming remedy, please, something to soothe the poor little guy."
+    a <b>calming remedy,</b> please, something to soothe the poor little guy."
   textAnim: 00000000000000000000000000000000
   audioClip:
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
