@@ -34,11 +34,11 @@ MonoBehaviour:
   defaultBlipInterval: 0300000003000000
   fastBlipInterval: 0a0000000a000000
   font:
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 589ee93493cd84043a696ffdd4bd4bc7, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
   fontSize:
-  - 36
-  - 36
+  - 45
+  - 28
   nameFont:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: 589ee93493cd84043a696ffdd4bd4bc7, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
