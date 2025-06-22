@@ -21073,7 +21073,7 @@ MonoBehaviour:
   audioSource: {fileID: 321377797}
   beginning: {fileID: 11400000, guid: 0113c551a5b9e974f9563ee710b2fb11, type: 2}
   tutorial: {fileID: 11400000, guid: 388d3a45a8d355f4699139db8e42fffa, type: 2}
-  ending: {fileID: 11400000, guid: 0113c551a5b9e974f9563ee710b2fb11, type: 2}
+  ending: {fileID: 11400000, guid: f57f2d45de034c24a820e4d160f67e2a, type: 2}
   characters:
   - {fileID: 17117706}
   - {fileID: 1165625166}
