@@ -62,6 +62,11 @@ public class SoundManager : MonoBehaviour
         instance.AudioSource.PlayOneShot(randomClip, volume);
     }
 
+    public void BellSound(AudioClip bellSound)
+    {
+        instance.AudioSource.PlayOneShot(bellSound, 0.3f);
+    }
+
 #if UNITY_EDITOR
     private void OnEnable()
     {
