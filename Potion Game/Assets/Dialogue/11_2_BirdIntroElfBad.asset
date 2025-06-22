@@ -10,35 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 01_Introduction
+  m_Name: 11_2_BirdIntroElfBad
   m_EditorClassIdentifier: 
-  bubble: 0100000001000000010000000100000001000000
+  bubble: 00000000000000000100000000000000
   nameText:
+  - 
+  - Betty
   - Albert
-  - Albert
-  - Albert
-  - Albert
-  - Albert
+  - Betty
   dialogueText:
-  - Hello?? Wake up, you lazy @*#&!! I can hear customers coming, come on, get up!!
-  - "Of course they leave me with the one apprentice that would rather sleep than
-    make potions\u2026"
-  - "No, no, there\u2019s no time to clean the cauldron, you\u2019ll have to reuse
-    yesterday\u2019s potion and pray the health overlords don\u2019t come knocking. "
-  - "Oh, you\u2019re worried about the potion\u2019s stability? I\u2019ll keep an
-    eye on it for you. Just remember less is more! you don\u2019t want to know what
-    happens if you put too many ingredients in a potion."
-  - "Now come on, quickly! The first customer is nearly here, at least try to look
-    like you didn\u2019t just wake up!"
-  textAnim: 0000000000000000000000000000000000000000
+  - "<i>The figure that approaches you does not acknowledge you, instead focusing
+    intently on the notes she is frantically scribbling on a piece of parchment with
+    the title \u201CResearch of Betty Bird\"</i>"
+  - "Did you see the poor goblin out there? Covered in glitter, looked pale as a
+    sheet. Don\u2019t think the poor love knew what hit him."
+  - "Oh that\u2019s not a goblin, that\u2019s an elf. He\u2019s very sensitive about
+    it."
+  - "Absolutely fascinating! A short elf! I simply must talk to him! I\u2019ll take
+    a calming remedy, please, something to soothe the poor little guy."
+  textAnim: 00000000000000000000000000000000
   audioClip:
-  - {fileID: 8300000, guid: 6404e6f82f85d4050b9d2d98d2f3392a, type: 3}
-  - {fileID: 8300000, guid: 714c6d1e1d36345f3a5fab47a1d4dbd5, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   defaultTextInterval:
-  - 0.05
   - 0.05
   - 0.05
   - 0.05
@@ -48,11 +44,9 @@ MonoBehaviour:
   - 0.01
   - 0.01
   - 0.01
-  - 0.01
-  defaultBlipInterval: 0300000003000000030000000300000003000000
-  fastBlipInterval: 1400000014000000140000001400000014000000
+  defaultBlipInterval: 03000000030000000300000003000000
+  fastBlipInterval: 0a0000000a0000000a0000000a000000
   font:
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
   - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
@@ -62,9 +56,7 @@ MonoBehaviour:
   - 36
   - 36
   - 36
-  - 36
   nameFont:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
