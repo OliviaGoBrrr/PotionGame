@@ -1043,12 +1043,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0451b71a580980043aa148dbb9bff107, type: 2}
   - {fileID: 11400000, guid: d9ae9354fdacbc2409391735e1bba1a4, type: 2}
   - {fileID: 11400000, guid: 7dbe23516d2f876439c45231bf76e308, type: 2}
-  tempFloor: 0
-  tempCeiling: 0
-  carbFloor: 0
-  carbCeiling: 0
+  tempFloor: 4
+  tempCeiling: 6
+  carbFloor: 8
+  carbCeiling: 10
   pazazFloor: 0
-  pazazCeiling: 0
+  pazazCeiling: 2
   potencyFloor: 0
   potionVisual: 2
   potionSound: {fileID: 8300000, guid: c8693f2179c914443b0c01fdc67be04f, type: 3}
@@ -1324,6 +1324,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250605969}
   m_CullTransparentMesh: 1
+--- !u!1 &279403301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279403302}
+  - component: {fileID: 279403303}
+  m_Layer: 0
+  m_Name: owl (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279403302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279403301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 263, y: 165, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 411794901}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!212 &279403303
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279403301}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1844749655839966024, guid: 998ee15dfc1ce174ba73664ab2413ea3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 509, y: 736}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &320018763
 GameObject:
   m_ObjectHideFlags: 0
@@ -6741,6 +6828,7 @@ RectTransform:
   - {fileID: 851075033}
   - {fileID: 686096436}
   - {fileID: 1942787201}
+  - {fileID: 279403302}
   - {fileID: 1847144665}
   - {fileID: 2079080465}
   m_Father: {fileID: 1863718326}
@@ -12473,7 +12561,7 @@ MonoBehaviour:
   currentPazaz: 0
   currentPotency: 0
   cauldronVisuals: {fileID: 605214396}
-  potencySlider: {fileID: 0}
+  potencySlider: {fileID: 1429364730}
 --- !u!4 &605214398
 Transform:
   m_ObjectHideFlags: 0
@@ -13900,7 +13988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 21, y: 9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &893619068
@@ -19127,12 +19215,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be6259dd4b2761c4c84c5569d4a44cf1, type: 2}
   - {fileID: 11400000, guid: 34c797f293accb54b808b8ea1d800f78, type: 2}
   - {fileID: 11400000, guid: befd56cd821db65458a65a5ef2e3501c, type: 2}
-  tempFloor: 0
-  tempCeiling: 0
+  tempFloor: 3
+  tempCeiling: 5
   carbFloor: 0
-  carbCeiling: 0
-  pazazFloor: 0
-  pazazCeiling: 0
+  carbCeiling: 2
+  pazazFloor: 4
+  pazazCeiling: 6
   potencyFloor: 0
   potionVisual: 4
   potionSound: {fileID: 8300000, guid: 160a03d9c0da5bc48ab633d67ee09a83, type: 3}
@@ -19629,12 +19717,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c4416e40c8c95a4d9ec3a4de229a793, type: 2}
   - {fileID: 11400000, guid: 103a2349e2fc6624caaada92451caa71, type: 2}
   - {fileID: 11400000, guid: cd5a866f4fda2684f93bc6cea2e9e36f, type: 2}
-  tempFloor: 0
-  tempCeiling: 0
-  carbFloor: 0
-  carbCeiling: 0
-  pazazFloor: 0
-  pazazCeiling: 0
+  tempFloor: 2
+  tempCeiling: 4
+  carbFloor: 4
+  carbCeiling: 6
+  pazazFloor: 8
+  pazazCeiling: 10
   potencyFloor: 0
   potionVisual: 1
   potionSound: {fileID: 8300000, guid: 7a9b38aae05c1f149aaf21d90dfbd40a, type: 3}
@@ -19960,7 +20048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 658.5, y: -294}
+  m_AnchoredPosition: {x: 949, y: 11}
   m_SizeDelta: {x: 841, y: 361}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297241589
@@ -21199,12 +21287,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a3545a7eaf72eb041aa664c7972a50db, type: 2}
   - {fileID: 11400000, guid: 6225fce83eeb7ab4b928650641e45ffd, type: 2}
   - {fileID: 11400000, guid: f607f5b926ccaed408e4e2662cfc2123, type: 2}
-  tempFloor: 0
-  tempCeiling: 0
-  carbFloor: 0
-  carbCeiling: 0
-  pazazFloor: 0
-  pazazCeiling: 0
+  tempFloor: 6
+  tempCeiling: 7
+  carbFloor: 2
+  carbCeiling: 4
+  pazazFloor: 6
+  pazazCeiling: 8
   potencyFloor: 0
   potionVisual: 3
   potionSound: {fileID: 8300000, guid: 1d19fd4907c71a74e9b1b578e800dbc2, type: 3}
@@ -29114,7 +29202,7 @@ Transform:
   m_GameObject: {fileID: 1942787199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -264, y: 165, z: 0}
+  m_LocalPosition: {x: -265, y: 165, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
