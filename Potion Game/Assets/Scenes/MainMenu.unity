@@ -427,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 248.31}
-  m_SizeDelta: {x: 533.3, y: 185.5}
+  m_AnchoredPosition: {x: 0, y: 205.4}
+  m_SizeDelta: {x: 624.8, y: 402.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103370201
 MonoBehaviour:
@@ -450,7 +450,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Untitled Cozy Game
+  m_text: 'Cauldron
+
+    Calamity'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
   m_sharedMaterial: {fileID: -310824402687149115, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
@@ -477,12 +479,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.05
+  m_fontSize: 136.8
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 144
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -549,6 +551,44 @@ MonoBehaviour:
   spline: 0
   fadeOut: 0
   splineCoords: []
+--- !u!1 &106462598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106462599}
+  m_Layer: 5
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &106462599
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106462598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 190281127}
+  - {fileID: 1989960852}
+  - {fileID: 1377437559}
+  m_Father: {fileID: 477739558}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -315.1}
+  m_SizeDelta: {x: 226.99, y: 241.70001}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &167047769
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,15 +673,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.9
-  m_fontSizeBase: 35.9
+  m_fontSize: 60.9
+  m_fontSizeBase: 60.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -719,12 +759,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 167047770}
-  m_Father: {fileID: 477739558}
+  m_Father: {fileID: 106462599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -125}
-  m_SizeDelta: {x: 226.99, y: 61.7}
+  m_AnchoredPosition: {x: 0, y: 109.1}
+  m_SizeDelta: {x: 287.5, y: 102.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190281128
 MonoBehaviour:
@@ -1546,9 +1586,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 103370200}
-  - {fileID: 190281127}
-  - {fileID: 1989960852}
-  - {fileID: 1377437559}
+  - {fileID: 106462599}
   m_Father: {fileID: 393525149}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2688,6 +2726,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1372017571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372017573}
+  - component: {fileID: 1372017572}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1372017572
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372017571}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4548336087968209600, guid: ec09921491e8ac246a1e99e59d30250c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 34b5712c96fc8fc41b0e396c430af442, type: 3}
+  m_Resource: {fileID: 8300000, guid: 34b5712c96fc8fc41b0e396c430af442, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.096
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1372017573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372017571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377437558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,17 +2883,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377437558}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 40877847}
-  m_Father: {fileID: 477739558}
+  m_Father: {fileID: 106462599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -305}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 226.99, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377437560
@@ -3583,11 +3750,29 @@ MonoBehaviour:
   soundList:
   - name: MENU
     sounds: []
-  - name: GOOD
+  - name: CAULDRON_MOVE
+    sounds: []
+  - name: CAULDRON_SHAKE
     sounds: []
   - name: BAD
     sounds: []
   - name: POTION
+    sounds: []
+  - name: BERRIES
+    sounds: []
+  - name: FEATHERS
+    sounds: []
+  - name: HONEY
+    sounds: []
+  - name: HERBS
+    sounds: []
+  - name: MOSS
+    sounds: []
+  - name: NUTS
+    sounds: []
+  - name: ROOTS
+    sounds: []
+  - name: WATER
     sounds: []
 --- !u!4 &1778505520
 Transform:
@@ -3813,11 +3998,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 669336274}
-  m_Father: {fileID: 477739558}
+  m_Father: {fileID: 106462599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -216}
+  m_AnchoredPosition: {x: 0, y: -1}
   m_SizeDelta: {x: 226.99, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989960853
@@ -4280,6 +4465,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 531989662}
   - {fileID: 1626282370}
+  - {fileID: 1372017573}
   - {fileID: 1778505520}
   - {fileID: 1344267040}
   - {fileID: 393525149}
