@@ -54,6 +54,8 @@ public class DialogueBubbleManager : MonoBehaviour
     float VertSpeed = 2;
     float ColourSpeed = 2f;
 
+    Coroutine type;
+
     private void Awake()
     {
         gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
@@ -61,6 +63,14 @@ public class DialogueBubbleManager : MonoBehaviour
     // Recieves a list of dialogue from another source
     public void SetDialogue(DialogueScriptableObject currentDialogue)
     {
+        // Clears any existing dialogue
+        foreach(DialogueBubble bubble in bubbleList)
+        {
+            if (type != null) { StopCoroutine(type); }
+            bubble.nameTextBox.text = string.Empty;
+            bubble.dialogueTextBox.text = string.Empty;
+        }
+
         currentBubble = new List<DialogueBubble>( new DialogueBubble[currentDialogue.Bubble.Count] );
         for ( int i = 0; i < currentDialogue.Bubble.Count; i++ )
         {
@@ -92,6 +102,10 @@ public class DialogueBubbleManager : MonoBehaviour
     {
         PrintWords();
         AnimateWords();
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+        {
+            Skip();
+        }
     }
     // Resets text interval and initiates coroutine
     void PrintWords()
@@ -99,7 +113,7 @@ public class DialogueBubbleManager : MonoBehaviour
         if (State == 1)
         {
             ResetAnim();
-            StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos], textFont[currentDiaPos], fontSize[currentDiaPos], nameFont[currentDiaPos]));
+            type = StartCoroutine(TypeText(currentBubble[currentDiaPos], names[currentDiaPos], dialogue[currentDiaPos], textFX[currentDiaPos], characterBlip[currentDiaPos], textFont[currentDiaPos], fontSize[currentDiaPos], nameFont[currentDiaPos]));
             State = 2;
         }
     }
@@ -151,34 +165,6 @@ public class DialogueBubbleManager : MonoBehaviour
         //AnimateWords(); // this is for testing
         yield return null;
     }
-
-    // Allows the player to either reduce the text interval or go to the next message by clicking on the dialogue bubble
-    public void BubbleClickEvent()
-    {
-        if (State == 2)
-        {
-            // Modifies the interval statistics to make the text scroll faster
-            textInterval = fastTextInterval[currentDiaPos];
-            soundInterval = fastBlipInterval[currentDiaPos];
-        }
-        if (State == 3)
-        {
-            currentBubble[currentDiaPos].nameTextBox.text = string.Empty;
-            currentBubble[currentDiaPos].dialogueTextBox.text = string.Empty;
-            if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
-            {
-                State = 0;
-                gameManager.DialogueEnded();
-            }
-            else
-            {
-                currentDiaPos += 1;
-                State = 1;
-                NewLinePrep();
-            }
-        }
-    }
-
     private void soundCheck(AudioClip blip)
     {
         if (soundCount == 0)
@@ -292,5 +278,38 @@ public class DialogueBubbleManager : MonoBehaviour
             }
         }
     }
-    
+    // Allows the player to either reduce the text interval or go to the next message by clicking on the dialogue bubble
+    public void BubbleClickEvent()
+    {
+        if (State == 2)
+        {
+            // Modifies the interval statistics to make the text scroll faster
+            textInterval = fastTextInterval[currentDiaPos];
+            soundInterval = fastBlipInterval[currentDiaPos];
+        }
+        if (State == 3)
+        {
+            currentBubble[currentDiaPos].nameTextBox.text = string.Empty;
+            currentBubble[currentDiaPos].dialogueTextBox.text = string.Empty;
+            if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
+            {
+                State = 0;
+                gameManager.DialogueEnded();
+            }
+            else
+            {
+                currentDiaPos += 1;
+                State = 1;
+                NewLinePrep();
+            }
+        }
+    }
+    public void Skip()
+    {
+        currentBubble[currentDiaPos].nameTextBox.text = string.Empty;
+        currentBubble[currentDiaPos].dialogueTextBox.text = string.Empty;
+        State = 0;
+        gameManager.DialogueEnded();
+        if (type != null) { StopCoroutine(type); }
+    }
 }
