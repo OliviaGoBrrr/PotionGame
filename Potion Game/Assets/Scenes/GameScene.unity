@@ -174,6 +174,7 @@ MonoBehaviour:
   carbonation: -3
   pazaz: -2
   potency: 1
+  isHoney: 0
   soundEffectList: 11
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -380,7 +381,10 @@ MonoBehaviour:
   happyDialogue: {fileID: 11400000, guid: 1fc7261232aff9943973ddecf1fefa7b, type: 2}
   neutralDialogue: {fileID: 11400000, guid: 1eff428a116d6414ab69eb81951f8442, type: 2}
   unhappyDialogue: {fileID: 11400000, guid: 2934d4c236bbc6f48abc0ad918d331a7, type: 2}
-  idleDialogue: []
+  idleDialogue:
+  - {fileID: 11400000, guid: 93e307b76492b964ba1c779f61e32229, type: 2}
+  - {fileID: 11400000, guid: 1b4c38eb4b7079f4eb244ec210c93e53, type: 2}
+  - {fileID: 11400000, guid: 1cc2a1fd72dc506458fef4452ce576f3, type: 2}
   tempFloor: 10
   tempCeiling: 10
   carbFloor: 0
@@ -828,6 +832,7 @@ MonoBehaviour:
   carbonation: 3
   pazaz: -2
   potency: 1
+  isHoney: 0
   soundEffectList: 7
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -1034,7 +1039,10 @@ MonoBehaviour:
   happyDialogue: {fileID: 11400000, guid: 9ae76bfd822b2544fbb198540d4b401f, type: 2}
   neutralDialogue: {fileID: 11400000, guid: 61ad60a837d89e74296e35364d066e37, type: 2}
   unhappyDialogue: {fileID: 11400000, guid: 866ab8e80c2f63643a4bf64f81a951ca, type: 2}
-  idleDialogue: []
+  idleDialogue:
+  - {fileID: 11400000, guid: 0451b71a580980043aa148dbb9bff107, type: 2}
+  - {fileID: 11400000, guid: d9ae9354fdacbc2409391735e1bba1a4, type: 2}
+  - {fileID: 11400000, guid: 7dbe23516d2f876439c45231bf76e308, type: 2}
   tempFloor: 0
   tempCeiling: 0
   carbFloor: 0
@@ -6797,6 +6805,7 @@ MonoBehaviour:
   carbonation: -2
   pazaz: -1
   potency: 1
+  isHoney: 0
   soundEffectList: 5
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -13255,6 +13264,7 @@ MonoBehaviour:
   carbonation: 0
   pazaz: 0
   potency: 0
+  isHoney: 1
   soundEffectList: 6
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -19113,7 +19123,10 @@ MonoBehaviour:
   happyDialogue: {fileID: 11400000, guid: f9303bf5982e35c479975d5482a2a57a, type: 2}
   neutralDialogue: {fileID: 11400000, guid: af5e00eb9612732469d5b51ddeed47b0, type: 2}
   unhappyDialogue: {fileID: 11400000, guid: a1da9b01a5bc6ec409375a43832fa423, type: 2}
-  idleDialogue: []
+  idleDialogue:
+  - {fileID: 11400000, guid: be6259dd4b2761c4c84c5569d4a44cf1, type: 2}
+  - {fileID: 11400000, guid: 34c797f293accb54b808b8ea1d800f78, type: 2}
+  - {fileID: 11400000, guid: befd56cd821db65458a65a5ef2e3501c, type: 2}
   tempFloor: 0
   tempCeiling: 0
   carbFloor: 0
@@ -19612,7 +19625,10 @@ MonoBehaviour:
   happyDialogue: {fileID: 11400000, guid: bfaea97aef2c51d47868f7fc5f10f45e, type: 2}
   neutralDialogue: {fileID: 11400000, guid: d6b8029ab482e8f4980eb388ac63969d, type: 2}
   unhappyDialogue: {fileID: 11400000, guid: 7713e61ffc3f96c4291bdfba816f3cfd, type: 2}
-  idleDialogue: []
+  idleDialogue:
+  - {fileID: 11400000, guid: 3c4416e40c8c95a4d9ec3a4de229a793, type: 2}
+  - {fileID: 11400000, guid: 103a2349e2fc6624caaada92451caa71, type: 2}
+  - {fileID: 11400000, guid: cd5a866f4fda2684f93bc6cea2e9e36f, type: 2}
   tempFloor: 0
   tempCeiling: 0
   carbFloor: 0
@@ -20572,6 +20588,7 @@ MonoBehaviour:
   carbonation: 3
   pazaz: 1
   potency: 1
+  isHoney: 0
   soundEffectList: 5
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -21057,7 +21074,7 @@ MonoBehaviour:
   audioSource: {fileID: 321377797}
   beginning: {fileID: 11400000, guid: 0113c551a5b9e974f9563ee710b2fb11, type: 2}
   tutorial: {fileID: 11400000, guid: 388d3a45a8d355f4699139db8e42fffa, type: 2}
-  ending: {fileID: 11400000, guid: 0113c551a5b9e974f9563ee710b2fb11, type: 2}
+  ending: {fileID: 11400000, guid: f57f2d45de034c24a820e4d160f67e2a, type: 2}
   characters:
   - {fileID: 17117706}
   - {fileID: 1165625166}
@@ -21178,7 +21195,10 @@ MonoBehaviour:
   happyDialogue: {fileID: 11400000, guid: a8fab9612a95f564ba26053608c178f3, type: 2}
   neutralDialogue: {fileID: 11400000, guid: 44d5fd8385c8acf45b50c306f11bc1dd, type: 2}
   unhappyDialogue: {fileID: 11400000, guid: f74f85b600d134146b9eb24abe55741c, type: 2}
-  idleDialogue: []
+  idleDialogue:
+  - {fileID: 11400000, guid: a3545a7eaf72eb041aa664c7972a50db, type: 2}
+  - {fileID: 11400000, guid: 6225fce83eeb7ab4b928650641e45ffd, type: 2}
+  - {fileID: 11400000, guid: f607f5b926ccaed408e4e2662cfc2123, type: 2}
   tempFloor: 0
   tempCeiling: 0
   carbFloor: 0
@@ -21584,6 +21604,7 @@ MonoBehaviour:
   carbonation: -2
   pazaz: 3
   potency: 1
+  isHoney: 0
   soundEffectList: 10
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -21823,6 +21844,7 @@ MonoBehaviour:
   carbonation: 3
   pazaz: -2
   potency: 1
+  isHoney: 0
   soundEffectList: 8
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}
@@ -27748,6 +27770,7 @@ MonoBehaviour:
   carbonation: 0
   pazaz: 2
   potency: 1
+  isHoney: 0
   soundEffectList: 9
   soundEffectVolume: 1
   cauldron: {fileID: 605214397}

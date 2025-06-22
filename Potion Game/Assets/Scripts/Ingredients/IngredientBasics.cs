@@ -6,6 +6,7 @@ public class IngredientBasics : MonoBehaviour
     public int carbonation;
     public int pazaz;
     public int potency;
+    public bool isHoney;
     [SerializeField] private SoundType soundEffectList;
     [SerializeField] private float soundEffectVolume = 1.0f;
 
@@ -51,13 +52,13 @@ public class IngredientBasics : MonoBehaviour
             cauldronScript.currentPazaz += pazaz;
             cauldronScript.currentPotency += potency;
 
-            sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
+            sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency, isHoney);
         }
     }
 
     public void OnClick()
     {
-        sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
+        sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency, isHoney);
         cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
         SoundManager.PlayRandomSound(soundEffectList, soundEffectVolume);
     }

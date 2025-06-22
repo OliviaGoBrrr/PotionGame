@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 02_1_WhaleIdle
+  m_Name: 02_2_WhaleIdle
   m_EditorClassIdentifier: 
   bubble: 00000000
   nameText:
   - Walter
   dialogueText:
-  - So... Itchy...
+  - "Are you sure the barnacle cream isn\u2019t too difficult? I can figure something
+    else out if it is\u2026 "
   textAnim: 00000000
   audioClip:
   - {fileID: 8300000, guid: 6404e6f82f85d4050b9d2d98d2f3392a, type: 3}
