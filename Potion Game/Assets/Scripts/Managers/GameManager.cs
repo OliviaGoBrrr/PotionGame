@@ -221,6 +221,7 @@ public class GameManager : MonoBehaviour
                 {
                     dialogueManager.SetDialogue(ending);
                     stateWaiting = true;
+                    timer = 0;
                 }
                 if (dialogueEnded == true)
                 {
