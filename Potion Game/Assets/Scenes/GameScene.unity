@@ -13581,9 +13581,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73359b7a6b3d56845bfd6d754ea32cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temperature: 0
-  carbonation: 0
-  pazaz: 0
+  temperature: 10
+  carbonation: 10
+  pazaz: 10
   potency: 0
   isHoney: 1
   soundEffectList: 6
@@ -22385,7 +22385,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 0, y: 0, z: 65, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

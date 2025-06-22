@@ -13,6 +13,7 @@ public class CauldronStats : MonoBehaviour
     public float currentPotency;
     [SerializeField] CauldronVisuals cauldronVisuals;
     [SerializeField] GameObject potencySlider;
+    bool tiltDir = true;
 
     private void Awake() // Sets initial cauldron stats
     {
@@ -31,7 +32,12 @@ public class CauldronStats : MonoBehaviour
         currentCarbonation = Mathf.Clamp(currentCarbonation + CarbChange, 0, 10);
         currentPazaz = Mathf.Clamp(currentPazaz + PazazChange, 0, 10);
         cauldronVisuals.GetCauldronValues(currentTemperature, currentCarbonation, currentPazaz, currentPotency);
-        cauldronVisuals.StartTheRock(10, true);
+        cauldronVisuals.StartTheRock(10, tiltDir);
+        switch (tiltDir)
+        {
+            case true: tiltDir = false; break;
+            case false: tiltDir = true; break;
+        }
         //potencySlider.GetComponent<Slider>().value = currentPotency;
     }
     public void PullStats(out float Temp, out float Carb, out float Pazaz, out float Potency)

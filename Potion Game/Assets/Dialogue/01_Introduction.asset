@@ -32,11 +32,11 @@ MonoBehaviour:
     like you didn\u2019t just wake up!"
   textAnim: 0000000000000000000000000000000000000000
   audioClip:
-  - {fileID: 8300000, guid: 714c6d1e1d36345f3a5fab47a1d4dbd5, type: 3}
-  - {fileID: 8300000, guid: 714c6d1e1d36345f3a5fab47a1d4dbd5, type: 3}
-  - {fileID: 8300000, guid: 714c6d1e1d36345f3a5fab47a1d4dbd5, type: 3}
-  - {fileID: 8300000, guid: 714c6d1e1d36345f3a5fab47a1d4dbd5, type: 3}
-  - {fileID: 8300000, guid: 714c6d1e1d36345f3a5fab47a1d4dbd5, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
   defaultTextInterval:
   - 0.05
   - 0.05
