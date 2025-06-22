@@ -47,17 +47,17 @@ MonoBehaviour:
   defaultBlipInterval: 03000000030000000300000003000000
   fastBlipInterval: 0a0000000a0000000a0000000a000000
   font:
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: b2c43c70a109ba04fb922b0b8de1a07a, type: 2}
+  - {fileID: 11400000, guid: d9c0e4ead96825147bf4a8ec73cf1a1f, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: d9c0e4ead96825147bf4a8ec73cf1a1f, type: 2}
   fontSize:
   - 36
   - 36
-  - 36
+  - 28
   - 36
   nameFont:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: b2c43c70a109ba04fb922b0b8de1a07a, type: 2}
+  - {fileID: 11400000, guid: d9c0e4ead96825147bf4a8ec73cf1a1f, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: d9c0e4ead96825147bf4a8ec73cf1a1f, type: 2}
