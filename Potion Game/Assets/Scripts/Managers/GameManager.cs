@@ -139,6 +139,7 @@ public class GameManager : MonoBehaviour
                 if (stateWaiting == false) // When the gamestate enters this phase
                 {
                     float Width = 250;
+                    sliders.title.text = characters[currentChar].potionName;
                     sliders.UpdateGaugePositions((tempFloor + tempCeiling)/2, (tempCeiling - tempFloor) * Width/10 + 35, (carbFloor + carbCeiling)/2, (carbCeiling - carbFloor) * Width / 10 + 35, (pazazFloor + pazazCeiling)/2, (pazazCeiling - pazazFloor) * Width / 10 + 35);
                     ResetIdleText();
                     dialogueEnded = true;

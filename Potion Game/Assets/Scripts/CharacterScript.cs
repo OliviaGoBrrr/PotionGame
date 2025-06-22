@@ -35,6 +35,8 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] int pazazCeiling;
     [Tooltip("The minimum value for the potency to be 'correct' (0 ~ 1, this value is included)")]
     [SerializeField] float potencyFloor;
+    [Tooltip("The name of the potion")]
+    [SerializeField] public string potionName;
     [Tooltip("The visuals for the potion canvas")]
     [SerializeField] public int potionVisual;
 
