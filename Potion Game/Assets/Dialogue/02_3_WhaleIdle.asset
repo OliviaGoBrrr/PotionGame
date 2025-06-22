@@ -19,7 +19,7 @@ MonoBehaviour:
   - "I can\u2019t wait for the itch to be gone\u2026 Thanks again for this! "
   textAnim: 00000000
   audioClip:
-  - {fileID: 8300000, guid: 6404e6f82f85d4050b9d2d98d2f3392a, type: 3}
+  - {fileID: 8300000, guid: f972e91ee431288409228e3f454c46e6, type: 3}
   defaultTextInterval:
   - 0.05
   fastTextInterval:
