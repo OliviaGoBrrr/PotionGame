@@ -15,6 +15,8 @@ public class IngredientBasics : MonoBehaviour
     private SliderContainer sliders;
 
     private RectTransform m_RectTransform;
+    private RectTransform outlineRectTransform;
+    private Image outlineImage;
 
     private bool isHovered;
     private bool isBounceTweening;
@@ -25,11 +27,16 @@ public class IngredientBasics : MonoBehaviour
 
     [SerializeField] CauldronStats cauldron;
 
+    [SerializeField] GameObject outlineBorder;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
         m_RectTransform = GetComponent<RectTransform>();
+        outlineRectTransform = outlineBorder.GetComponent<RectTransform>();
+        outlineImage = outlineBorder.GetComponent<Image>();
+        outlineImage.enabled = false;
     }
 
     // Update is called once per frame
@@ -71,13 +78,17 @@ public class IngredientBasics : MonoBehaviour
             iconSize = 1f;
         }
         DOTween.Kill(m_RectTransform);
+        DOTween.Kill(outlineRectTransform);
+
         Sequence bounceTween = DOTween.Sequence();
         isBounceTweening = true;
         bounceTween.Append(m_RectTransform.DOScale(0.8f, 0.08f).SetEase(Ease.OutSine));
+        bounceTween.Join(outlineRectTransform.DOScale(0.8f, 0.08f).SetEase(Ease.OutSine));
         bounceTween.Append(m_RectTransform.DOScale(1f, 0.6f).SetEase(Ease.OutElastic)).OnComplete(() =>
         {
             isBounceTweening = false;
         });
+        bounceTween.Join(outlineRectTransform.DOScale(1f, 0.6f).SetEase(Ease.OutElastic));
 
 
         /*
@@ -93,35 +104,52 @@ public class IngredientBasics : MonoBehaviour
         SoundManager.PlayRandomSound(soundEffectList, soundEffectVolume);
     }
 
-
     public void OnEnter()
     {
         isHovered = true;
+
+        outlineImage.enabled = true;
+
         if (isBounceTweening == true) return;
 
         DOTween.Kill(m_RectTransform);
+        DOTween.Kill(outlineRectTransform);
 
         m_RectTransform.DOScale(1.2f, 0.1f).SetEase(Ease.OutSine);
+        outlineRectTransform.DOScale(1.2f, 0.1f).SetEase(Ease.OutSine);
+
 
         m_RectTransform.DOLocalRotate(new Vector3(0, 0, -5f), 0.3f).SetEase(Ease.InOutSine).OnComplete(() =>
         {
             m_RectTransform.DOLocalRotate(new Vector3(0, 0, 5f), 0.3f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
         });
-        
+
+        outlineRectTransform.DOLocalRotate(new Vector3(0, 0, -5f), 0.3f).SetEase(Ease.InOutSine).OnComplete(() =>
+        {
+            outlineRectTransform.DOLocalRotate(new Vector3(0, 0, 5f), 0.3f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        });
+
     }
 
     public void OnExit()
     {
         isHovered = false;
+
+        outlineImage.enabled = false;
+
         //DOTween.Kill(m_RectTransform);
         if (isBounceTweening == true) return;
 
+
         DOTween.Kill(m_RectTransform);
+        DOTween.Kill(outlineRectTransform);
 
         m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0), 0);
+        outlineRectTransform.DOLocalRotate(new Vector3(0, 0, 0), 0);
 
         m_RectTransform.DOScale(1f, 0.1f).SetEase(Ease.OutSine);
+        outlineRectTransform.DOScale(1f, 0.1f).SetEase(Ease.OutSine);
 
-        
+
     }
 }
