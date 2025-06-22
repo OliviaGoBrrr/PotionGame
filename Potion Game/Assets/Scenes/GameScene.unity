@@ -13514,7 +13514,7 @@ GameObject:
   - component: {fileID: 605214396}
   m_Layer: 0
   m_Name: Cauldron
-  m_TagString: Untagged
+  m_TagString: Cauldron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31001,6 +31001,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 5983339054608454923, guid: 92ab51e132ae42c4180b8a073e023612, type: 3}
+      propertyPath: aaa
+      value: 
+      objectReference: {fileID: 605214397}
+    - target: {fileID: 5983339054608454923, guid: 92ab51e132ae42c4180b8a073e023612, type: 3}
+      propertyPath: cauldronScript
+      value: 
+      objectReference: {fileID: 605214397}
     - target: {fileID: 6277892089400113891, guid: 92ab51e132ae42c4180b8a073e023612, type: 3}
       propertyPath: m_Name
       value: SliderContainer

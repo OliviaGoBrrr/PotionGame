@@ -22,7 +22,7 @@ MonoBehaviour:
     the realm, and they didn\u2019t have a clue what flamma ale was!!"
   textAnim: 00000000
   audioClip:
-  - {fileID: 8300000, guid: 6404e6f82f85d4050b9d2d98d2f3392a, type: 3}
+  - {fileID: 8300000, guid: c974fc0bb900de640b573ff359a8d989, type: 3}
   defaultTextInterval:
   - 0.05
   fastTextInterval:
@@ -34,4 +34,4 @@ MonoBehaviour:
   fontSize:
   - 36
   nameFont:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: 2cb8c3b419942614eb1897e14955e062, type: 2}

@@ -23,14 +23,13 @@ public class CauldronStats : MonoBehaviour
         currentPotency = 100;
         cauldronVisuals.GetCauldronValues(currentTemperature, currentCarbonation, currentPazaz, currentPotency);
     }
-    public void IngredientEnters(int TempChange, int CarbChange, int PazazChange, int PotencyChange) // Call when ingredient enters the cauldron
+    public void IngredientEnters(int temp, int carb, int paz, int PotencyChange) // Call when ingredient enters the cauldron
     {
-        cauldronVisuals.StartTheRock(10, true);
-        cauldronVisuals.FireBurst(TempChange, CarbChange, PazazChange);
+        cauldronVisuals.FireBurst(temp - (int)currentTemperature, carb - (int)currentCarbonation, paz - (int)currentPazaz);
         currentPotency -= PotencyChange;
-        currentTemperature = Mathf.Clamp(currentTemperature + TempChange, 0, 10);
-        currentCarbonation = Mathf.Clamp(currentCarbonation + CarbChange, 0, 10);
-        currentPazaz = Mathf.Clamp(currentPazaz + PazazChange, 0, 10);
+        currentTemperature = temp;
+        currentCarbonation = carb;
+        currentPazaz = paz;
         cauldronVisuals.GetCauldronValues(currentTemperature, currentCarbonation, currentPazaz, currentPotency);
         cauldronVisuals.StartTheRock(10, tiltDir);
         switch (tiltDir)

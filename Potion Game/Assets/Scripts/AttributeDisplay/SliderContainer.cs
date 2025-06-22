@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SliderContainer : MonoBehaviour
 {
@@ -24,12 +25,13 @@ public class SliderContainer : MonoBehaviour
     private Slider carbonGauge;
     private Slider pazazGauge;
 
-    private float actualTempValue = 5f;
-    private float actualCarbonValue = 5f;
-    private float actualPazazValue = 5f;
+    private float actualTempValue;
+    private float actualCarbonValue;
+    private float actualPazazValue;
 
     public float Width;
 
+    public CauldronStats cauldronScript;
 
     [HideInInspector] public bool isClicked;
     private float clickedTimer;
@@ -44,6 +46,10 @@ public class SliderContainer : MonoBehaviour
         tempGauge = temperatureGaugeObject.GetComponent<Slider>();
         carbonGauge = carbonationGaugeObject.GetComponent<Slider>();
         pazazGauge = pazazGaugeObject.GetComponent<Slider>();
+
+        actualTempValue = tempSlider.value;
+        actualCarbonValue = carbonSlider.value;
+        actualPazazValue = pazazSlider.value;
     }
 
     // Update is called once per frame
@@ -57,7 +63,7 @@ public class SliderContainer : MonoBehaviour
         if (isClicked == true)
         {
             clickedTimer += Time.deltaTime;
-            if (clickedTimer >= 1f)
+            if (clickedTimer >= 0.1f)
             {
                 isClicked = false;
                 clickedTimer = 0f;
@@ -70,54 +76,42 @@ public class SliderContainer : MonoBehaviour
         if (isClicked == true) return; // so no spamming
         isClicked = true;
         // sets values to what they should be so spamming doesnt affect the tweens
-        tempSlider.value = actualTempValue;
-        carbonSlider.value = actualCarbonValue;
-        pazazSlider.value = actualPazazValue;
-
-        float tempTotal = tempSlider.value;
-        float carbTotal = carbonSlider.value;
-        float pazTotal = pazazSlider.value;
 
         if (isHoney == true)
         {
-            tempTotal = HoneyStats(tempSlider, tempTotal);
-            carbTotal = HoneyStats(carbonSlider, carbTotal);
-            pazTotal = HoneyStats(pazazSlider, pazTotal);
-            Debug.Log("ISHONEY");
+            actualTempValue = HoneyStats(actualTempValue);
+            actualCarbonValue = HoneyStats(actualCarbonValue);
+            actualPazazValue = HoneyStats(actualPazazValue);
         }
         else
         {
-            tempTotal = tempSlider.value + temperature;
-            carbTotal = carbonSlider.value + carbonation;
-            pazTotal = pazazSlider.value + pazaz;
-            Debug.Log("ISNOTHONEY");
+            actualTempValue += temperature;
+            actualCarbonValue += carbonation;
+            actualPazazValue += pazaz;
         }
-        /*
-        CheckIfStatIsMinMax(tempSlider, tempTotal);
-        CheckIfStatIsMinMax(carbonSlider, carbTotal);
-        CheckIfStatIsMinMax(pazazSlider, pazTotal);
-        */
-        actualTempValue = tempTotal;
-        actualCarbonValue = carbTotal;
-        actualPazazValue = pazTotal;
 
+        actualTempValue = Mathf.Clamp(actualTempValue, 0, 10);
+        actualCarbonValue = Mathf.Clamp(actualCarbonValue, 0, 10);
+        actualPazazValue = Mathf.Clamp(actualPazazValue, 0, 10);
+
+        cauldronScript.IngredientEnters((int)actualTempValue, (int)actualCarbonValue, (int)actualPazazValue, (int)potency);
 
         Sequence sliderSequence = DOTween.Sequence();
         float timeElapsed = 0f;
 
-        if (tempTotal != tempSlider.value)
+        if (actualTempValue != tempSlider.value)
         {
-            sliderSequence.Append(DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine));
+            sliderSequence.Append(DOTween.To(() => tempSlider.value, x => tempSlider.value = x, actualTempValue, 0.3f).SetEase(Ease.OutSine));
             timeElapsed += 0.2f;
         }
-        if (carbTotal != carbonSlider.value)
+        if (actualCarbonValue != carbonSlider.value)
         {
-            sliderSequence.Insert(timeElapsed, DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine));
+            sliderSequence.Insert(timeElapsed, DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, actualCarbonValue, 0.3f).SetEase(Ease.OutSine));
             timeElapsed += 0.2f;
         }
-        if (pazTotal != pazazSlider.value)
+        if (actualPazazValue != pazazSlider.value)
         {
-            sliderSequence.Insert(timeElapsed, DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine));
+            sliderSequence.Insert(timeElapsed, DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, actualPazazValue, 0.3f).SetEase(Ease.OutSine));
         }
     }
     
@@ -130,33 +124,29 @@ public class SliderContainer : MonoBehaviour
     }
     
 
-    private float HoneyStats(Slider slider, float total)
+    private float HoneyStats(float total)
     {
-        if (slider.value > 5)
+        if (total > 5)
         {
-            if (slider.value <= 6)
+            if (total <= 7)
             {
                 total = 5;
             }
             else
             {
-                total = slider.value - 2;
+                total += -2;
             }
         }
-        else if (slider.value < 5)
+        else if (total < 5)
         {
-            if (slider.value >= 4)
+            if (total >= 3)
             {
                 total = 5;
             }
             else
             {
-                total = slider.value + 2;
+                total += 2;
             }
-        }
-        else
-        {
-            total = slider.value;
         }
 
         return total;
