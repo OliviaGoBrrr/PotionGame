@@ -60,6 +60,11 @@ public class GameManager : MonoBehaviour
     {
         dialogueEnded = true;
     }
+
+    public void TutorialSkipped()
+    {
+        gameState = 2;
+    }
     public void PotionSubmitted()
     {
         potionSubmitted = true;
