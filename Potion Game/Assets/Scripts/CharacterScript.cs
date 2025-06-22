@@ -37,6 +37,8 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] float potencyFloor;
     [Tooltip("The visuals for the potion canvas")]
     [SerializeField] public int potionVisual;
+
+    [SerializeField] public AudioClip potionSound;
     bool active;
     private void Awake()
     {

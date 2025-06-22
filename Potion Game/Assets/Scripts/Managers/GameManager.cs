@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
                 {
                     potionCanvas.gameObject.SetActive(true);
                     potionCanvas.FadeIn(characters[currentChar].potionVisual);
+                    SoundManager.PlaySound(SoundType.POTION, characters[currentChar].potionSound.name, 0.5f);
                     stateWaiting = true;
                 }
                 if (potionSubmitted == true)
