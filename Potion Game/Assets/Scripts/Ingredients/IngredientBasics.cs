@@ -17,6 +17,10 @@ public class IngredientBasics : MonoBehaviour
     private RectTransform m_RectTransform;
 
     private bool isHovered;
+    private bool isBounceTweening;
+    private float iconSize = 1f;
+
+    private float bounceTimer;
 
     [SerializeField] CauldronStats cauldron;
 
@@ -30,36 +34,14 @@ public class IngredientBasics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckBounds();
- 
-    }
-
-    private void CheckBounds()
-    {
-        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-
-        if (pos.x > 1.1 || pos.x < -0.1)
+        if (isBounceTweening == true)
         {
-            Destroy(this.gameObject);
+            bounceTimer += Time.deltaTime;
         }
 
-        if (pos.y > 3 || pos.y < -0.1)
+        if (bounceTimer >= 0.65)
         {
-            Destroy(this.gameObject);
-        }
-    }
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.name == "Cauldron")
-        {
-            var cauldronScript = collider.gameObject.GetComponent<CauldronStats>();
-            cauldronScript.currentTemperature += temperature;
-            cauldronScript.currentCarbonation += carbonation;
-            cauldronScript.currentPazaz += pazaz;
-            cauldronScript.currentPotency += potency;
-
-            sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency, isHoney);
         }
     }
 
@@ -67,24 +49,34 @@ public class IngredientBasics : MonoBehaviour
     {
         if (sliders.isClicked == true) return; // no spam
 
-        float size = 1f;
-
         if (isHovered == true)
         {
-            size = 1.2f;
+            iconSize = 1.2f;
         }
         else
         {
-            size = 1f;
+            iconSize = 1f;
         }
 
-            Sequence bounceTween = DOTween.Sequence();
-
+        Sequence bounceTween = DOTween.Sequence();
+        isBounceTweening = true;
         bounceTween.Append(m_RectTransform.DOScale(0.6f, 0.08f).SetEase(Ease.OutSine));
-        bounceTween.Append(m_RectTransform.DOScale(1f, 0.8f).SetEase(Ease.OutElastic));
+        bounceTween.Append(m_RectTransform.DOScale(1f, 0.8f).SetEase(Ease.OutElastic)).OnComplete(() =>
+        {
+            isBounceTweening = false;
+        });
+
+
+        /*
+                    if (isHovered == true)
+            {
+                m_RectTransform.DOScale(1.2f, 0.1f).SetEase(Ease.OutSine);
+            }
+            isBounceTweening = false;
+
+        */
 
         sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency, isHoney);
-        //cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
         SoundManager.PlayRandomSound(soundEffectList, soundEffectVolume);
     }
 
@@ -92,10 +84,15 @@ public class IngredientBasics : MonoBehaviour
     public void OnEnter()
     {
         isHovered = true;
+        if (isBounceTweening == true) return;
+        m_RectTransform.DOScale(1.2f, 0.1f).SetEase(Ease.OutSine);
     }
 
     public void OnExit()
     {
         isHovered = false;
+        //DOTween.Kill(m_RectTransform);
+        if (isBounceTweening == true) return;
+        m_RectTransform.DOScale(1f, 0.1f).SetEase(Ease.OutSine);
     }
 }
