@@ -9,9 +9,10 @@ public class CauldronStats : MonoBehaviour
     public float currentCarbonation;
     [Tooltip("Current pazaz score from 0 to 10. 0 is lusterless and 10 is glistening.")]
     public float currentPazaz;
-    [Tooltip("Current potency score from 0 to 1. 0 impotent and 100 is the starting value.")]
+    [Tooltip("Current potency score from 0 to 100. 0 impotent and 100 is the starting value.")]
     public float currentPotency;
     [SerializeField] CauldronVisuals cauldronVisuals;
+    [SerializeField] GameObject potencySlider;
 
     private void Awake() // Sets initial cauldron stats
     {
@@ -31,6 +32,7 @@ public class CauldronStats : MonoBehaviour
         currentPazaz = Mathf.Clamp(currentPazaz + PazazChange, 0, 10);
         cauldronVisuals.GetCauldronValues(currentTemperature, currentCarbonation, currentPazaz, currentPotency);
         cauldronVisuals.StartTheRock(10, true);
+        //potencySlider.GetComponent<Slider>().value = currentPotency;
     }
     public void PullStats(out float Temp, out float Carb, out float Pazaz, out float Potency)
     {
