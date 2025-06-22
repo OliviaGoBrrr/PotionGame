@@ -380,7 +380,8 @@ MonoBehaviour:
   happyDialogue: {fileID: 11400000, guid: 1fc7261232aff9943973ddecf1fefa7b, type: 2}
   neutralDialogue: {fileID: 11400000, guid: 1eff428a116d6414ab69eb81951f8442, type: 2}
   unhappyDialogue: {fileID: 11400000, guid: 2934d4c236bbc6f48abc0ad918d331a7, type: 2}
-  idleDialogue: []
+  idleDialogue:
+  - {fileID: 11400000, guid: 39f583e8cd3de344982e48e3ff273432, type: 2}
   tempFloor: 10
   tempCeiling: 10
   carbFloor: 0
@@ -18898,10 +18899,12 @@ MonoBehaviour:
   happyPose: {fileID: 21300000, guid: 02a1d829eb8945f4c8bcc05482cf4bc3, type: 3}
   neutralPose: {fileID: 21300000, guid: 7822111311a40ef4c82b38a051a33eb9, type: 3}
   unhappyPose: {fileID: 21300000, guid: 3d651249c3730bd4bbd531e0dcb4767f, type: 3}
-  introductionDialogue: []
-  happyDialogue: {fileID: 0}
-  neutralDialogue: {fileID: 0}
-  unhappyDialogue: {fileID: 0}
+  introductionDialogue:
+  - {fileID: 11400000, guid: 9e7fa71f9134f444db3795f0a3e8e7b6, type: 2}
+  - {fileID: 11400000, guid: 008366a9105cd3a4386b29c3a9730bf6, type: 2}
+  happyDialogue: {fileID: 11400000, guid: f9303bf5982e35c479975d5482a2a57a, type: 2}
+  neutralDialogue: {fileID: 11400000, guid: af5e00eb9612732469d5b51ddeed47b0, type: 2}
+  unhappyDialogue: {fileID: 11400000, guid: a1da9b01a5bc6ec409375a43832fa423, type: 2}
   idleDialogue: []
   tempFloor: 0
   tempCeiling: 0
@@ -20159,7 +20162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1331751810
 SpriteRenderer:
   m_ObjectHideFlags: 0
