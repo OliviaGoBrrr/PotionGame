@@ -17,8 +17,8 @@ MonoBehaviour:
   - Stacey
   - Albert
   dialogueText:
-  - Thank you for the anti-venom... this is perfect. You've definitely got a free
-    passss to our next gig!
+  - Thank you for the <b>anti-venom...</b> this is perfect. You've definitely got
+    a free passss to our next gig!
   - "You\u2019ll be going to that one on your own\u2026 I would rather keep my ears
     safe from whatever obnoxious guitar riffs they distort beyond recognition\u2013"
   textAnim: 0000000000000000

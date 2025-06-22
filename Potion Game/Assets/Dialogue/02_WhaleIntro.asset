@@ -28,12 +28,12 @@ MonoBehaviour:
   - "erm\u2026 hello? sorry, i think i might\u2019ve left a small dent in one of
     the rafters, that\u2019s my bad, i can pay for it\u2013  "
   - "Speak up would you? What\u2019ll it be??"
-  - "I\u2019m having some barnacle issues. Only if that\u2019s okay of course, if
-    it\u2019s too hard I can get something else\u2013"
+  - "I\u2019m having some barnacle issues and need some <b>cream</b> for it. Only
+    if that\u2019s okay of course, if it\u2019s too hard I can get something else\u2013"
   - I really cannot hear you.
-  - I NEED SOME CREAM FOR MY BARNACLE RASH!!!
-  - "Alright calm down, there\u2019s no need to yell\u2026 Barnacle cream coming
-    right up.  "
+  - I NEED SOME <b>CREAM</b> FOR MY BARNACLE RASH!!!
+  - "Alright calm down, there\u2019s no need to yell\u2026 <b>Barnacle cream</b>
+    coming right up.  "
   - oh okay, thank you. walter please, if that's okay.
   textAnim: 0000000000000000000000000000000000000000000000000000000000000000
   audioClip:
