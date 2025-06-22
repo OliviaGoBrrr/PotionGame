@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using static UnityEngine.Rendering.DebugUI;
+using TMPro;
 
 public class SliderContainer : MonoBehaviour
 {
+    [SerializeField] public TMP_Text title;
     [SerializeField] private GameObject temperatureSliderObject;
     [SerializeField] private GameObject carbonationSliderObject;
     [SerializeField] private GameObject pazazSliderObject;
