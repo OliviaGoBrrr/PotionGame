@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject endScreen;
     [SerializeField] GameObject thankYouScreen;
+    [SerializeField] TMP_Text potencyNumber;
+
 
     [Header("Dialogue Components")]
     [SerializeField] DialogueScriptableObject beginning;
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CurrentGameState();
+        potencyNumber.SetText($"{cauldron.currentPotency}");
     }
     void CurrentGameState()
     {
