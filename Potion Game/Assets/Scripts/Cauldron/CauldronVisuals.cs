@@ -86,7 +86,7 @@ public class CauldronVisuals : MonoBehaviour
     }
     public void GetCauldronValues(float TempValue, float CarbValue, float PazazValue, float Alpha)
     {
-        liquidColour = new Color(TempValue / 10, CarbValue / 10, PazazValue / 10, Alpha/100);
+        liquidColour = new Color(TempValue / 10, CarbValue / 10, PazazValue / 10, Alpha/100 + 0.1f);
         liquidTimer = 0;
         var hotEmission = hotParticle.emission;
         hotEmission.rateOverTime = Mathf.Clamp(TempValue - 5, 0, 10);

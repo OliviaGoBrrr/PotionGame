@@ -102,7 +102,7 @@ public class DialogueBubbleManager : MonoBehaviour
     {
         PrintWords();
         AnimateWords();
-        if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Space) && Application.isEditor == true)
         {
             Skip();
         }

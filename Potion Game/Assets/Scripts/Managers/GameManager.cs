@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     DialogueBubbleManager dialogueManager;
     SliderContainer sliders;
+    GameObject mainCamera;
     [Header("GameObject Components")]
     [SerializeField] CauldronStats cauldron;
     [SerializeField] PotionCanvas potionCanvas;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         dialogueManager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueBubbleManager>();
         sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
+        mainCamera = GameObject.FindWithTag("MainCamera");
     }
 
     public void DialogueEnded()
@@ -244,6 +246,7 @@ public class GameManager : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= 2 && stateWaiting == false) // After a two second wait, play the tutorial
                 {
+                    mainCamera.GetComponent<CameraPan>().OnButtonPress(1);
                     dialogueManager.SetDialogue(tutorial);
                     stateWaiting = true;
                 }

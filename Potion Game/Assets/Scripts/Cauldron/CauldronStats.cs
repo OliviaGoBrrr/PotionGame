@@ -26,7 +26,7 @@ public class CauldronStats : MonoBehaviour
     public void IngredientEnters(int temp, int carb, int paz, int PotencyChange) // Call when ingredient enters the cauldron
     {
         cauldronVisuals.FireBurst(temp - (int)currentTemperature, carb - (int)currentCarbonation, paz - (int)currentPazaz);
-        currentPotency -= PotencyChange;
+        currentPotency = Mathf.Clamp(currentPotency -= PotencyChange, 0, 100);
         currentTemperature = temp;
         currentCarbonation = carb;
         currentPazaz = paz;
