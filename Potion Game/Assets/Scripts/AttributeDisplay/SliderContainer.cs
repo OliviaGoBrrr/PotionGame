@@ -47,32 +47,62 @@ public class SliderContainer : MonoBehaviour
         }
     }
 
-    public void UpdateSliderStats(float temperature, float carbonation, float pazaz, float potency)
+    public void UpdateSliderStats(float temperature, float carbonation, float pazaz, float potency, bool isHoney)
     {
-        float tempTotal = tempSlider.value + temperature;
-        float carbTotal = carbonSlider.value + carbonation;
-        float pazTotal = pazazSlider.value + pazaz;
 
-        //Sequence valueSequence = DOTween.Sequence();
-        /*
-        valueSequence.Append();
-        valueSequence.Append();
-        valueSequence.Append();
-        */
-        //AddStats(tempSlider, temperature);
-        DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine);
-        DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine);
-        DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine);
-        //AddStats(carbonSlider, carbonation);
+        float tempTotal = tempSlider.value;
+        float carbTotal = carbonSlider.value;
+        float pazTotal = pazazSlider.value;
 
-
-        //AddStats(pazazSlider, pazaz);
+        if (isHoney == false)
+        {
+            tempTotal = tempSlider.value + temperature;
+            carbTotal = carbonSlider.value + carbonation;
+            pazTotal = pazazSlider.value + pazaz;
+        }
+        else
+        {
+            tempTotal = HoneyStats(tempSlider, tempTotal);
+            carbTotal = HoneyStats(carbonSlider, carbTotal);
+            pazTotal = HoneyStats(pazazSlider, pazTotal);
+        }
+        Tween tempTween = DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine);
+        Tween carbTween = DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine);
+        Tween pazTween = DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine);
     }
 
-    private void AddStats(Slider slider, float stat)
+    private float HoneyStats(Slider slider, float total)
     {
-        slider.value += stat;
+        if (slider.value > 5)
+        {
+            if (slider.value <= 7)
+            {
+                total = 5;
+            }
+            else
+            {
+                total = slider.value - 2;
+            }
+        }
+        else if (tempSlider.value < 5)
+        {
+            if (slider.value >= 3)
+            {
+                total = 5;
+            }
+            else
+            {
+                total = slider.value + 2;
+            }
+        }
+        else
+        {
+            total = slider.value;
+        }
+
+        return total;
     }
+
 
     public void UpdateGaugePositions(float tempPos, float tempSize, float carbPos, float carbSize, float pazPos, float pazSize)
     {
