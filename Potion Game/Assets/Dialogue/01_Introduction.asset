@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
   m_Name: 01_Introduction
   m_EditorClassIdentifier: 
-  bubble: 0100000001000000010000000100000001000000
+  bubble: 0300000003000000030000000300000003000000
   nameText:
   - Albert
   - Albert

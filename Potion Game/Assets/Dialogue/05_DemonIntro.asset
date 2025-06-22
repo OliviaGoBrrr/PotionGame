@@ -27,9 +27,9 @@ MonoBehaviour:
     itself, thank you very much.
   textAnim: 000000000000000000000000
   audioClip:
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: c974fc0bb900de640b573ff359a8d989, type: 3}
+  - {fileID: 8300000, guid: c974fc0bb900de640b573ff359a8d989, type: 3}
+  - {fileID: 8300000, guid: c974fc0bb900de640b573ff359a8d989, type: 3}
   defaultTextInterval:
   - 0.05
   - 0.05

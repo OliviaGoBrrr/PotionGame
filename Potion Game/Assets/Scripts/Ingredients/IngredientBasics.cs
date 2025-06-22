@@ -8,7 +8,7 @@ public class IngredientBasics : MonoBehaviour
     public int potency;
     public bool isHoney;
     [SerializeField] private SoundType soundEffectList;
-    [SerializeField] private float soundEffectVolume = 1.0f;
+    [SerializeField] private float soundEffectVolume = 0.4f;
 
     private SliderContainer sliders;
 
