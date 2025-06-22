@@ -47,5 +47,6 @@ public class CameraPan : MonoBehaviour
     {
         LeanTween.move(gameObject, hi, 1f).setEase(LeanTweenType.easeOutQuint);
         LeanTween.move(cauldron, new Vector3(hi.x, -540, 0), 1f).setEase(LeanTweenType.easeInOutQuart);
+        SoundManager.PlayRandomSound(SoundType.CAULDRON_MOVE, 0.1f);
     }
 }

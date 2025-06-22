@@ -7,7 +7,8 @@ using UnityEngine.Audio;
 public enum SoundType
 {
     MENU,
-    GOOD,
+    CAULDRON_MOVE,
+    CAULDRON_SHAKE,
     BAD,
     POTION,
     BERRIES,
@@ -54,11 +55,11 @@ public class SoundManager : MonoBehaviour
         Debug.LogError("No sound of that name in the selected sound clips");
     }
 
-    public static void PlayRandomSound(SoundType sound, float volume = 1)
+    public static void PlayRandomSound(SoundType sound, float volume = 1, bool pitchChange = true)
     {
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
         AudioClip randomClip = clips[UnityEngine.Random.Range(0, clips.Length)];
-        instance.AudioSource.pitch = 1 * Mathf.Pow(1.059463f, UnityEngine.Random.Range(-3,2));
+        if (pitchChange) { instance.AudioSource.pitch = 1 * Mathf.Pow(1.059463f, UnityEngine.Random.Range(-3, 2)); }
         instance.AudioSource.PlayOneShot(randomClip, volume);
     }
 
