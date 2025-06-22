@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TitleTween : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class TitleTween : MonoBehaviour
     public bool moveAcross;
     public bool moveUp;
     public bool spline;
+    public bool fadeOut;
+    private Image fadeImage;
 
     [SerializeField] public Vector3[] splineCoords;
-
+    
     public void TweenTitle()
     {
         // Move to a specific X coordinate
@@ -23,6 +26,12 @@ public class TitleTween : MonoBehaviour
         else if (spline)
         {
             transform.LeanMoveSplineLocal(splineCoords, tweenDuration).setEaseInBack();
+        }
+
+        else if (fadeOut)
+        {
+            fadeImage = transform.GetComponent<Image>();
+            fadeImage.CrossFadeAlpha(0, tweenDuration, false);
         }
 
         // Move to a specific X,Y coordinate
