@@ -6,6 +6,8 @@ public class IngredientBasics : MonoBehaviour
     public int carbonation;
     public int pazaz;
     public int potency;
+    [SerializeField] private SoundType soundEffectList;
+    [SerializeField] private float soundEffectVolume = 1.0f;
 
     private SliderContainer sliders;
 
@@ -57,5 +59,6 @@ public class IngredientBasics : MonoBehaviour
     {
         sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency);
         cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
+        SoundManager.PlayRandomSound(soundEffectList, soundEffectVolume);
     }
 }

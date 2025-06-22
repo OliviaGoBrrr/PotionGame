@@ -1,13 +1,23 @@
 using UnityEngine;
 using System;
 using System.Linq;
+using Unity.Mathematics;
+using UnityEngine.Audio;
 
 public enum SoundType
 {
     MENU,
     GOOD,
     BAD,
-    POTION
+    POTION,
+    BERRIES,
+    FEATHERS,
+    HONEY,
+    HERBS,
+    MOSS,
+    NUTS,
+    ROOTS,
+    WATER
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
@@ -48,6 +58,7 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
         AudioClip randomClip = clips[UnityEngine.Random.Range(0, clips.Length)];
+        instance.AudioSource.pitch = 1 * Mathf.Pow(1.059463f, UnityEngine.Random.Range(-3,2));
         instance.AudioSource.PlayOneShot(randomClip, volume);
     }
 

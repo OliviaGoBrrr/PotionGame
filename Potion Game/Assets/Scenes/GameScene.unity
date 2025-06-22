@@ -174,6 +174,8 @@ MonoBehaviour:
   carbonation: -3
   pazaz: -2
   potency: 1
+  soundEffectList: 11
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &14880420
 MonoBehaviour:
@@ -733,6 +735,8 @@ MonoBehaviour:
   carbonation: 3
   pazaz: -2
   potency: 1
+  soundEffectList: 7
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &124380253
 MonoBehaviour:
@@ -1303,6 +1307,42 @@ MonoBehaviour:
     sounds: []
   - name: POTION
     sounds: []
+  - name: BERRIES
+    sounds:
+    - {fileID: 8300000, guid: bc2439bbfd19f0e42836367e0c97f689, type: 3}
+  - name: FEATHERS
+    sounds:
+    - {fileID: 8300000, guid: c37ee18d6cbdc5841a8fecdb2357d1f6, type: 3}
+  - name: HONEY
+    sounds:
+    - {fileID: 8300000, guid: bbc2a166e1bf67e4784b09326f161b80, type: 3}
+    - {fileID: 8300000, guid: c7ae667d0f91195429c1095911078eb4, type: 3}
+    - {fileID: 8300000, guid: 515e0003a59ac79439f78fb3f396e98b, type: 3}
+    - {fileID: 8300000, guid: ceeb45adbdf74134ca088c35e70e59df, type: 3}
+  - name: HERBS
+    sounds:
+    - {fileID: 8300000, guid: 9d5e8af95df7da04d9b2079f7408fca1, type: 3}
+    - {fileID: 8300000, guid: b6cdfcf1bcd1afc4c81eb23ebe5e247e, type: 3}
+    - {fileID: 8300000, guid: 2f3527dc0a12c8f4f8e8931e5a4be578, type: 3}
+  - name: MOSS
+    sounds:
+    - {fileID: 8300000, guid: c8096bdc07afdb44f85850e30bc52e08, type: 3}
+    - {fileID: 8300000, guid: b07abb30ed7c11245a6fc070a387aa11, type: 3}
+  - name: NUTS
+    sounds:
+    - {fileID: 8300000, guid: a2dfdddef2800f84f8ad19407250fcca, type: 3}
+    - {fileID: 8300000, guid: 090a133834b03f741a585b9aaca0b990, type: 3}
+  - name: ROOTS
+    sounds:
+    - {fileID: 8300000, guid: 8e746bda97a9f634f9c225c03bd4bfcb, type: 3}
+    - {fileID: 8300000, guid: 8e746bda97a9f634f9c225c03bd4bfcb, type: 3}
+  - name: WATER
+    sounds:
+    - {fileID: 8300000, guid: 4c3ad2a08425e47cbb3dbf0a8e21af7e, type: 3}
+    - {fileID: 8300000, guid: 435c510cf0ac148289ae7cba74c212c1, type: 3}
+    - {fileID: 8300000, guid: 24b7c97ddb83e4ce79a7f1906733e966, type: 3}
+    - {fileID: 8300000, guid: a37a31c8af8f34ad7b99b69b4c4e91ea, type: 3}
+    - {fileID: 8300000, guid: 1f822640709234e1b850860021463d0f, type: 3}
 --- !u!4 &321377799
 Transform:
   m_ObjectHideFlags: 0
@@ -6508,6 +6548,8 @@ MonoBehaviour:
   carbonation: -2
   pazaz: -1
   potency: 1
+  soundEffectList: 5
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &430097422
 MonoBehaviour:
@@ -12825,6 +12867,8 @@ MonoBehaviour:
   carbonation: 0
   pazaz: 0
   potency: 0
+  soundEffectList: 6
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &745905140
 MonoBehaviour:
@@ -19942,6 +19986,8 @@ MonoBehaviour:
   carbonation: 3
   pazaz: 1
   potency: 1
+  soundEffectList: 4
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!222 &1348034364
 CanvasRenderer:
@@ -20860,6 +20906,8 @@ MonoBehaviour:
   carbonation: -2
   pazaz: 3
   potency: 1
+  soundEffectList: 10
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &1513936727
 MonoBehaviour:
@@ -21097,6 +21145,8 @@ MonoBehaviour:
   carbonation: 3
   pazaz: -2
   potency: 1
+  soundEffectList: 8
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &1522170447
 MonoBehaviour:
@@ -27019,6 +27069,8 @@ MonoBehaviour:
   carbonation: 0
   pazaz: 2
   potency: 1
+  soundEffectList: 9
+  soundEffectVolume: 1
   cauldron: {fileID: 605214397}
 --- !u!114 &1838669082
 MonoBehaviour:
