@@ -36,7 +36,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 605fe0e5565ff334db642debe74e95b4, type: 2}
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
   fontSize:
-  - 36
+  - 45
   - 28
   nameFont:
   - {fileID: 11400000, guid: 605fe0e5565ff334db642debe74e95b4, type: 2}
