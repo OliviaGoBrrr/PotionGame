@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 02_1_WhaleIdle
+  m_Name: 11a_BirdIdle
   m_EditorClassIdentifier: 
   bubble: 00000000
   nameText:
-  - Walter
+  - Betty
   dialogueText:
-  - So... Itchy...
+  - "Sparkly, colourful and in a state of shock\u2026 I don\u2019t think that sounds
+    like the symptoms of any ailment I\u2019m familiar with\u2026 "
   textAnim: 00000000
   audioClip:
-  - {fileID: 8300000, guid: 6404e6f82f85d4050b9d2d98d2f3392a, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   defaultTextInterval:
   - 0.05
   fastTextInterval:
   - 0.01
   defaultBlipInterval: 03000000
-  fastBlipInterval: 14000000
+  fastBlipInterval: 0a000000
   font:
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: d9c0e4ead96825147bf4a8ec73cf1a1f, type: 2}
   fontSize:
   - 36
   nameFont:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: d9c0e4ead96825147bf4a8ec73cf1a1f, type: 2}

@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
-  m_Name: 02_1_WhaleIdle
+  m_Name: 9_2_ElfIdle
   m_EditorClassIdentifier: 
   bubble: 00000000
   nameText:
-  - Walter
+  - Gregory
   dialogueText:
-  - So... Itchy...
+  - "A good potioneer is a prankster\u2019s greatest ally\u2026 but your apprentice
+    fees help a bit too, I guess. "
   textAnim: 00000000
   audioClip:
-  - {fileID: 8300000, guid: 6404e6f82f85d4050b9d2d98d2f3392a, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   defaultTextInterval:
   - 0.05
   fastTextInterval:
   - 0.01
   defaultBlipInterval: 03000000
-  fastBlipInterval: 14000000
+  fastBlipInterval: 0a000000
   font:
-  - {fileID: 11400000, guid: 00ca77df5af785f489125c891488a691, type: 2}
+  - {fileID: 11400000, guid: 605fe0e5565ff334db642debe74e95b4, type: 2}
   fontSize:
-  - 36
+  - 45
   nameFont:
-  - {fileID: 11400000, guid: c9a169ff79abf9b49a1a0c15064dca87, type: 2}
+  - {fileID: 11400000, guid: 605fe0e5565ff334db642debe74e95b4, type: 2}
