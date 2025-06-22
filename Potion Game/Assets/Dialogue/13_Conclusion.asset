@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
+  m_Name: 13_Conclusion
+  m_EditorClassIdentifier: 
+  bubble: 010000000100000001000000
+  nameText:
+  - Albert
+  - Albert
+  - Albert
+  dialogueText:
+  - "Aaand we\u2019re finally closed, thank the gods. Let today be a lesson about
+    always cleaning your cauldron... or something...  "
+  - "Despite that, I guess congrats on getting through the day and not blowing the
+    place up. That\u2019s a win."
+  - "Of course, you couldn\u2019t have done that without my unsolicited yet endlessly
+    helpful feedback\u2026 I deserve a nap after that\u2026  "
+  textAnim: 000000000000000000000000
+  audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  defaultTextInterval:
+  - 0.05
+  - 0.05
+  - 0.05
+  fastTextInterval:
+  - 0.01
+  - 0.01
+  - 0.01
+  defaultBlipInterval: 030000000300000003000000
+  fastBlipInterval: 140000001400000014000000
+  font:
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  fontSize:
+  - 28
+  - 28
+  - 28
+  nameFont:
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f166e28552914c54e8383e1a515d62aa, type: 3}
+  m_Name: 14_ResultsBad
+  m_EditorClassIdentifier: 
+  bubble: 01000000
+  nameText:
+  - Albert
+  dialogueText:
+  - "*sigh* It seems I\u2019m going to be stuck teaching you for a long time yet\u2026  "
+  textAnim: 00000000
+  audioClip:
+  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  defaultTextInterval:
+  - 0.05
+  fastTextInterval:
+  - 0.01
+  defaultBlipInterval: 03000000
+  fastBlipInterval: 14000000
+  font:
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
+  fontSize:
+  - 28
+  nameFont:
+  - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
