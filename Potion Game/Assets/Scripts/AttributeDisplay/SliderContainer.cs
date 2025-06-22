@@ -47,9 +47,9 @@ public class SliderContainer : MonoBehaviour
         carbonGauge = carbonationGaugeObject.GetComponent<Slider>();
         pazazGauge = pazazGaugeObject.GetComponent<Slider>();
 
-        actualTempValue = tempSlider.value;
-        actualCarbonValue = carbonSlider.value;
-        actualPazazValue = pazazSlider.value;
+        actualTempValue = 5f;
+        actualCarbonValue = 5f;
+        actualPazazValue = 5f;
     }
 
     // Update is called once per frame

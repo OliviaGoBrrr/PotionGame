@@ -16,6 +16,8 @@ public class IngredientBasics : MonoBehaviour
 
     private RectTransform m_RectTransform;
 
+    private bool isHovered;
+
     [SerializeField] CauldronStats cauldron;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -64,13 +66,36 @@ public class IngredientBasics : MonoBehaviour
     public void OnClick()
     {
         if (sliders.isClicked == true) return; // no spam
-        Sequence bounceTween = DOTween.Sequence();
+
+        float size = 1f;
+
+        if (isHovered == true)
+        {
+            size = 1.2f;
+        }
+        else
+        {
+            size = 1f;
+        }
+
+            Sequence bounceTween = DOTween.Sequence();
 
         bounceTween.Append(m_RectTransform.DOScale(0.6f, 0.08f).SetEase(Ease.OutSine));
         bounceTween.Append(m_RectTransform.DOScale(1f, 0.8f).SetEase(Ease.OutElastic));
 
         sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency, isHoney);
-        cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
+        //cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
         SoundManager.PlayRandomSound(soundEffectList, soundEffectVolume);
+    }
+
+
+    public void OnEnter()
+    {
+        isHovered = true;
+    }
+
+    public void OnExit()
+    {
+        isHovered = false;
     }
 }
