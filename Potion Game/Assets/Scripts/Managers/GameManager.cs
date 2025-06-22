@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PotionCanvas potionCanvas;
     [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject endScreen;
+    [SerializeField] GameObject thankYouScreen;
 
     [Header("Dialogue Components")]
     [SerializeField] DialogueScriptableObject beginning;
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
         dialogueManager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueBubbleManager>();
         sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
     }
+
     public void DialogueEnded()
     {
         dialogueEnded = true;
@@ -209,7 +212,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 4:
                 timer += Time.deltaTime;
-                if (timer >= 2 && stateWaiting == false) // After a two second wait, play the conclusion
+                if (timer >= 2.0f && stateWaiting == false) // After a two second wait, play the conclusion
                 {
                     dialogueManager.SetDialogue(ending);
                     stateWaiting = true;
@@ -223,6 +226,18 @@ public class GameManager : MonoBehaviour
                     midCustNum.SetText($"{midCust}");
                     negCustNum.SetText($"{badCust}");
 
+                    if(timer >= 8.0f)
+                    {
+                        ResetState(5);
+                    }
+                }
+                break;
+            case 5:
+                timer += Time.deltaTime;
+                thankYouScreen.SetActive(true);
+                if(timer >= 5)
+                {
+                    SceneManager.LoadScene("MainMenu");
                 }
                 break;
             case 666:
@@ -266,6 +281,11 @@ public class GameManager : MonoBehaviour
     {
         audioSource.resource = clip;
         audioSource.Play();
+    }
+
+    void EndGame()
+    {
+        thankYouScreen.SetActive(true);
     }
 
     public void SkipGame()
