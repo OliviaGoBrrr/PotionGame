@@ -21,17 +21,16 @@ public class Tooltip : MonoBehaviour
 
     public void SetText(string content, string header = "")
     {
-        if (string.IsNullOrEmpty(header))
+        headerField.text = header;
+        contentField.text = content;
+        /*if (string.IsNullOrEmpty(header))
         {
             headerField.gameObject.SetActive(false);
         }
         else
         {
             headerField.gameObject.SetActive(true);
-        }
-
-        contentField.text = content;
-
+        }*/
 
         // box sizing around text
         int headerLength = headerField.text.Length;
