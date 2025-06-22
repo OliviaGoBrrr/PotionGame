@@ -7,19 +7,28 @@ using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     public bool gameStarted = false;
+
     
     DialogueBubbleManager dialogueManager;
     SliderContainer sliders;
+    [Header("GameObject Components")]
     [SerializeField] CauldronStats cauldron;
     [SerializeField] PotionCanvas potionCanvas;
+    [SerializeField] AudioSource audioSource;
 
-    // Dialogue Components
+    [Header("Dialogue Components")]
     [SerializeField] DialogueScriptableObject beginning;
     [SerializeField] DialogueScriptableObject tutorial;
     [SerializeField] DialogueScriptableObject ending;
     [Tooltip("Place characters in here in order of appearance")]
     [SerializeField] List<CharacterScript> characters;
     int currentChar = 0;
+
+    [Header("Audio Components")]
+    [SerializeField] AudioClip characterEnter;
+    [SerializeField] AudioClip potionPositive;
+    [SerializeField] AudioClip potionNeutral;
+    [SerializeField] AudioClip potionNegative;
 
     // Character Sections (Pulled later with function)
     List<DialogueScriptableObject> characterIntroduction;
@@ -36,7 +45,7 @@ public class GameManager : MonoBehaviour
     int pazazCeiling;
     float potencyFloor;
 
-    // Game State Logic
+    [Header("Game Logic")]
     public int gameState = 0;
     bool stateWaiting = false;
     float timer = 0;
@@ -92,8 +101,14 @@ public class GameManager : MonoBehaviour
                 break;
             case 1: // Character introduction
                 timer += Time.deltaTime;
+                if (timer >= 1 && potionSubmitted == false)
+                {
+                    PlaySound(characterEnter);
+                    potionSubmitted = true;
+                }
                 if (timer >= 2 && stateWaiting == false) // After a two second wait, introduce the character
                 {
+                    
                     characters[currentChar].SetActive(true);
                     characters[currentChar].PullCharacterValues(out characterIntroduction, out positiveConclusion, out neutralConclusion, out negativeConclusion, out idleDialogue, out tempFloor, out tempCeiling, out carbFloor, out carbCeiling, out pazazFloor, out pazazCeiling, out potencyFloor);
                     if (characterIntroduction.Count == 1) { dialogueManager.SetDialogue(characterIntroduction[0]); }
@@ -154,16 +169,19 @@ public class GameManager : MonoBehaviour
                     switch (score)
                     {
                         case 4:
+                            PlaySound(potionPositive);
                             dialogueManager.SetDialogue(positiveConclusion);
                             characters[currentChar].SetSprite(1);
                             lastPotionScore = 0;
                             break;
                         case 3:
+                            PlaySound(potionNeutral);
                             dialogueManager.SetDialogue(neutralConclusion);
                             characters[currentChar].SetSprite(2);
                             lastPotionScore = 1;
                             break;
                         default:
+                            PlaySound(potionNegative);
                             dialogueManager.SetDialogue(negativeConclusion);
                             characters[currentChar].SetSprite(3);
                             lastPotionScore = 2;
@@ -233,5 +251,10 @@ public class GameManager : MonoBehaviour
         if (Pazaz >=  pazazFloor && Pazaz <= pazazCeiling) { tally += 1; }
         if (Potency >= potencyFloor) { tally += 1; }
         return tally;
+    }
+    void PlaySound(AudioClip clip)
+    {
+        audioSource.resource = clip;
+        audioSource.Play();
     }
 }
