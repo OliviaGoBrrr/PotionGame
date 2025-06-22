@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     {
         dialogueEnded = true;
     }
-
     public void TutorialSkipped()
     {
         gameState = 2;

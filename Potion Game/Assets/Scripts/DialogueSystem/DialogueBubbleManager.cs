@@ -174,7 +174,6 @@ public class DialogueBubbleManager : MonoBehaviour
             audioSource.pitch = 1 * Mathf.Pow(1.059463f, random);
             audioSource.PlayOneShot(blip);
             soundCount = soundInterval;
-            Debug.Log(soundCount);
         }
         else { soundCount -= 1; }
     }
