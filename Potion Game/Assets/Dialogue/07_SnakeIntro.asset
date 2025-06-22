@@ -36,13 +36,13 @@ MonoBehaviour:
   - "I don\u2019t even wanna know\u2026  "
   textAnim: 00000000000000000000000000000000000000000000000000000000
   audioClip:
+  - {fileID: 8300000, guid: 1b31f302174cd084d896c923dbf9e28a, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 1b31f302174cd084d896c923dbf9e28a, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
   - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
-  - {fileID: 8300000, guid: 2dc1fa3ad2b48f84e84aa64d6c8d5dd3, type: 3}
+  - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
   defaultTextInterval:
   - 0.05
   - 0.05

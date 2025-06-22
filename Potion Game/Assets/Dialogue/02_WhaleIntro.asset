@@ -37,8 +37,8 @@ MonoBehaviour:
   - oh okay, thank you. walter please, if that's okay.
   textAnim: 0000000000000000000000000000000000000000000000000000000000000000
   audioClip:
-  - {fileID: 8300000, guid: 3e4fc7b227861413a8db042dbc32ebdf, type: 3}
-  - {fileID: 8300000, guid: b10471f220059472e8ddb44dc5188806, type: 3}
+  - {fileID: 8300000, guid: 1b31f302174cd084d896c923dbf9e28a, type: 3}
+  - {fileID: 8300000, guid: f972e91ee431288409228e3f454c46e6, type: 3}
   - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
   - {fileID: 8300000, guid: f972e91ee431288409228e3f454c46e6, type: 3}
   - {fileID: 8300000, guid: 838da8695dcdcc146a04ff17915e32ab, type: 3}
