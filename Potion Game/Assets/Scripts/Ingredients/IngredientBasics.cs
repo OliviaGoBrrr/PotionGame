@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class IngredientBasics : MonoBehaviour
 {
@@ -12,12 +14,15 @@ public class IngredientBasics : MonoBehaviour
 
     private SliderContainer sliders;
 
+    private RectTransform m_RectTransform;
+
     [SerializeField] CauldronStats cauldron;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
+        m_RectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -58,6 +63,12 @@ public class IngredientBasics : MonoBehaviour
 
     public void OnClick()
     {
+        if (sliders.isClicked == true) return; // no spam
+        Sequence bounceTween = DOTween.Sequence();
+
+        bounceTween.Append(m_RectTransform.DOScale(0.6f, 0.08f).SetEase(Ease.OutSine));
+        bounceTween.Append(m_RectTransform.DOScale(1f, 0.8f).SetEase(Ease.OutElastic));
+
         sliders.UpdateSliderStats(temperature, carbonation, pazaz, potency, isHoney);
         cauldron.IngredientEnters(temperature, carbonation, pazaz, potency);
         SoundManager.PlayRandomSound(soundEffectList, soundEffectVolume);

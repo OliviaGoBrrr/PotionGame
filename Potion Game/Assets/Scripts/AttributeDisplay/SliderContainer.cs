@@ -24,7 +24,15 @@ public class SliderContainer : MonoBehaviour
     private Slider carbonGauge;
     private Slider pazazGauge;
 
+    private float actualTempValue = 5f;
+    private float actualCarbonValue = 5f;
+    private float actualPazazValue = 5f;
+
     public float Width;
+
+
+    [HideInInspector] public bool isClicked;
+    private float clickedTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,55 +53,74 @@ public class SliderContainer : MonoBehaviour
         {
             UpdateGaugePositions(0, 100, 5, 100, 10, 100);
         }
-    }
 
+        if (isClicked == true)
+        {
+            clickedTimer += Time.deltaTime;
+            if (clickedTimer >= 1f)
+            {
+                isClicked = false;
+                clickedTimer = 0f;
+            }
+        }
+    }
+    
     public void UpdateSliderStats(float temperature, float carbonation, float pazaz, float potency, bool isHoney)
     {
+        if (isClicked == true) return; // so no spamming
+        isClicked = true;
+        // sets values to what they should be so spamming doesnt affect the tweens
+        tempSlider.value = actualTempValue;
+        carbonSlider.value = actualCarbonValue;
+        pazazSlider.value = actualPazazValue;
 
         float tempTotal = tempSlider.value;
         float carbTotal = carbonSlider.value;
         float pazTotal = pazazSlider.value;
 
-        if (isHoney == false)
-        {
-            tempTotal = tempSlider.value + temperature;
-            carbTotal = carbonSlider.value + carbonation;
-            pazTotal = pazazSlider.value + pazaz;
-        }
-        else
+        if (isHoney == true)
         {
             tempTotal = HoneyStats(tempSlider, tempTotal);
             carbTotal = HoneyStats(carbonSlider, carbTotal);
             pazTotal = HoneyStats(pazazSlider, pazTotal);
+            Debug.Log("ISHONEY");
         }
-
+        else
+        {
+            tempTotal = tempSlider.value + temperature;
+            carbTotal = carbonSlider.value + carbonation;
+            pazTotal = pazazSlider.value + pazaz;
+            Debug.Log("ISNOTHONEY");
+        }
+        /*
         CheckIfStatIsMinMax(tempSlider, tempTotal);
         CheckIfStatIsMinMax(carbonSlider, carbTotal);
         CheckIfStatIsMinMax(pazazSlider, pazTotal);
+        */
+        actualTempValue = tempTotal;
+        actualCarbonValue = carbTotal;
+        actualPazazValue = pazTotal;
 
-        
+
         Sequence sliderSequence = DOTween.Sequence();
         float timeElapsed = 0f;
 
         if (tempTotal != tempSlider.value)
         {
             sliderSequence.Append(DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine));
-            timeElapsed += 0.3f;
+            timeElapsed += 0.2f;
         }
         if (carbTotal != carbonSlider.value)
         {
             sliderSequence.Insert(timeElapsed, DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine));
-            timeElapsed += 0.3f;
+            timeElapsed += 0.2f;
         }
         if (pazTotal != pazazSlider.value)
         {
             sliderSequence.Insert(timeElapsed, DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine));
         }
-        
-        
-        
     }
-
+    
     private void CheckIfStatIsMinMax(Slider slider, float total)
     {
         if (slider.value == 1 || slider.value == 10)
@@ -107,7 +134,7 @@ public class SliderContainer : MonoBehaviour
     {
         if (slider.value > 5)
         {
-            if (slider.value <= 7)
+            if (slider.value <= 6)
             {
                 total = 5;
             }
@@ -116,9 +143,9 @@ public class SliderContainer : MonoBehaviour
                 total = slider.value - 2;
             }
         }
-        else if (tempSlider.value < 5)
+        else if (slider.value < 5)
         {
-            if (slider.value >= 3)
+            if (slider.value >= 4)
             {
                 total = 5;
             }
