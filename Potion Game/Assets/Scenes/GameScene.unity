@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -772,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -1246,6 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -1688,6 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 0}
@@ -1963,6 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 211808184}
@@ -2289,6 +2294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 1
   inclusive: 1
   state: 0
   text: {fileID: 0}
@@ -7921,6 +7927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 421136562}
@@ -13344,6 +13351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 0}
@@ -14415,6 +14423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 2
   text: {fileID: 845441243}
@@ -14593,6 +14602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -15151,6 +15161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 747265652}
@@ -15514,6 +15525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 797435157}
@@ -15702,6 +15714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 2
   text: {fileID: 0}
@@ -15718,6 +15731,7 @@ GameObject:
   - component: {fileID: 851075036}
   - component: {fileID: 851075035}
   - component: {fileID: 851075034}
+  - component: {fileID: 851075038}
   m_Layer: 5
   m_Name: ScrollRightButton
   m_TagString: Untagged
@@ -15756,6 +15770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 0
   state: 0
   text: {fileID: 0}
@@ -15853,6 +15868,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851075032}
   m_CullTransparentMesh: 1
+--- !u!114 &851075038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851075032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cb2ed39c87ad0448ef96b9b3f76cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &889378919
 GameObject:
   m_ObjectHideFlags: 0
@@ -21306,6 +21333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -21913,6 +21941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -22965,6 +22994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -23324,6 +23354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -24216,6 +24247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 1497030260}
@@ -25836,6 +25868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 0
   state: 0
   text: {fileID: 0}
@@ -25939,6 +25972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}
@@ -26575,6 +26609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 1807224664}
@@ -26727,6 +26762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 4
   text: {fileID: 1823181286}
@@ -32789,6 +32825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3fca582b6bf46499123b09180bf10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnOwl: 0
   inclusive: 1
   state: 5
   text: {fileID: 0}

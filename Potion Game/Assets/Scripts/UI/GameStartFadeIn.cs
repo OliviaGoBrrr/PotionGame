@@ -8,6 +8,7 @@ public class GameStartFadeIn : MonoBehaviour
     Image image;
     GameManager manager;
     float alpha = 0;
+    public bool isAnOwl = false;
     [SerializeField] bool inclusive;
     [SerializeField] int state;
     [SerializeField] TMP_Text text;
@@ -53,6 +54,10 @@ public class GameStartFadeIn : MonoBehaviour
                     alpha -= Time.deltaTime * 0.5f;
                 }
                 break;
+        }
+        if (isAnOwl == true && alpha <= 0)
+        {
+            gameObject.SetActive(false);
         }
 
         if (image != null) { image.color = new Color(imageColor.r, imageColor.g, imageColor.b, alpha); }
