@@ -66,10 +66,42 @@ public class SliderContainer : MonoBehaviour
             carbTotal = HoneyStats(carbonSlider, carbTotal);
             pazTotal = HoneyStats(pazazSlider, pazTotal);
         }
-        Tween tempTween = DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine);
-        Tween carbTween = DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine);
-        Tween pazTween = DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine);
+
+        CheckIfStatIsMinMax(tempSlider, tempTotal);
+        CheckIfStatIsMinMax(carbonSlider, carbTotal);
+        CheckIfStatIsMinMax(pazazSlider, pazTotal);
+
+        
+        Sequence sliderSequence = DOTween.Sequence();
+        float timeElapsed = 0f;
+
+        if (tempTotal != tempSlider.value)
+        {
+            sliderSequence.Append(DOTween.To(() => tempSlider.value, x => tempSlider.value = x, tempTotal, 0.4f).SetEase(Ease.OutSine));
+            timeElapsed += 0.3f;
+        }
+        if (carbTotal != carbonSlider.value)
+        {
+            sliderSequence.Insert(timeElapsed, DOTween.To(() => carbonSlider.value, x => carbonSlider.value = x, carbTotal, 0.4f).SetEase(Ease.OutSine));
+            timeElapsed += 0.3f;
+        }
+        if (pazTotal != pazazSlider.value)
+        {
+            sliderSequence.Insert(timeElapsed, DOTween.To(() => pazazSlider.value, x => pazazSlider.value = x, pazTotal, 0.4f).SetEase(Ease.OutSine));
+        }
+        
+        
+        
     }
+
+    private void CheckIfStatIsMinMax(Slider slider, float total)
+    {
+        if (slider.value == 1 || slider.value == 10)
+        {
+            total = slider.value;
+        }
+    }
+    
 
     private float HoneyStats(Slider slider, float total)
     {
