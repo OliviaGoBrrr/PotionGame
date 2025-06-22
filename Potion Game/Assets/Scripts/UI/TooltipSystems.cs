@@ -10,9 +10,9 @@ public class TooltipSystems : MonoBehaviour
         current = this;
     }
 
-    public static void Show(string content, string header)
-    {
-        current.tooltip.SetText(content, header);
+    public static void Show(string header, string content)
+    { 
+        current.tooltip.SetText(header, content);
         current.tooltip.gameObject.SetActive(true);
     }
 
