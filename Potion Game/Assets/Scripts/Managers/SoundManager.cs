@@ -27,12 +27,21 @@ public class SoundManager : MonoBehaviour
         AudioSource = GetComponent<AudioSource>();
     }
 
-    public static void PlaySound(SoundType sound, string soundIndex, float volume)
+    public static void PlaySound(SoundType sound, string soundName, float volume)
     {
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
-        //AudioClip soundClip = clips[soundIndex];
-        AudioClip soundClip = clips.Select
-        instance.AudioSource.PlayOneShot(soundClip, volume);
+
+        for (int i = 0; i < clips.Length; i++)
+        {
+            if(clips[i].name.CompareTo(soundName) == 0)
+            {
+                AudioClip soundClip = clips[i];
+                instance.AudioSource.PlayOneShot(soundClip, volume);
+                return;
+            }
+        }
+
+        Debug.LogError("No sound of that name in the selected sound clips");
     }
 
     public static void PlayRandomSound(SoundType sound, float volume = 1)

@@ -151,7 +151,34 @@ public class DialogueBubbleManager : MonoBehaviour
         //AnimateWords(); // this is for testing
         yield return null;
     }
-    
+
+    // Allows the player to either reduce the text interval or go to the next message by clicking on the dialogue bubble
+    public void BubbleClickEvent()
+    {
+        if (State == 2)
+        {
+            // Modifies the interval statistics to make the text scroll faster
+            textInterval = fastTextInterval[currentDiaPos];
+            soundInterval = fastBlipInterval[currentDiaPos];
+        }
+        if (State == 3)
+        {
+            currentBubble[currentDiaPos].nameTextBox.text = string.Empty;
+            currentBubble[currentDiaPos].dialogueTextBox.text = string.Empty;
+            if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
+            {
+                State = 0;
+                gameManager.DialogueEnded();
+            }
+            else
+            {
+                currentDiaPos += 1;
+                State = 1;
+                NewLinePrep();
+            }
+        }
+    }
+
     private void soundCheck(AudioClip blip)
     {
         if (soundCount == 0)
@@ -159,8 +186,9 @@ public class DialogueBubbleManager : MonoBehaviour
             audioSource.resource = blip;
             int random = UnityEngine.Random.Range(-2, 3);
             audioSource.pitch = 1 * Mathf.Pow(1.059463f, random);
-            audioSource.Play();
+            audioSource.PlayOneShot(blip);
             soundCount = soundInterval;
+            Debug.Log(soundCount);
         }
         else { soundCount -= 1; }
     }
@@ -264,30 +292,5 @@ public class DialogueBubbleManager : MonoBehaviour
             }
         }
     }
-    // Allows the player to either reduce the text interval or go to the next message by clicking on the dialogue bubble
-    public void BubbleClickEvent()
-    {
-        if (State == 2)
-        {
-            // Modifies the interval statistics to make the text scroll faster
-            textInterval = fastTextInterval[currentDiaPos];
-            soundInterval = fastBlipInterval[currentDiaPos];
-        }
-        if (State == 3)
-        {
-            currentBubble[currentDiaPos].nameTextBox.text = string.Empty;
-            currentBubble[currentDiaPos].dialogueTextBox.text = string.Empty;
-            if (currentDiaPos + 1 >= dialogue.Count) // If there is no more dialogue, go back to state 0
-            {
-                State = 0;
-                gameManager.DialogueEnded();
-            }
-            else
-            {
-                currentDiaPos += 1;
-                State = 1;
-                NewLinePrep();
-            }
-        }
-    }
+    
 }
