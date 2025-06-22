@@ -20,7 +20,8 @@ public class IngredientBasics : MonoBehaviour
     private bool isBounceTweening;
     private float iconSize = 1f;
 
-    private float bounceTimer;
+    private float enterTimer;
+    private float exitTimer;
 
     [SerializeField] CauldronStats cauldron;
 
@@ -34,15 +35,27 @@ public class IngredientBasics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isBounceTweening == true)
+        if (isHovered == true && m_RectTransform.localScale != new Vector3(1.2f, 1.2f, 1.2f))
         {
-            bounceTimer += Time.deltaTime;
+            enterTimer += Time.deltaTime;
+            if (enterTimer >= 0.11 && m_RectTransform.localScale != new Vector3(1.2f, 1.2f, 1.2f))
+            {
+                OnEnter();
+                enterTimer = 0;
+            }
+            
         }
 
-        if (bounceTimer >= 0.65)
+        if (isHovered == false && m_RectTransform.localScale != new Vector3(1f, 1f, 1f))
         {
-
+            exitTimer += Time.deltaTime;
+            if (exitTimer >= 0.11 && m_RectTransform.localScale != new Vector3(1f, 1f, 1f))
+            {
+                OnExit();
+                exitTimer = 0;
+            }
         }
+
     }
 
     public void OnClick()
@@ -57,11 +70,11 @@ public class IngredientBasics : MonoBehaviour
         {
             iconSize = 1f;
         }
-
+        DOTween.Kill(m_RectTransform);
         Sequence bounceTween = DOTween.Sequence();
         isBounceTweening = true;
-        bounceTween.Append(m_RectTransform.DOScale(0.6f, 0.08f).SetEase(Ease.OutSine));
-        bounceTween.Append(m_RectTransform.DOScale(1f, 0.8f).SetEase(Ease.OutElastic)).OnComplete(() =>
+        bounceTween.Append(m_RectTransform.DOScale(0.8f, 0.08f).SetEase(Ease.OutSine));
+        bounceTween.Append(m_RectTransform.DOScale(1f, 0.6f).SetEase(Ease.OutElastic)).OnComplete(() =>
         {
             isBounceTweening = false;
         });
@@ -85,7 +98,16 @@ public class IngredientBasics : MonoBehaviour
     {
         isHovered = true;
         if (isBounceTweening == true) return;
+
+        DOTween.Kill(m_RectTransform);
+
         m_RectTransform.DOScale(1.2f, 0.1f).SetEase(Ease.OutSine);
+
+        m_RectTransform.DOLocalRotate(new Vector3(0, 0, -5f), 0.3f).SetEase(Ease.InOutSine).OnComplete(() =>
+        {
+            m_RectTransform.DOLocalRotate(new Vector3(0, 0, 5f), 0.3f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        });
+        
     }
 
     public void OnExit()
@@ -93,6 +115,13 @@ public class IngredientBasics : MonoBehaviour
         isHovered = false;
         //DOTween.Kill(m_RectTransform);
         if (isBounceTweening == true) return;
+
+        DOTween.Kill(m_RectTransform);
+
+        m_RectTransform.DOLocalRotate(new Vector3(0, 0, 0), 0);
+
         m_RectTransform.DOScale(1f, 0.1f).SetEase(Ease.OutSine);
+
+        
     }
 }
