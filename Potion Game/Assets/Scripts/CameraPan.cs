@@ -32,11 +32,11 @@ public class CameraPan : MonoBehaviour
             switch (cameraPos)
             {
                 case 0:
-                    GoHere(new Vector3(970, 0, -926));
+                    GoHere(new Vector3(960, 0, -926));
                     cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x - 970) / 100, false);
                     break;
                 case 1:
-                    GoHere(new Vector3(-970, 0, -926));
+                    GoHere(new Vector3(-960, 0, -926));
                     cauldron.GetComponent<CauldronVisuals>().StartTheRock(Mathf.Abs(cauldron.transform.position.x + 970) / 100, true);
                     break;
                 default:
