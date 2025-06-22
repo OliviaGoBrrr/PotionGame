@@ -22,10 +22,12 @@ public class CameraPan : MonoBehaviour
         {
             OnButtonPress(1);
         }
+
+        
     }
     public void OnButtonPress(int cameraPos)
     {
-        if (gameManager.gameState != 0)
+        if (gameManager.gameState != 0 || gameManager.gameState != 4)
         {
             switch (cameraPos)
             {

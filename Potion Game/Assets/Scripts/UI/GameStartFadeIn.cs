@@ -11,12 +11,18 @@ public class GameStartFadeIn : MonoBehaviour
     [SerializeField] bool inclusive;
     [SerializeField] int state;
     [SerializeField] TMP_Text text;
+    Color imageColor;
     Color textColor;
     private void Awake()
     {
         image = GetComponent<Image>();
         manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         text = GetComponent<TMP_Text>();
+
+        if(image != null)
+        {
+            imageColor = image.color;
+        }
 
         if(text != null)
         {
@@ -49,7 +55,7 @@ public class GameStartFadeIn : MonoBehaviour
                 break;
         }
 
-        if (image != null) { image.color = new Color(1, 1, 1, alpha); }
+        if (image != null) { image.color = new Color(imageColor.r, imageColor.g, imageColor.b, alpha); }
 
         if(text != null)
         {

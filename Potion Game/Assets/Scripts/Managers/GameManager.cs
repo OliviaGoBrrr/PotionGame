@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] CauldronStats cauldron;
     [SerializeField] PotionCanvas potionCanvas;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject endScreen;
 
     [Header("Dialogue Components")]
     [SerializeField] DialogueScriptableObject beginning;
@@ -27,6 +29,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip potionNeutral;
     [SerializeField] AudioClip potionNegative;
 
+    [Header("Stat Stuff")]
+    [SerializeField] GameObject statGrid;
+    [SerializeField] TMP_Text posCustNum;
+    [SerializeField] TMP_Text midCustNum;
+    [SerializeField] TMP_Text negCustNum;
+
     // Character Sections (Pulled later with function)
     List<DialogueScriptableObject> characterIntroduction;
     DialogueScriptableObject positiveConclusion;
@@ -41,6 +49,8 @@ public class GameManager : MonoBehaviour
     int pazazFloor;
     int pazazCeiling;
     float potencyFloor;
+
+    int goodCust, midCust, badCust;
 
     [Header("Game Logic")]
     public int gameState = 0;
@@ -164,18 +174,21 @@ public class GameManager : MonoBehaviour
                             dialogueManager.SetDialogue(positiveConclusion);
                             characters[currentChar].SetSprite(1);
                             lastPotionScore = 0;
+                            goodCust++;
                             break;
                         case 3:
                             PlaySound(potionNeutral);
                             dialogueManager.SetDialogue(neutralConclusion);
                             characters[currentChar].SetSprite(2);
                             lastPotionScore = 1;
+                            midCust++;
                             break;
                         default:
                             PlaySound(potionNegative);
                             dialogueManager.SetDialogue(negativeConclusion);
                             characters[currentChar].SetSprite(3);
                             lastPotionScore = 2;
+                            badCust++;
                             break;
                     }
                     potionSubmitted = false;
@@ -203,7 +216,13 @@ public class GameManager : MonoBehaviour
                 }
                 if (dialogueEnded == true)
                 {
-                    // GAME END STUFF GOES HERE
+                    endScreen.SetActive(true);
+                    statGrid.SetActive(true);
+
+                    posCustNum.SetText($"{goodCust}");
+                    midCustNum.SetText($"{midCust}");
+                    negCustNum.SetText($"{badCust}");
+
                 }
                 break;
             case 666:
@@ -247,5 +266,10 @@ public class GameManager : MonoBehaviour
     {
         audioSource.resource = clip;
         audioSource.Play();
+    }
+
+    public void SkipGame()
+    {
+        gameState = 4;
     }
 }
