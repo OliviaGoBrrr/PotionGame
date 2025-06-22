@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Linq;
 
 public enum SoundType
 {
@@ -26,10 +27,11 @@ public class SoundManager : MonoBehaviour
         AudioSource = GetComponent<AudioSource>();
     }
 
-    public static void PlaySound(SoundType sound, int soundIndex, float volume)
+    public static void PlaySound(SoundType sound, string soundIndex, float volume)
     {
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
-        AudioClip soundClip = clips[soundIndex];
+        //AudioClip soundClip = clips[soundIndex];
+        AudioClip soundClip = clips.Select
         instance.AudioSource.PlayOneShot(soundClip, volume);
     }
 
