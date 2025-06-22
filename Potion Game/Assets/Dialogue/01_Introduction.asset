@@ -58,11 +58,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
   fontSize:
-  - 28
-  - 28
-  - 28
-  - 28
-  - 28
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
   nameFont:
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
   - {fileID: 11400000, guid: 3251b6619d3a3d04f94cada15ce8faea, type: 2}
