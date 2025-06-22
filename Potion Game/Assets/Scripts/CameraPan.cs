@@ -14,11 +14,11 @@ public class CameraPan : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && gameManager.gameStarted == true)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && gameManager.gameState != 0)
         {
             OnButtonPress(0);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && gameManager.gameStarted == true)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && gameManager.gameState != 0)
         {
             OnButtonPress(1);
         }

@@ -46,7 +46,7 @@ public class PotionCanvas : MonoBehaviour
             case false:
                 if (Alpha >= 0)
                 {
-                    Alpha -= Time.deltaTime * 0.5f;
+                    Alpha -= Time.deltaTime * 2f;
                     ColourUpdate();
                 }
                 break;

@@ -6,9 +6,6 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
-    public bool gameStarted = false;
-
-    
     DialogueBubbleManager dialogueManager;
     SliderContainer sliders;
     [Header("GameObject Components")]
@@ -59,14 +56,6 @@ public class GameManager : MonoBehaviour
         dialogueManager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueBubbleManager>();
         sliders = GameObject.FindWithTag("SliderContainer").GetComponent<SliderContainer>();
     }
-    public void PlayButtonClicked()
-    {
-        if (gameStarted == false)
-        {
-            gameStarted = true;
-            timer = 0;
-        }
-    }
     public void DialogueEnded()
     {
         dialogueEnded = true;
@@ -78,10 +67,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameStarted == true)
-        {
-            CurrentGameState();
-        }
+        CurrentGameState();
     }
     void CurrentGameState()
     {
