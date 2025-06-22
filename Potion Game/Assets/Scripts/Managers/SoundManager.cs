@@ -9,7 +9,6 @@ public enum SoundType
     MENU,
     CAULDRON_MOVE,
     CAULDRON_SHAKE,
-    BAD,
     POTION,
     BERRIES,
     FEATHERS,
